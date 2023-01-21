@@ -84,15 +84,15 @@ pickleshare==0.7.5
 Pillow==9.0.1
 platformdirs==2.5.2
 # pooch==1.6.0
-# prompt-toolkit==3.0.28
-# protobuf==3.19.6
-# pure-eval==0.2.2
-# pyasn1==0.4.8
-# pyasn1-modules==0.2.8
-# pycodestyle==2.9.1
-# pycparser==2.21
-# Pygments==2.11.2
-# pyparsing==3.0.9
+prompt-toolkit==3.0.28
+protobuf==3.19.6
+pure-eval==0.2.2
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycodestyle==2.9.1
+pycparser==2.21
+Pygments==2.11.2
+pyparsing==3.0.9
 # pypiwin32==223
 # PySocks==1.7.1
 # python-dateutil==2.8.2
