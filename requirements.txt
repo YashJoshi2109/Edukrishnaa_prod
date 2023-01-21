@@ -97,7 +97,7 @@ pypiwin32==223
 PySocks==1.7.1
 python-dateutil==2.8.2
 pyttsx3==2.90
-pytz==2022.4
+# pytz==2022.4
 pywin32==303
 PyYAML==6.0
 PyYtX==0.6.5
