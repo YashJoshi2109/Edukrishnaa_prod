@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>EduKrishnaa - Result</title>
+  <meta content="Career Guidance System" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../static/assets/img/logo_without_name.png" rel="icon">
+  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/assets/css/resultpage.css" rel="stylesheet">
+
+
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+  <!-- Pie chart JS -->
+  <script src="../static/assets/js/result.js"></script>
+  <!-- <script src="../static/assets/js/custom.js"></script> -->
+  <script src="/static/assets/js/tooltip.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="/myhome" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="../static/assets/img/White_font-removebg-preview.png" alt="logo">
+        <h1>EduKrishnaa<span>.</span></h1>
+      </a>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/myhome">Home</a></li>
+          <!-- <li><a href="/404">Courses</a></li> -->
+          <li><a href="#">About</a></li>
+          <li><a href="#contactus">Contact Us</a></li>
+          </li>
+            {% if session['user'] == Flase: %}
+            <li><a href="/login">Login</a></li>
+            {% else: %}
+            <!-- <li><a href="/user_profile">{{session['user']}}</a></li> -->
+            <li class="dropdown"><a href=""><span>{{session['user']}}</span> <i
+                  class="bi bi-chevron-down dropdown-indicator"></i></a>
+              <ul>
+                <li><a href="/user_profile">Profile</a></li>
+                <li><a href="/logout">Logout</a></li>
+              </ul>
+            </li>
+
+            {% endif %}
+          </li>
+
+          <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <div class="media align-items-center">
+              <span class="avatar avatar-sm rounded-circle">
+                <img href="/user-profile" alt="Image placeholder" src="/../static/assets/img/{{getinfo.img}}">
+              </span>
+            </div>
+          </a>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <section class="single-page-header">
+    <div class="container">
+      <div class="row justify-content-center" style="margin-top: 6%;">
+        <div class="col-12 col-sm-8 col-lg-6">
+          <!-- Section Heading-->
+          <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s"
+            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <h2><span>VIEW YOUR RESULTS</h2>
+            <h6>These are your results based on your responses in the previous tests</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-left">
+      <div class="container position-relative d-flex flex-column align-items-left" data-aos="fade">
+        <ol>
+          <li><a href="/myhome">Home</a></li>
+          <li><a href="/taketest-up">Take Test</a></li>
+          <li>Result</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ======= Get Started Section ======= -->
+    <!-- <section id="get-started" class="get-started explore-section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div>
+              <canvas id="chart-line" width="299" height="200" class="chartjs-render-monitor" style="display: block; width: 299px; height: 200px;"></canvas>
+            </div>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <h3>Skillset Test</h3>
+            <p class="">
+            You excel in work environments where you are given the authority to operate within a schedule and clearly define your project goals.
+            </p>
+            <ul>
+              <li><i class="bx bx-check-double"></i> The secret in choosing the RIGHT career path is to correctly assess ones' Aptitudes and Personality and then pick
+                the careers accordingly.</li>
+              <li><i class="bx bx-check-double"></i> You now know that how your Aptitude and Personality Profile is matching with the three
+                career Interests that you marked at the time of Assessment</li>
+              <li><i class="bx bx-check-double"></i> It is perfectly OK if some or all of your career Interests are not matching very well with your Aptitude and Personality.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section> -->
+    <!-- End Get Started Section -->
+
+    <!-- ======= Get Started Section ======= -->
+    <section id="get-started" class="get-started explore-section-bg" data-aos="fade-up">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <h3>Personality Test</h3>
+            <p class="">
+            <h4><em><b><span class="text-capitalize">{{ getinfo.fname }}</span> is an {{ mylist[0][0] }}
+                  Person.</b></em></h4>
+            </p>
+            <img src="/static/assets/img/artistic2.png" width="250px" height="" />
+            <img src="/static/assets/img/artistic4.png" width="250px" height="" />
+            <ul>
+              <li><i class="bx bx-check-double"></i> You enjoy being in the outdoors and appreciate various aspects of
+                Mother Nature.</li>
+              <li><i class="bx bx-check-double"></i> You have a natural ability for mobilizing people. Another one of
+                your strengths is organizing and developing procedures and regulations.</li>
+              <li><i class="bx bx-check-double"></i> You prefer a structure that keeps things running smoothly. </li>
+              <li><i class="bx bx-check-double"></i> You have greater respect for the chain of command. You have a
+                higher commitment to being productive and accountable. </li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <div>
+              <div class="a-box1" title="" data-toggle="tooltip">
+                <p>{{ mylist[0][0] }}</p>
+                <div class="container1">
+                  <div class="skills html" style="width : {{ mylist[0][1] }} %">{{ mylist[0][1] }}</div>
+                </div>
+              </div>
+              <br>
+
+              <!-- <div class="a-box1" title="CLICK TO EXPLORE" data-toggle="tooltip"> -->
+              <p>{{ mylist[1][0] }}</p>
+              <div class="container1">
+                <div class="skills css">{{ mylist[1][1] }}</div>
+              </div>
+              <!-- </div> -->
+
+              <p>{{ mylist[2][0] }}</p>
+              <div class="container1">
+                <div class="skills js">{{ mylist[2][1] }}</div>
+              </div>
+
+              <p>Others</p>
+              <div class="container1">
+                <div class="skills php">30%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Get Started Section -->
+
+
+    <!-- ======= Get Started Section ======= -->
+    <!-- <section id="get-started" class="get-started section-bg" data-aos="fade-up">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-lg-6 pt-4 pt-lg-0">
+              <h3>Psychomeric Test</h3>
+              <p class="">
+                You are an Artistic Person. This means that 
+              </p>
+              <ul>
+                <li><i class="bx bx-check-double"></i> You enjoy being in the outdoors and appreciate various aspects of Mother Nature.</li>
+                <li><i class="bx bx-check-double"></i> You have a natural ability for mobilizing people.  Another one of your strengths is organizing and developing procedures and regulations.</li>
+                <li><i class="bx bx-check-double"></i> You prefer a structure that keeps things running smoothly. You have greater respect for the chain of command.  You have a higher commitment to being productive and accountable. </li>
+              </ul>
+              <p>
+                When you are working in a career that fulfills your work personality, you prefer to be punctual and set your own routine.
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <div>
+                <canvas id="chart-line2" width="299" height="200" class="chartjs-render-monitor" style="display: block; width: 299px; height: 200px;"></canvas>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </section> -->
+    <!-- End Get Started Section -->
+
+
+    <!-- ======= recommend *career*  Section ======= -->
+    <section id="recommend" class="jobs-section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Recommended Career</h2>
+          <p>EduKrishnaa brings to you scientific and meticulously designed. Our recommendation System to discover your
+            true potential and interest ,learning styles and skills .</p>
+        </div>
+        <div class="row justify-content-center body1">
+
+
+          <!-- section start -->
+          {% for i in roles %}
+          <div class="col-sm-3 d-flex align-items-center">
+            <div class="a-box" title="CLICK TO EXPLORE" data-toggle="tooltip">
+              <div class="img-container">
+                <div class="img-inner">
+                  <div class="inner-skew">
+                    <img src="/static/assets/img/musicteacher.jpg">
+                  </div>
+                </div>
+              </div>
+              <div class="text-container">
+                <a href="/results_te/{{i}}">
+                  <h3>{{ i }}</h3>
+                </a>
+                <div>
+                  Sample descriptions
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+
+        </div>
+      </div>
+    </section><!-- End recommend Section -->
+
+    <!-- ======= popular scheme Section ======= -->
+    <section id="recent-blog-posts" class="recent-blog-posts">
+      <div class="container" data-aos="fade-up">
+        <div class=" section-header">
+          <h2>POPULAR SCHEME</h2>
+          <p>Explore the depth of Goverment Schemes for 8-10 Grade students.</p>
+        </div>
+
+        <div class="row gy-5">
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100" title="CLICK TO EXPLORE"
+            data-toggle="tooltip">
+            <div class="post-item position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="../static/assets//img/nse.png" class="img-fluid" alt="">
+                <span class="post-date">June 01</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">NATIONAL SCHOLARSHIP EXAM(NSE)</h3>
+
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">(8th to 12th)</span>
+                  </div>
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Junior category</span>
+                  </div>
+                </div>
+
+                <hr>
+
+                <a href="https://www.nationalscholarshipexam.com/" class="readmore stretched-link"><span>Read
+                    More</span><i class="bi bi-arrow-right"></i></a>
+
+              </div>
+
+            </div>
+          </div><!-- End post item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200" title="CLICK TO EXPLORE"
+            data-toggle="tooltip">
+            <div class="post-item position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="../static/assets//img/Kishore-Vaigyanik-Protsahan-Yojana.jpg" class="img-fluid" alt="">
+                <span class="post-date">September 21</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">KISHORE VAIGYANIK PRATSAHAN YOJANA(KVPY)</h3>
+
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">10th pass and studing in 11th</span>
+                  </div>
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Higher Category</span>
+                  </div>
+                </div>
+
+                <hr>
+
+                <a href="https://ncert.nic.in/national-talent-examination.php"
+                  class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+              </div>
+
+            </div>
+          </div><!-- End post item -->
+
+          <div class="col-xl-4 col-md-6" title="CLICK TO EXPLORE" data-toggle="tooltip">
+            <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="300">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="../static/assets//img/NTSE-LOGO.jpg" class="img-fluid" alt="">
+                <span class="post-date">February 16</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">NATIONAL LEVEL SCIENCE TALENT EXAMINATION(NSTSE)</h3>
+
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">class 8-10 Grade students</span>
+                  </div>
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Secondary Category</span>
+                  </div>
+                </div>
+
+                <hr>
+
+                <a href="https://www.unifiedcouncil.com/options.html?gclid=Cj0KCQjwgO2XBhCaARIsANrW2X2bbUSXvR5CpumGiFoytHeONix6mLJQm6PcoLoEfbpxHF3HDhEvR0AaAnzqEALw_wcB"
+                  class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+              </div>
+
+            </div>
+          </div><!-- End post item -->
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Recent Blog Posts Section -->
+
+
+    <!-- ========= college section ========= -->
+    <section id="recommend" class="jobs-section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>College Recommendations</h2>
+          <p>EduKrishnaa brings to you Classified and Conventional designed. Our College recommendation System to
+            acknowledge your true potential and interest with Higher rank Universities .</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card" style="background-color: #ffffff00;">
+            <div class="col-lg-3 d-flex align-items-center">
+              <div class="a-box">
+                <div class="img-container">
+                  <div class="img-inner">
+                    <div class="inner-skew">
+                      <img src="/static/assets/img/IIST_Image_10th.jpg">
+                    </div>
+                  </div>
+                </div>
+                <div class="text-container-job">
+                  <a href="https://www.iist.ac.in/">
+                    <h3>Indian Institute of Space Science and Technology</h3>
+                  </a>
+                  <div>
+                    <h6><b>NIRF Ranking: 40th</b></h6>
+                    <p>Courses Type: Full Time, Remote</p>
+                    <p>Semester: 4yrs(8 semester)</p>
+                    <p>Location: Thiruvananthapuram, Kerala, India</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="background-color: #ffffff00;">
+            <div class="col-lg-3 d-flex align-items-center">
+              <div class="a-box">
+                <div class="img-container">
+                  <div class="img-inner">
+                    <div class="inner-skew">
+                      <img src="/static/assets/img/IIA_10th.jpg">
+                    </div>
+                  </div>
+                </div>
+                <div class="text-container-job">
+                  <a href="https://www.iiap.res.in/">
+                    <h3>Indian Institute of Astrophysics.</h3>
+                  </a>
+                  <div>
+                    <h6><b>NIRF Ranking: 38th</b></h6>
+                    <p>Courses Type: Full Time, Remote</p>
+                    <p>Semester: 4yrs(8 semester)</p>
+                    <p>Location: Bengaluru,Karnataka, India</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="background-color: #ffffff00;">
+            <div class="col-lg-3 d-flex align-items-center">
+              <div class="a-box">
+                <div class="img-container">
+                  <div class="img-inner">
+                    <div class="inner-skew">
+                      <img src="/static/assets/img/RA Podar_img.jpg.jpeg">
+                    </div>
+                  </div>
+                </div>
+                <div class="text-container-job">
+                  <a href="https://www.rapodar.ac.in/">
+                    <h3>RA Podar College of Commerce and Economics.</h3>
+                  </a>
+                  <div>
+                    <h6><b>NIRF Ranking: 150th</b></h6>
+                    <p>Courses Type: Full Time, Remote</p>
+                    <p>Semester: 4yrs(8 semester)</p>
+                    <p>Location: Mumbai, Maharashtra</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="background-color: #ffffff00;">
+            <div class="col-lg-3 d-flex align-items-center">
+              <div class="a-box">
+                <div class="img-container">
+                  <div class="img-inner">
+                    <div class="inner-skew">
+                      <img src="/static/assets/img/NIFT_10th.jpg">
+                    </div>
+                  </div>
+                </div>
+                <div class="text-container-job">
+                  <a href="https://nift.ac.in/">
+                    <h3>National Institute of Fashion Technology.</h3>
+                  </a>
+                  <div>
+                    <h6><b>NIRF Ranking: 50th</b></h6>
+                    <p>Courses Type: Full Time, Remote</p>
+                    <p>Semester: 4yrs(8 semester)</p>
+                    <p>Location: Mumbai, Maharashtra</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="background-color: #ffffff00;">
+            <div class="col-lg-3 d-flex align-items-center">
+              <div class="a-box">
+                <div class="img-container">
+                  <div class="img-inner">
+                    <div class="inner-skew">
+                      <img src="/static/assets/img/TIFR_10h.jpg">
+                    </div>
+                  </div>
+                </div>
+                <div class="text-container-job">
+                  <a href="https://www.tifr.res.in/">
+                    <h3>Tata Institute of Fundamental Research.</h3>
+                  </a>
+                  <div>
+                    <h6><b>NIRF Ranking: 10th</b></h6>
+                    <p>Courses Type: Full Time, Remote</p>
+                    <p>Semester: 4yrs(8 semester)</p>
+                    <p>Location: Mumbai, Maharashtra</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section><!-- End college Section -->
+
+
+
+    <!-- offline consultancy section -->
+    <section id="recomend" class="jobs-section-bg">
+      <div class="container">
+        <div class="section-header">
+          <h2>Discover your IDEAL counsellors</h2>
+          <p>Get acquainted with the talented and well-trained experts who will guide you to your ideal future.</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-sm">
+            <!-- start -->
+            <figure class="fir-image-figure">
+              <a class="fir-imageover" rel="noopener" target="_blank" href="#">
+                <img class="fir-author-image fir-clickcircle" src="/static/assets/img/team/team-3.jpg"
+                  alt="David East - Author">
+                <div class="fir-imageover-color"></div>
+                <img class="fir-imageover-image fir-clickcircle"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png" />
+              </a>
+              <figcaption>
+                <div class="fig-author-figure-title">Rishika Gosh</div>
+                <div class="fig-author-figure-title">Clinical psychologist.</div>
+                <div class="fig-author-figure-title">Experience &#8212; 5 Years</div>
+              </figcaption>
+            </figure>
+            <!-- end -->
+            <!-- start -->
+            <figure class="fir-image-figure">
+              <a class="fir-imageover" rel="noopener" target="_blank" href="#">
+                <img class="fir-author-image fir-clickcircle" src="/static/assets/img/team/team-2.jpg"
+                  alt="David East - Author">
+                <div class="fir-imageover-color"></div>
+                <img class="fir-imageover-image fir-clickcircle"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png" />
+              </a>
+              <figcaption>
+                <div class="fig-author-figure-title">Prathamesh Kapote </div>
+                <div class="fig-author-figure-title">Career Consultant| Coach| Speaker| Mentor</div>
+                <div class="fig-author-figure-title">Experience &#8212; 3 years</div>
+              </figcaption>
+            </figure>
+            <!-- end -->
+          </div>
+          <div class="col-sm">
+            <!-- start -->
+            <figure class="fir-image-figure">
+              <a class="fir-imageover" rel="noopener" target="_blank" href="#">
+                <img class="fir-author-image fir-clickcircle" src="/static/assets/img/team/team-2.jpg"
+                  alt="David East - Author">
+                <div class="fir-imageover-color"></div>
+                <img class="fir-imageover-image fir-clickcircle"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png" />
+              </a>
+              <figcaption>
+                <div class="fig-author-figure-title">Manish Jain</div>
+                <div class="fig-author-figure-title">Career Consultant| Coach| Speaker| Mentor</div>
+                <div class="fig-author-figure-title">Experience &#8212; 7 Years</div>
+              </figcaption>
+            </figure>
+            <!-- end -->
+            <!-- start -->
+            <figure class="fir-image-figure">
+              <a class="fir-imageover" rel="noopener" target="_blank" href="#">
+                <img class="fir-author-image fir-clickcircle" src="/static/assets/img/team/team-2.jpg"
+                  alt="David East - Author">
+                <div class="fir-imageover-color"></div>
+                <img class="fir-imageover-image fir-clickcircle"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png" />
+              </a>
+              <figcaption>
+                <div class="fig-author-figure-title">Dr.Vijay</div>
+                <div class="fig-author-figure-title">Coach| Speaker| Mentor.</div>
+                <div class="fig-author-figure-title">Experience &#8212; 8 Years</div>
+              </figcaption>
+            </figure>
+            <!-- end -->
+          </div>
+          <div class="col-sm" style="align-content: flex-end;">
+            <!-- start -->
+            <figure class="fir-image-figure">
+              <a class="fir-imageover" rel="noopener" target="_blank" href="">
+                <img class="fir-author-image fir-clickcircle" src="/static/assets/img/team/team-3.jpg"
+                  alt="David East - Author">
+                <div class="fir-imageover-color"></div>
+                <img class="fir-imageover-image fir-clickcircle"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png" />
+              </a>
+              <figcaption>
+                <div class="fig-author-figure-title">Adnan Buland</div>
+                <div class="fig-author-figure-title">Career | Mentor.</div>
+                <div class="fig-author-figure-title">Experience &#8212; 7 Years</div>
+              </figcaption>
+            </figure>
+            <!-- end -->
+            <!-- start -->
+            <figure class="fir-image-figure">
+              <a class="fir-imageover" rel="noopener" target="_blank" href="#">
+                <img class="fir-author-image fir-clickcircle" src="/static/assets/img/team/team-3.jpg"
+                  alt="David East - Author">
+                <div class="fir-imageover-color"></div>
+                <img class="fir-imageover-image fir-clickcircle"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png" />
+              </a>
+              <figcaption>
+                <div class="fig-author-figure-title">Bhaskar</div>
+                <div class="fig-author-figure-title">Mentor.</div>
+                <div class="fig-author-figure-title">Experience &#8212; 4 Years</div>
+              </figcaption>
+            </figure>
+            <!-- end -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-content position-relative">
+
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>EduKrishnaa<span>.</span></h3>
+              <p>
+                Navi Mumbai<br><br>
+                <strong>Email:</strong> info@something.com<br>
+              </p>
+              <div class="social-links d-flex mt-3">
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div><!-- End footer info column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Class 10</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>CLass 11-12</h4>
+            <ul>
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Product Management</a></li>
+              <li><a href="#">Marketing</a></li>
+              <li><a href="#">Graphic Design</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>UG/PG</h4>
+            <ul>
+              <li><a href="#">Molestiae accusamus iure</a></li>
+              <li><a href="#">Excepturi dignissimos</a></li>
+              <li><a href="#">Suscipit distinctio</a></li>
+              <li><a href="#">Dilecta</a></li>
+              <li><a href="#">Sit quas consectetur</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+          <div class="col-lg-2 col-md-3">
+            <a href="/login">
+              <button type="submit" class="footer_button ">Login </button>
+            </a>
+            <br>
+            <br>
+            <a href="/registration">
+              <button type="submit" class="footer_button">Signup</button>
+            </a>
+          </div><!-- End footer links column-->
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-legal text-center position-relative">
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>EduKrishnaa </span></strong>. All Rights Reserved
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets/vendor/aos/aos.js"></script>
+  <script src="../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/assets/js/main.js"></script>
+  <script>
+    $(document).ready(function () {
+      var ctx = $("#chart-line");
+      var myLineChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ["Communication", "Judgement", "Analytical", "Research", "Creativity"],
+          datasets: [{
+            data: [1200, 1700, 800, 200, 100],
+            backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(100, 255, 0, 0.5)", "rgba(200, 50, 255, 0.5)", "rgba(0, 100, 255, 0.5)"]
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: 'Skillset'
+          }
+        }
+      });
+    });
+
+    $(document).ready(function () {
+      var ctx = $("#chart-line2");
+      var myLineChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ["Realistic", "Investigation", "Artistic", "Social", "Enterprising", "Conventional"],
+          datasets: [{
+            data: [200, 50, 150, 100, 150, 50],
+            backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(100, 255, 0, 0.5)", "rgba(200, 50, 255, 0.5)", "rgba(0, 100, 255, 0.5)", "rgba(205, 227, 7, 0.5)"]
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: 'Psychometric'
+          }
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

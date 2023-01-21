@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aptitude Test</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Favicons -->
+  <link href="../static/assets/img/edugati_favicon-removebg-preview (1).png" rel="icon">
+  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/assets/css/testing.css" rel="stylesheet">
+  <link href="../static/assets/css/test.css" rel="stylesheet">
+  <link href="../static/assets/css/te.css" rel="stylesheet">
+
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="/static/assets/js/custom.js"></script>
+
+  <!-- Pie chart JS -->
+  <script src="../static/assets/js/result.js"></script>
+  <script src="../static/assets/js/custom.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="/myhome" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="../static/assets/img/logo.png" alt=""> -->
+        <h1>EduKrishnaa<span>.</span></h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <div class="media align-items-center">
+              <span class="avatar avatar-sm rounded-circle">
+                <img alt="Image placeholder" src="../static/assets/img/profile.png">
+              </span>
+              <div class="media-body ml-2 d-none d-lg-block">
+                <span class="mb-0 text-sm  font-weight-bold"><a href="/user-profile">{{session['user']}}</a></span>
+                <span class="mb-0 text-sm  font-weight-bold"></span>
+              </div>
+            </div>
+          </a>
+          </li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero">
+
+    <div class="info d-flex align-items-center">
+
+    </div>
+    <section class="single-page-header">
+      <div class="container">
+        <div class="row">
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <h1>
+                <div>
+                  <div class="col-lg-11 text-center">
+                    <div class="mid-container">
+                      <h1 class="apti-header1">WELCOME TO THIRD YEAR TEST</h1>
+                      <h4 class="apti-header4">EXAM SECTION</h4>
+                    </div>
+                  </div>
+                </div>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!--Test Section-->
+    <!-- <div class="container-prog">
+    <div class="skill html" id="timer"></div>
+  </div> -->
+
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'psycometric')">Psycometric Section</button>
+      <button class="tablinks" onclick="openCity(event, 'section1')"><a title="From given tests" data-toggle="tooltip">Aptitude Section 1</a></button>
+      <button class="tablinks" onclick="openCity(event, 'section2')">Aptitude Section 2</button>
+      <button class="tablinks" onclick="openCity(event, 'section3')">Aptitude Section 3</button>
+    </div>
+
+    <div id="psycometric" class="tabcontent">
+      <form class="form1" method="POST" action="/results-te">
+        <!-- Question 16   Logical -->
+
+        <div class="form-bg">
+          <h2>Logical</h2>
+          <div class="qt1">1. I find budgeting and managing my money easy</div>
+          <div class="form-check">
+
+            <input class="form-check-input" type="radio" name="logical1" id="flexRadioDefault1" value="Mostly Disagree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="logical1" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+            </label>
+            Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="logical1" id="flexRadioDefault1" value="Slightly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="logical1" id="flexRadioDefault2" value="Mostly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 17 -->
+        <div class="form-bg">
+          <div class="qt1">2. I don’t like ambiguity, I like things to be clear</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="logical2" id="flexRadioDefault1" value="Mostly Disagree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="logical2" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="logical2" id="flexRadioDefault1" value="Slightly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="logical2" id="flexRadioDefault2" value="Mostly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+        <!-- Question 18 -->
+        <div class="form-bg">
+          <div class="qt1">3. I enjoy logic puzzles such as 'sudoku'</div>
+          <div class="form-check">
+
+            <input class="form-check-input" type="radio" name="logical3" id="flexRadioDefault1" value="Mostly Disagree"
+              required>
+
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="logical3" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="logical3" id="flexRadioDefault1" value="Slightly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+
+            <input class="form-check-input" type="radio" name="logical3" id="flexRadioDefault2" value="Mostly Agree"
+              required>
+
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 19 -->
+        <div class="form-bg">
+          <div class="qt1">4. People behaving irrationally annoy me.</div>
+          <div class="form-check">
+
+            <input class="form-check-input" type="radio" name="logical4" id="flexRadioDefault1" value="Mostly Disagree"
+              required>
+
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="logical4" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="logical4" id="flexRadioDefault1" value="Slightly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="logical4" id="flexRadioDefault2" value="Mostly Agree"
+              required>
+
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+        <!-- Question 20 -->
+        <div class="form-bg">
+          <div class="qt1">5. I don’t use my fingers when I count.</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="logical5" id="flexRadioDefault1" value="Mostly Disagree"
+              required>
+
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="logical5" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="logical5" id="flexRadioDefault1" value="Slightly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="logical5" id="flexRadioDefault2" value="Mostly Agree"
+              required>
+
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+
+        <!-- Spatial question 26-1************************************************ -->
+        <hr>
+        <div class="form-bg">
+          <h2>Spatial</h2>
+          <div class="qt1">1. I find graphs and charts easy to understand </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial1" id="flexRadioDefault1" value="Mostly Disagree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial1" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+            </label>
+            Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial1" id="flexRadioDefault1" value="Slightly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial1" id="flexRadioDefault2" value="Mostly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+        <div class="form-bg">
+          <div class="qt1">2. I can always recognise places that I have been before, even when I was very young</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial2" id="flexRadioDefault1" value="Mostly Disagree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial2" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial2" id="flexRadioDefault1" value="Slightly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial2" id="flexRadioDefault2" value="Mostly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+        <!-- question 7 -->
+        <div class="form-bg">
+          <div class="qt1">3. When I am concentrating I tend to doodle</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial3" id="flexRadioDefault1" value="Mostly Disagree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial3" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial3" id="flexRadioDefault1" value="Slightly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial3" id="flexRadioDefault2" value="Mostly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+        <!-- question 8 -->
+        <div class="form-bg">
+          <div class="qt1">4. I never get lost when I am on my own in a new place</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial4" id="flexRadioDefault1" value="Mostly Disagree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial4" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial4" id="flexRadioDefault1" value="Slightly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial4" id="flexRadioDefault2" value="Mostly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+        <!-- question 9  -->
+        <div class="form-bg">
+          <div class="qt1">5. If I am learning how to do something, I like to see drawings and diagrams of how it works
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial5" id="flexRadioDefault1" value="Mostly Disagree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial5" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial5" id="flexRadioDefault1" value="Slightly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="spatial5" id="flexRadioDefault2" value="Mostly Agree"
+              required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+
+        <!-- interpersonal question 10-1 -->
+        <hr>
+        <div class="form-bg">
+          <h2>Interpersonal</h2>
+          <div class="qt1">1. coordinating work between team members in a class project</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal1" id="flexRadioDefault1"
+              value="Mostly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal1" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+            </label>
+            Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal1" id="flexRadioDefault1"
+              value="Slightly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal1" id="flexRadioDefault2"
+              value="Mostly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+
+        <!-- question 11 -->
+        <div class="form-bg">
+          <div class="qt1">2. I care about how those around me feel</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal2" id="flexRadioDefault1"
+              value="Mostly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal2" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal2" id="flexRadioDefault1"
+              value="Slightly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal2" id="flexRadioDefault2"
+              value="Mostly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+
+        <!-- question3 -->
+        <div class="form-bg">
+          <div class="qt1">3. I find it easy to talk to new people</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal3" id="flexRadioDefault1"
+              value="Mostly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal3" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal3" id="flexRadioDefault1"
+              value="Slightly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal3" id="flexRadioDefault2"
+              value="Mostly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="form-bg">
+          <div class="qt1">4. I am very aware of other people’s body language</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal4" id="flexRadioDefault1"
+              value="Mostly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal4" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal4" id="flexRadioDefault1"
+              value="Slightly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal4" id="flexRadioDefault2"
+              value="Mostly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+        <!-- Question 15 -->
+        <div class="form-bg">
+          <div class="qt1">5. I prefer team sports</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal5" id="flexRadioDefault1"
+              value="Mostly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal5" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal5" id="flexRadioDefault1"
+              value="Slightly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="interpersonal5" id="flexRadioDefault2"
+              value="Mostly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+
+        <!-- intrapersonal question 10-1 -->
+        <hr>
+        <div class="form-bg">
+          <h2>Intrapersonal</h2>
+          <div class="qt1">1. I like to learn more about myself</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal1" id="flexRadioDefault1"
+              value="Mostly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal1" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+            </label>
+            Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal1" id="flexRadioDefault1"
+              value="Slightly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal1" id="flexRadioDefault2"
+              value="Mostly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+
+        <!-- question 11 -->
+        <div class="form-bg">
+          <div class="qt1">2. I can predict my feelings and behaviours in certain situations fairly accurately</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal2" id="flexRadioDefault1"
+              value="Mostly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal2" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal2" id="flexRadioDefault1"
+              value="Slightly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal2" id="flexRadioDefault2"
+              value="Mostly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+        <div class="form-bg">
+          <div class="qt1">3. I enjoy individual sports best</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal3" id="flexRadioDefault1"
+              value="Mostly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal3" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal3" id="flexRadioDefault1"
+              value="Slightly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal3" id="flexRadioDefault2"
+              value="Mostly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="form-bg">
+          <div class="qt1">4. I keep a diary</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal4" id="flexRadioDefault1"
+              value="Mostly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal4" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal4" id="flexRadioDefault1"
+              value="Slightly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal4" id="flexRadioDefault2"
+              value="Mostly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+        <!-- Question 15 -->
+        <div class="form-bg">
+          <div class="qt1">5. I am happy spending time alone</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal5" id="flexRadioDefault1"
+              value="Mostly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Mostly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal5" id="flexRadioDefault2"
+              value="Slightly Disagree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Slightly Disagree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal5" id="flexRadioDefault1"
+              value="Slightly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Slightly Agree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="intrapersonal5" id="flexRadioDefault2"
+              value="Mostly Agree" required>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Mostly Agree
+            </label>
+          </div>
+        </div>
+
+
+    </div>
+
+    <div id="section1" class="tabcontent">
+      <!-- Aptitude test exam  -->
+      <hr>
+      <div class="form-bg">
+        <center>
+          <h2>Aptitude Section</h2>
+        </center>
+        <div class="qt1">1. In the IPv4 addressing format,the number of networks allowed under Class C addresses is
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM1" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            2^14
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM1" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            2^7
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM1" id="flexRadioDefault1" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            2^21
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM1" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            2^24
+          </label>
+        </div>
+      </div>
+
+      <div class="form-bg">
+        <div class="qt1">2. The address of a class B host is to be split into subnets with a 6-bit subnet number. What
+          is the maximum number of subnets and the maximum number of hosts in each subnet?</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM2" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            62 subnets and 262142 hosts
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM2" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            64 subnets and 262142 hosts
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM2" id="flexRadioDefault1" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            62 subnets and 1022 hosts
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM2" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            64 subnets and 1024 hosts.
+          </label>
+        </div>
+      </div>
+
+      <div class="form-bg">
+        <div class="qt1">3. A system has 6 identical resources and N processes competing for them. Each process can
+          request atmost 2 resources. Which one of the following values of N could lead to a deadlock?</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM3" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            1
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM3" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            3
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM3" id="flexRadioDefault1" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            6
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM3" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-bg">
+        <div class="qt1">4. Which one of the following statements is TRUE if all three processes run concurrently
+          starting at time t=0?</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM4" id="flexRadioDefault1" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            All processes will finish without any deadlock
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM4" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Only P1 and P2 will be in deadlock
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM4" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Only P1 and P3 will be in a deadlock
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM4" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            All three processes will be in deadlock
+          </label>
+        </div>
+      </div>
+
+
+      <div class="form-bg">
+        <div class="qt1">5. "Comparing the time T1 taken for a single instruction on a pipelined CPU with time T2 taken
+          on a non-pipelined but identical CPU we can say that "</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM5" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            T1 <= T2 </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM5" id="flexRadioDefault2" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            T1>= T2
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM5" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            T1< T2 </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM5" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            T1 is T2 plus the time taken for one instruction fetch cycle
+          </label>
+        </div>
+      </div>
+
+
+      <div class="form-bg">
+        <div class="qt1">6. A CPU has 24-bit instructions. A program starts at address 300 (in decimal). Which one of
+          the following is a legal program counter (all values in decimal)?</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM6" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            400
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM6" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            500
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM6" id="flexRadioDefault1" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            600
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="NIM6" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            700
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="section2" class="tabcontent">
+
+
+      <div class="form-bg">
+        <center>
+          <h2>Aptitude section</h2>
+        </center>
+        <hr>
+        <div class="qt1">7. For merging two unsorted list of size p and q into sorted list of size (p + q). The time
+          complexity in terms of number of comparisons is:</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web1" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            O(log p + log q)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web1" id="flexRadioDefault2" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            O(p log p) + q log q)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web1" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            O(p + q)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web1" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            None
+          </label>
+        </div>
+      </div>
+
+
+      <div class="form-bg">
+        <div class="qt1">8. For a graph with E edges and V vertices what is the time complexity of Dijkstra algorithm
+          using array as data structure for storing non-finalized vertices. Graph is undirected and represented as
+          adjacency list?</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web2" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            O(VE)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web2" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            O(ElogV)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web2" id="flexRadioDefault1" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            O(V^2)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web2" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            O(E^2log V)
+          </label>
+        </div>
+      </div>
+
+      <div class="form-bg">
+        <div class="qt1">9. For n keys and m slots in a hashing table, which of the following is the expected number of
+          empty location.</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web3" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            n((m-1)/m)^n
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web3" id="flexRadioDefault2" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            m((m-1)/m)^n
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web3" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            n((n-1)/m)^n
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web3" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            n((n-1)/n)^m
+          </label>
+        </div>
+      </div>
+
+      <div class="form-bg">
+        <div class="qt1">10. Lambda expressions in Java allow us to treat.</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web4" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Data as code
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web4" id="flexRadioDefault2" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Code as data
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web4" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Both the options
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web4" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            None of the options
+          </label>
+        </div>
+      </div>
+
+
+      <div class="form-bg">
+        <div class="qt1">11. Which component is used to compile, debug and execute the java programs?</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web5" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            JRE
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web5" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            JIT
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web5" id="flexRadioDefault1" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            JDK
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web5" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            JVM
+          </label>
+        </div>
+      </div>
+
+
+
+      <div class="form-bg">
+        <div class="qt1">12. Which of the following is a superclass of every class in Java?</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web6" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            ArrayList
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web6" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Abstract class
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web6" id="flexRadioDefault1" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Object class
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="web6" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            String
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="section3" class="tabcontent">
+      <hr>
+      <center>
+        <h3>Aptitude Section</h3>
+      </center>
+      <div class="form-bg">
+        <div class="qt1">13. Which one of the following is NOT a part of the ACID properties of database transactions?
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI1" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Atomicity
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI1" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Consistency
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI1" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Isolation
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI1" id="flexRadioDefault2" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Deadlock-Freedom
+          </label>
+        </div>
+      </div>
+
+
+
+      <div class="form-bg">
+        <div class="qt1">14. A prime attribute of a relation R scheme is an attribute that appears</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI2" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            In all candidate key of R
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI2" id="flexRadioDefault2" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            In some candidate key of R
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI2" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            In a foreign key of R
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI2" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Only in the primary key of R
+          </label>
+        </div>
+      </div>
+
+
+
+      <div class="form-bg">
+        <div class="qt1">15. Which one of the following is used to represent the supporting many-one relationships of a
+          weak entity set in an entity-relationship diagram?</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI3" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Rectangles with double/bold border
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI3" id="flexRadioDefault2" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Diamonds with double/bold border
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI3" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Ovals that contain underlined identifiers
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI3" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Ovals with double/bold border
+          </label>
+        </div>
+      </div>
+
+
+
+      <div class="form-bg">
+        <div class="qt1">16. The lexical analysis for a modern computer language such as java needs the power of which
+          one of the following machine model in a necessary and sufficient sense?</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI4" id="flexRadioDefault1" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Finite state automate
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI4" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Deterministic pushdown automata
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI4" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Non-deterministic pushdown automata
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI4" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Turing machine
+          </label>
+        </div>
+      </div>
+
+
+
+      <div class="form-bg">
+        <div class="qt1">17. Which one of the following is FALSE?</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI5" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            There is unique minimal DFA for every regular language
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI5" id="flexRadioDefault2" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Every NFA can be converted to an equivalent PDA
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI5" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            complement of every context free language is recursive
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI5" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Every non deteministic PDA can be converted to an equivalent deterministic PDA
+          </label>
+        </div>
+      </div>
+
+
+
+      <div class="form-bg">
+        <div class="qt1">18. Let w be any string of length n in {a, b}*. <br>Consider 'L' be the set of all strings
+          ending with at least n a's. What is the minimum number of states in non deterministic finite automata that
+          accept 'L'?</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI6" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            (n+3)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI6" id="flexRadioDefault2" value="1" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            (n+1)
+            <!-- correct answer -->
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI6" id="flexRadioDefault1" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault1">
+            n
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="AI6" id="flexRadioDefault2" value="0" required>
+          <label class="form-check-label" for="flexRadioDefault2">
+            2^n
+          </label>
+        </div>
+      </div>
+      <center><button value="button">Submit</button></center>
+
+      </form>
+    </div>
+
+    <!-- ======= Footer ======= -->
+
+    <!-- End Footer -->
+
+    <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+    </script>
+
+</body>
+
+</html>

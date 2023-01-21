@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EdGati - Login</title>
+    <link href="../static/assets/img/edugati_favicon-removebg-preview.png" rel="icon">
+    <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Client ID :- 411974903638-tuco5kc4h5pql62sshrjs7bqoaimn61k.apps.googleusercontent.com
+        Secret Key :- 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 -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id"
+        content="411974903638-ji8sj39lvdi8ilvigae3kq23031c1uni.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <!-- Vendor CSS Files -->
+    <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <!-- Base css with customised bootstrap included -->
+    <link rel='stylesheet' type='text/css' media='screen' href='../static/assets/css/reg.css'>
+    <link rel="stylesheet" type='text/css' media='screen' href="static\assets\css\daynight.css" />
+    <link rel='stylesheet' type='text/css' media='screen' href='../static/assets/css/data_analyst.css'>
+    <!-- <link href="/EduGati_SIH_2022/static/assets/scss/reg.scss"> -->
+    <!-- <link href="/EduGati_SIH_2022/static/assets/css/reg.css"> -->
+
+
+    <!-- Stylesheet for demo page specific css -->
+</head>
+
+<body>
+
+    <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="/myhome" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <img src="../static/assets/img/White_font-removebg-preview.png" alt="logo">
+                <h1>EduKrishnaa<span>.</span></h1>
+            </a>
+        </div>
+    </header>
+
+    <!-- <div class="container5">
+        <div class="glow1"></div>
+        <div class="stars1"></div>
+        <div class="spinner1">
+            <div class="sun1">
+                <div class="ray1"></div>
+                <div class="ray2"></div>
+                <div class="ray3"></div>
+                <div class="ray4"></div>
+            </div>
+            <div class="moon1"></div>
+        </div>
+    </div> -->
+
+
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="admin" name="form" method="POST">
+                <h3>Recruiters Login</h3>
+                <!-- <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a> -->
+                <!-- <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a> -->
+                <!-- </div> -->
+                <!-- <span>or use your email for registration</span> -->
+                <input type="text" name="rec_email" placeholder="Company email address" />
+                <input type="password" name="rec_pass" placeholder="Password" />
+                <input type="OTP" name="otp" placeholder="OTP Number on your mail ID" />
+                <a href="/recruiter_register">Don't have an account?</a>
+                <button>Sign in</button>
+
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form name="form" action="login" method="POST">
+                <h1>User Login</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="/googlesign" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <!-- <span>or use your account</span> -->
+                <input type="text" placeholder="username" id="email" name="email" required />
+                <input type="password" placeholder="Password" name="pass" id="password" required />
+                <input type="OTP" name="otp" placeholder="OTP Number on your mail ID" />
+                <a href="/register">Don't have an account?</a>
+                <button>Sign In</button>
+                <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> -->
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Recruiters!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign in As an User</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign in as an recruiter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v14.0"
+        nonce="JAAIs4ss"></script>
+
+
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+        });
+
+        // Google Signup Function
+        // function onSignIn(googleUser) {
+        // var profile = googleUser.getBasicProfile();
+        // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        // console.log('Name: ' + profile.getName());
+        // console.log('Image URL: ' + profile.getImageUrl());
+        // console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        // }
+
+        // https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.metadata.readonly&state=state_parameter_passthrough_value&redirect_uri=http://127.0.0.1:5000/auth/google_oauth2/callback&response_type=code&client_id=411974903638-tuco5kc4h5pql62sshrjs7bqoaimn61k.apps.googleusercontent.com&flowName=GeneralOAuthFlow
+
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    <script>
+        
+        document.querySelector('.img__btn').addEventListener('click', function() {
+    document.querySelector('.cont').classList.toggle('s--signup');
+    });
+
+
+
+
+
+
+    function Login()
+    {
+        
+    var a = new Array();
+    up1 = new Object();
+    up2 = new Object();
+    
+    up1={
+    name:'abcd@gmail.com',
+    password:btoa('abc@12')
+    };
+    up2={
+    name:'bcd@gmail.com',
+    password:btoa('bcd@12')
+    };
+
+    a.push(up1);
+    a.push(up2);
+
+    var username = document.getElementById('uname').value;
+    var password = document.getElementById('psw').value;
+    sessionStorage.setItem('currentloggedin',username);
+    localStorage.setItem('all_users',JSON.stringify(a));
+
+    a=JSON.parse((localStorage.getItem("all_users")));
+    a.push({name: username, password: password});
+    localStorage.setItem('name',JSON.stringify(a));
+    for(var i=0; i<a.length; i++)
+    {
+    var li = document.createElement("li");
+    li.innerHTML=a[i]['name'];
+    document.getElementById("listuser").appendChild(li);
+    }
+    }
+
+
+    // function Login()
+    // {
+    //     const hash = Object.fromEntries(
+    //     a.map(e => [e.name, e.password])
+    //          )
+    //      var username = document.getElementById('uname').value;
+    //      var password = document.getElementById('psw').value;
+    //      for (let key of hash) 
+    //      {
+        
+    //          if(key[0] === username && key[1]===atob(password))
+    //          {
+    //               alert('Login successful');
+    //          }
+    
+    //      else
+    //          {
+    //              alert('Login fail');
+    //          }
+    //          var hashmap = a.reduce(function(map, obj) {
+    //             map[obj.key] = obj.val;
+    //             return map;
+    //         }, {});
+    //         const hashmap = Object.assign({}, ...(<{}>a.map(s => ({[s.key]:s.value}))));
+    //     }
+    // }
+
+
+        </script>
+     -->

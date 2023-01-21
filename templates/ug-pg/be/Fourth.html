@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aptitude Test</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Favicons -->
+    <link href="../static/assets/img/edugati_favicon-removebg-preview (1).png" rel="icon">
+    <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../static/assets/css/testing.css" rel="stylesheet">
+    <link href="../static/assets/css/test.css" rel="stylesheet">
+    <link href="../static/assets/css/te.css" rel="stylesheet">
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="/static/assets/js/custom.js"></script>
+
+    <!-- Pie chart JS -->
+    <script src="../static/assets/js/result.js"></script>
+    <script src="../static/assets/js/custom.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="/myhome" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="../static/assets/img/logo.png" alt=""> -->
+                <h1>EduKrishnaa<span>.</span></h1>
+            </a>
+
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <div class="media align-items-center">
+                            <span class="avatar avatar-sm rounded-circle">
+                                <img alt="Image placeholder" src="../static/assets/img/profile.png">
+                            </span>
+                            <div class="media-body ml-2 d-none d-lg-block">
+                                <span class="mb-0 text-sm  font-weight-bold"><a
+                                        href="/user-profile">{{session['user']}}</a></span>
+                                <span class="mb-0 text-sm  font-weight-bold"></span>
+                            </div>
+                        </div>
+                    </a>
+                    </li>
+                </ul>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero">
+
+        <div class="info d-flex align-items-center">
+
+        </div>
+        <section class="single-page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <h1>
+                                <div>
+                                    <div class="col-lg-11 text-center">
+                                        <div class="mid-container">
+                                            <h1 class="apti-header1">WELCOME TO FOUTH YEAR TEST</h1>
+                                            <h4 class="apti-header4">EXAM SECTION</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!--Test Section-->
+        <!-- <div class="container-prog">
+    <div class="skill html" id="timer"></div>
+  </div> -->
+
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'psycometric')"><a title="Psychometric"
+                    data-toggle="tooltip">Section 1</a></button>
+            <button class="tablinks" onclick="openCity(event, 'section1')"><a title="Aptitude"
+                    data-toggle="tooltip">Section 2</a></button>
+            <button class="tablinks" onclick="openCity(event, 'section2')"><a title="Aptitude"
+                    data-toggle="tooltip">Section 3</a></button>
+            <button class="tablinks" onclick="openCity(event, 'section3')"><a title="Aptitude"
+                    data-toggle="tooltip">Section 4</a></button>
+            <button class="tablinks" onclick="openCity(event, 'section4')"><a title="Aptitude"
+                    data-toggle="tooltip">Section 5</a></button>
+            <button class="tablinks" onclick="openCity(event, 'section5')"><a title="Aptitude"
+                    data-toggle="tooltip">Section 6</a></button>
+            <button class="tablinks" onclick="openCity(event, 'section6')"><a title="Aptitude"
+                    data-toggle="tooltip">Section 7</a></button>
+        </div>
+
+        <div id="psycometric" class="tabcontent">
+            <form class="form1" method="POST" action="/results_be">
+                <!-- Question 16   Logical -->
+
+                <div class="form-bg">
+                    <!-- <h2>Logical</h2> -->
+                    <div class="qt1">1. I find budgeting and managing my money easy</div>
+                    <div class="form-check">
+
+                        <input class="form-check-input" type="radio" name="logical1" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="logical1" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                        </label>
+                        Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="logical1" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="logical1" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 17 -->
+                <div class="form-bg">
+                    <div class="qt1">2. I don’t like ambiguity, I like things to be clear</div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="logical2" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="logical2" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="logical2" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="logical2" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+                <!-- Question 18 -->
+                <div class="form-bg">
+                    <div class="qt1">3. I enjoy logic puzzles such as 'sudoku'</div>
+                    <div class="form-check">
+
+                        <input class="form-check-input" type="radio" name="logical3" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="logical3" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="logical3" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+
+                        <input class="form-check-input" type="radio" name="logical3" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 19 -->
+                <div class="form-bg">
+                    <div class="qt1">4. People behaving irrationally annoy me.</div>
+                    <div class="form-check">
+
+                        <input class="form-check-input" type="radio" name="logical4" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="logical4" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="logical4" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="logical4" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+                <!-- Question 20 -->
+                <div class="form-bg">
+                    <div class="qt1">5. I don’t use my fingers when I count.</div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="logical5" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="logical5" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="logical5" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="logical5" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Spatial question 26-1************************************************ -->
+                <!-- <hr> -->
+                <div class="form-bg">
+                    <!-- <h2>Spatial</h2> -->
+                    <div class="qt1">6. I find graphs and charts easy to understand </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial1" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial1" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                        </label>
+                        Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial1" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial1" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+                <div class="form-bg">
+                    <div class="qt1">7. I can always recognise places that I have been before, even when I was very
+                        young</div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial2" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial2" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial2" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial2" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+                <!-- question 7 -->
+                <div class="form-bg">
+                    <div class="qt1">8. When I am concentrating I tend to doodle</div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial3" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial3" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial3" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial3" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+                <!-- question 8 -->
+                <div class="form-bg">
+                    <div class="qt1">9. I never get lost when I am on my own in a new place</div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial4" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial4" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial4" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial4" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+                <!-- question 9  -->
+                <div class="form-bg">
+                    <div class="qt1">10. If I am learning how to do something, I like to see drawings and diagrams of
+                        how
+                        it works
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial5" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial5" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial5" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="spatial5" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+
+                <!-- interpersonal question 10-1 -->
+                <hr>
+                <div class="form-bg">
+                    <!-- <h2>Interpersonal</h2> -->
+                    <div class="qt1">11. coordinating work between team members in a class project</div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal1" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal1" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                        </label>
+                        Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal1" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal1" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+
+                <!-- question 11 -->
+                <div class="form-bg">
+                    <div class="qt1">12. I care about how those around me feel</div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal2" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal2" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal2" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal2" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+
+                <!-- question3 -->
+                <div class="form-bg">
+                    <div class="qt1">13. I find it easy to talk to new people</div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal3" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal3" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal3" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal3" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 14 -->
+                <div class="form-bg">
+                    <div class="qt1">14. I am very aware of other people’s body language</div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal4" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal4" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal4" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal4" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+                <!-- Question 15 -->
+                <div class="form-bg">
+                    <div class="qt1">15. I prefer team sports</div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal5" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal5" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal5" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="interpersonal5" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+
+                <!-- intrapersonal question 10-1 -->
+                <!-- <hr> -->
+                <div class="form-bg">
+                    <!-- <h2>Intrapersonal</h2> -->
+                    <div class="qt1">16. I like to learn more about myself</div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal1" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal1" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                        </label>
+                        Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal1" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal1" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+
+                <!-- question 11 -->
+                <div class="form-bg">
+                    <div class="qt1">17. I can predict my feelings and behaviours in certain situations fairly
+                        accurately
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal2" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal2" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal2" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal2" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+                <div class="form-bg">
+                    <div class="qt1">18. I enjoy individual sports best</div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal3" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal3" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal3" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal3" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 14 -->
+                <div class="form-bg">
+                    <div class="qt1">19. I keep a diary</div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal4" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal4" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal4" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal4" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+                <!-- Question 15 -->
+                <div class="form-bg">
+                    <div class="qt1">20. I am happy spending time alone</div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal5" id="flexRadioDefault1"
+                            value="Mostly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Mostly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal5" id="flexRadioDefault2"
+                            value="Slightly Disagree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Slightly Disagree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal5" id="flexRadioDefault1"
+                            value="Slightly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Slightly Agree
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="intrapersonal5" id="flexRadioDefault2"
+                            value="Mostly Agree" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Mostly Agree
+                        </label>
+                    </div>
+                </div>
+
+
+        </div>
+
+        <div id="section1" class="tabcontent">
+            <!-- Aptitude test exam  -->
+            <hr>
+            <div class="form-bg">
+                <div class="qt1">1. This Is Not Part Of A Complete URL.
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web1" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Browser
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web1" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Path
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web1" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Resource Name
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web1" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Protocol
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-bg">
+                <div class="qt1">2. Which of the following can't be done with client-side Javascript?</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web2" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Validating a form
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web2" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Sending a form's contents by email
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web2" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Storing the form's contents to a database file on the server
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web2" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        None of the above
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-bg">
+                <div class="qt1">3. Which of the following provides SMTP interface to Flask application?</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web3" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Flask WTF
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web3" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Flask Mail
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web3" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Flask SQLAlchemy
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web3" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        None of the above
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-bg">
+                <div class="qt1">4.Consider the below statement, how to print the value of "StudentName"?
+                    ------code------</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web4" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        StudentName
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web4" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        {{StudentName}}
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web4" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        { StudentName }
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web4" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        { _StudentName }
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="form-bg">
+                <div class="qt1">5. What are the worst case and average case complexities of a binary search tree?</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web5" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        O(n), O(n) </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web5" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        O(log n), O(log n)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web5" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        O(logn), O(n)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web5" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        O(n), O(log n)
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="form-bg">
+                <div class="qt1">6. In the balanced binary tree in Fig. given below, how many nodes will become
+                    unbalanced when a node is inserted as a child of the node "g"?</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web6" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        1
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web6" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        3
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web6" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        4
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="web6" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        7
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="section2" class="tabcontent">
+
+
+            <div class="form-bg">
+
+                <hr>
+                <div class="qt1">7. Sorting of relations that do not fit in memory is called as: </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml1" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Internal sorting
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml1" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        External sorting
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml1" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Overflow sorting
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml1" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Overload sorting
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="form-bg">
+                <div class="qt1">8. Which refers to a property of computer to run several operation simultaneously and
+                    possible as computers await response of each other</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml2" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Concurrency
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml2" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Deadlock
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml2" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Backup
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml2" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Recovery
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-bg">
+                <div class="qt1">9. Identify the term used to define the task of inferring a model from labeled training
+                    data</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml3" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Supervised Learning
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml3" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Unsupervised Learning
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml3" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Reinforcement Learning
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml3" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        None
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-bg">
+                <div class="qt1">10. Small logical units where data warehouses hold large amounts of data is known as
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml4" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Access Layers
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml4" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Data marts
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml4" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Data Storage
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml4" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Data miners
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="form-bg">
+                <div class="qt1">11.The search algorithm which is similar to the minimax search, but removes the
+                    branches that don't affect the final output is known as__.</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml5" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Breadth-first search
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml5" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Depth-first search
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml5" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Alpha-beta pruning
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml5" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        None of the above
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">12. Which algorithm is used in the Game tree to make decisions of Win/Lose?</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml6" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Heuristic Search Algorithm
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml6" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        DFS/BFS algorithm
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml6" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Greedy Search Algorithm
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="aiml6" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Min/Max algorithm
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="section3" class="tabcontent">
+            <hr>
+
+            <div class="form-bg">
+                <div class="qt1">13.What is the main purpose of WoT (Web of Things) in the IoT?
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot1" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Improve the usability and interoperability
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot1" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Reduce the security
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot1" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Complex the development
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot1" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Increase the cost
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">14. How many numbers of the element in the open IoT architecture?</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot2" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Four elements
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot2" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Five elements
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot2" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Six elements
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot2" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Seven elements
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">15. Which of the following is not an advantage of IoT?</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot3" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Improved Customer Engagement
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot3" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Security
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot3" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Reduced Waste
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot3" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Enhanced Data Collection
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">16. Which of the following is used to capture data from the physical world in IoT
+                    devices?</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot4" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Sensors
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot4" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Microprocessors
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot4" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Actuators
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot4" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Microcontrollers
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">17. Which of the following is not related to Arduino IDE IoT software?</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot5" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Serial monitor
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot5" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Verify
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot5" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Upload
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot5" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Terminate
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">18. IoT gateway must provide __________</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot6" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Protocol abstraction
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot6" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Data storage
+                        <!-- correct answer -->
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot6" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Security with hardware
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="iot6" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Simple and fast installation
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="section4" class="tabcontent">
+            <hr>
+            <!-- <center>
+                <h3>Aptitude Section</h3>
+            </center> -->
+            <div class="form-bg">
+                <div class="qt1">19.The type of access used in GSM technology is:
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim1" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        FDMA/TDMA
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim1" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        CDMA
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim1" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        OFDMA
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim1" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        None of the above
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">20. What is the frequency range of the IEEE 802.11a standard?</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim2" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        2.4Gbps
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim2" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        5Gbps
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim2" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        2.4GHz
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim2" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        5GHz
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">21. "If a total of 33 MHz of Bandwidth is allocated to a particular FDD cellular
+                    telephone system which uses two 25 kHz simplex channels to provide full duplex voice and control
+                    channels, compute the number of channels available per cell if a system uses 4-cell reuse
+                    "</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim3" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        55
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim3" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        660
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim3" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        95
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim3" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        165
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">22. when there is an excessive amount of data flow , which the system cannot handle,---
+                    attack takes place</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim4" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Database crash attack
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim4" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        DoS(Denial of Service) attack
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim4" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Data overflow attack
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim4" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Buffer Overflow attack
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">23. The context in which the privilege ,'CREATE TABLESPACE' applies is :</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim5" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Server administration
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim5" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Tables
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim5" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Stored routines
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim5" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Views
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">24. The DSS Signature Uses which Hash Algorithm?</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim6" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        MD5
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim6" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        SHA-2
+                        <!-- correct answer -->
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim6" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        SHA-1
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nim6" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Does not Use Hash Algorithm
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="section5" class="tabcontent">
+            <hr>
+
+            <div class="form-bg">
+                <div class="qt1">25. It can be a software program or a hardware device that filters all data packets
+                    coming through the internet, a network, etc. it is known as the_______:
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec1" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Antivirus
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec1" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Firewall
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec1" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Cookies
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec1" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Malware
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">26. An ethical hacker is trying to breach a website through SQL injection. He also
+                    changed his User-Agent HTTP header, sent by his browser .what can be achieve with this action?</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec2" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        He acquires a matching SSL connection.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec2" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        He obtain better performance of the website so that it responds faster to his requests.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec2" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        He prevents forensics from revealing his real browser that was used during the attack.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec2" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        None of the above.
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">27. When a hacker attempts to attack a host via the Internet it is known as what type
+                    of attack?</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec3" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Local Access
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec3" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Remote Attack
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec3" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Internal Attack
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec3" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Physical Access
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">28. Anarkali digitally signs a message and sends it to Salim. Verification of the
+                    signature by Salim requires</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec4" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Anarkali's Public Key
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec4" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Salim's Public Key
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec4" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Salim's Private Key
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec4" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Anarkali's Private Key
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">29. Suppose that everyone in a group of N people wants to communicate secretly with the
+                    N - 1 others using symmetric key cryptographic system. The communication between any two persons
+                    should not be decodable by the others in the group. The number of keys required in the system as a
+                    whole to satisfy the confidentiality requirement is</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec5" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        2N
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec5" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        N(N -1)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec5" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        (N(N -1))/2
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec5" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        (N-1)^2
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">30. The process of verifying the identity of a user</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec6" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Authentication
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec6" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Identification
+                        <!-- correct answer -->
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec6" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Validation
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sec6" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Verification
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="section6" class="tabcontent">
+            <hr>
+
+            <div class="form-bg">
+                <div class="qt1">31.The activity that distributes estimated effort across the planned project duration
+                    by allocating the effort to specific software developing tasks is ____________
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm1" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Project scheduling
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm1" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Reduce the security
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm1" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Complex the development
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm1" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Increase the cost
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">32. Attributes of good software is ____________</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm2" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Development
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm2" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Maintainability & functionality
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm2" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Functionality
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm2" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Maintainability
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">33. Which of the following is not defined in a good Software Requirement Specification
+                    (SRS) document?</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm3" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Functional Requirement
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm3" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Nonfunctional Requirement
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm3" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Goals of implementation
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm3" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Algorithm for software implementation
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">34. Which of the following is not considered as a risk in project management?</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm4" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Specification Delays
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm4" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Product Competition
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm4" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Testing
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm4" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Staff Turnover
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">35. Projects management is divided in _____ process groups.</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm5" id="flexRadioDefault1" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        5
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm5" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        7
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm5" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        9
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm5" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        21
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-bg">
+                <div class="qt1">36. In which of the following stages are project objectives established, teams formed,
+                    and major responsibilities assigned</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm6" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Planning
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm6" id="flexRadioDefault2" value="1" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Defining
+                        <!-- correct answer -->
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm6" id="flexRadioDefault1" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Executing
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pm6" id="flexRadioDefault2" value="0" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Delivering
+                    </label>
+                </div>
+            </div>
+            <center><button value="button">Submit</button></center>
+
+            </form>
+        </div>
+
+
+        <!-- ======= Footer ======= -->
+
+        <!-- End Footer -->
+
+        <script>
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+
+</body>
+
+</html>

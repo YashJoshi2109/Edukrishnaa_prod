@@ -1,0 +1,42 @@
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>EduKrishnaa</title>
+  <link href="/static/assets/css/popup.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div id="overlay" class="cover blur-in">
+    <img src="/static/assets/img/result.jpeg" width="100%" height="100%">
+
+</div>
+<div class="row pop-up">
+  <div class="box small-6 large-centered">
+    <a href="/taketest-up" class="close-button">&#10006;</a>
+    <em><h3>HHHUURRAAAHHHH SHREYAS !</h3></em>
+    <em><p>YOU HAVE COMPLETED YOUR EXAM<br><br></em>
+    <br><br>TO VIEW YOUR RESULT CLICK ON CONTINUE...!</p>
+    <a href="/results-up" class="button">Continue</a>
+  </div>
+</div>
+<script>
+
+$(function() {
+$('.pop-up').hide();
+$('.pop-up').fadeIn(1000);
+$('.close-button').click(function (e) {
+$('.pop-up').fadeOut(700);
+$('#overlay').removeClass('blur-in');
+$('#overlay').addClass('blur-out');
+e.stopPropagation();
+});
+});
+</script>
+
+</body>
+
+</html>

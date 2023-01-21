@@ -1,0 +1,710 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+      <title>EduKrishnaa - Home</title>
+      <meta content="Career Guidance System" name="description">
+      <meta content="" name="keywords">
+
+      <!-- Favicons -->
+      <link href="../static/assets/img/logo_without_name.png" rel="icon">
+      <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+      <!-- Google Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+      <!-- Vendor CSS Files -->
+      <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+      <link href="../static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+      <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+      <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+      <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+      <!-- Template Main CSS File -->
+      <link href="../static/assets/css/main.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+      <link rel="stylesheet" type="text/css" href="/static/assets/css/chatbot/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="/static/assets/css/chatbot/style1.css">
+      <link rel="stylesheet" type="text/css" href="/static/assets/css/chatbot/responsive.css">
+      
+      <!-- ChatBot -->
+      <link rel="stylesheet" type="text/css" href="/static/assets/css/chatbot/jquery.convform.css">
+
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+      <script  src="/static/assets/js/jquery-3.1.1.min.js"></script>
+      <script  src="/static/assets/js/jquery.convform.js"></script>
+      <script  src="/static/assets/js/custom.js"></script>   
+
+      <script>
+        onload = function() {
+  if ('speechSynthesis' in window) with(speechSynthesis) {
+
+    var playEle = document.querySelector('#play');
+    var pauseEle = document.querySelector('#pause');
+    var stopEle = document.querySelector('#stop');
+    var flag = false;
+
+    playEle.addEventListener('click', onClickPlay);
+    pauseEle.addEventListener('click', onClickPause);
+    stopEle.addEventListener('click', onClickStop);
+
+    function onClickPlay() {
+      if (!flag) {
+        flag = true;
+        utterance = new SpeechSynthesisUtterance(document.querySelector('section.section-bg').textContent);
+        utterance.voice = getVoices()[0];
+        utterance.onend = function() {
+          flag = false;
+          playEle.className = pauseEle.className = '';
+          stopEle.className = 'stopped';
+        };
+        playEle.className = 'played';
+        stopEle.className = '';
+        speak(utterance);
+      }
+      if (paused) { /* unpause/resume narration */
+        playEle.className = 'played';
+        pauseEle.className = '';
+        resume();
+      }
+    }
+
+    function onClickPause() {
+      if (speaking && !paused) { /* pause narration */
+        pauseEle.className = 'paused';
+        playEle.className = '';
+        pause();
+      }
+    }
+
+    function onClickStop() {
+      if (speaking) { /* stop narration */
+        /* for safari */
+        stopEle.className = 'stopped';
+        playEle.className = pauseEle.className = '';
+        flag = false;
+        cancel();
+
+      }
+    }
+
+  }
+
+  else { /* speech synthesis not supported */
+    msg = document.createElement('h5');
+    msg.textContent = "Detected no support for Speech Synthesis";
+    msg.style.textAlign = 'center';
+    msg.style.backgroundColor = 'red';
+    msg.style.color = 'white';
+    msg.style.marginTop = msg.style.marginBottom = 0;
+    document.body.insertBefore(msg, document.querySelector('div'));
+  }
+
+} 
+      </script>
+    </head>
+
+    <body>
+
+      <!-- ======= Header ======= -->
+      <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+          <a href="/myhome" class="logo d-flex align-items-center">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <img src="../static/assets/img/White_font-removebg-preview.png" alt="logo">
+          </a>
+                     
+          <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+          <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+          <nav id="navbar" class="navbar">
+             <!-- ======= Breadcrumbs ======= -->
+
+            <ul>
+              <li><a href="/myhome" class="active">Home</a></li>
+              <li><a href="#">Courses</a></li> 
+              <li><a href="#">About</a></li>
+              <li><a href="#contactus">Contact Us</a></li>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/register">Sign up</a></li>
+              <li>
+
+    
+              </li>
+
+                <!-- <div class="col-lg-2 col-md-3">
+                  <a href="/login">
+                    <button type="submit" class="footer_button ">Login  </button>
+                  </a>
+                </l1>
+                  <li><a href="/registration">
+                    <button type="submit" class="footer_button">Signup</button>
+                  </a>
+                  </li>
+                </div>  -->
+            </ul>
+          </nav><!-- .navbar -->
+
+        </div>
+        
+      </header><!-- End Header -->
+      <main id="main">
+        
+      <!-- ======= Hero Section ======= -->
+      <section id="hero" class="hero"> 
+
+        <div class="info d-flex align-items-center">
+          <div class="container">        
+            <div class="row justify-content-center">
+              <div class="col-lg-6 text-center">
+                <!-- <h2 data-aos="fade-down">Welcome to EduKrishnaa</h2>--> 
+                <img data-aos="fade-down" src="../static/assets/img/edukrishnaa_white.png">
+                <h3 data-aos="fade-down">SEE THE SUCCESS IN YOUR CAREER</h3>
+                <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+          <div class="carousel-item active" style="background-image: url(../static/assets/img/hero/carsoul_new2.jpg)"></div>
+          <!-- <div class="carousel-item" style="background-image: url(../static/assets/img/hero/GUIDANCE1.jpg)"></div>
+          <div class="carousel-item" style="background-image: url(../static/assets/img/hero/carsoul_new2.jpg)"></div>
+          <div class="carousel-item" style="background-image: url(../static/assets/img/hero/carsoul_new3.jpg)"></div>
+          <div class="carousel-item" style="background-image: url(../static/assets/img/hero/carsoul_new4.jpg)"></div>
+          <div class="carousel-item" style="background-image: url(../static/assets/img/hero/carsoul_new5.jpg)"></div>
+          <div class="carousel-item" style="background-image: url(../static/assets/img/hero/GUIDANCE.jpg)"></div>
+          <div class="carousel-item" style="background-image: url(../static/assets/img/hero/GUIDANCE1.jpg)"></div>
+          <div class="carousel-item" style="background-image: url(../static/assets/img/hero/carsoul_new2.jpg)"></div>
+          <div class="carousel-item" style="background-image: url(../static/assets/img/hero/carsoul_new3.jpg)"></div>
+          <div class="carousel-item" style="background-image: url(../static/assets/img/hero/carsoul_new4.jpg)"></div>
+          <div class="carousel-item" style="background-image: url(../static/assets/img/hero/carsoul_new5.jpg)"></div>
+          <div class="carousel-item" style="background-image: url(../static/assets/img/hero/GUIDANCE.jpg)"></div> -->
+
+          <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+          </a>
+
+          <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+          </a>
+
+        </div>
+
+      </section><!-- End Hero Section -->
+      <div>
+        
+      </div>
+
+        
+        <!-- ======= Services Section ======= -->
+        <div>
+              <button id=play>Play</button>
+              <button id=pause>Pause</button>
+              <button id=stop>Stop</button>
+          </div>          
+        <section id="get-started" class="services section-bg">
+          <div class="container" data-aos="fade-up">
+            <div class="section-header">
+              <h2>Our Career Services</h2>
+              <p>EduKrishnaa brings to you scientific and meticulously designed. Our Services to discover your true potential and interest ,learning styles and skills .</p>
+            </div>
+
+            <div class="row gy-4">
+
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item  position-relative">
+                  <div class="icon">
+                    <i class="fa-solid fa-mountain-city"></i>
+                  </div>
+                  <h3 data-aos="fade-up" data-aos-delay="100">8th-10th</h3>
+                  <p>Students from SSC has a broad mindset for them we have an aptitude examination. An aptitude is a component of a competence to do a certain kind of work at a certain level.</p>
+                  <a href="/taketest-10" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div><!-- End Service Item -->
+
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-item position-relative">
+                  <div class="icon">
+                    <i class="fa-solid fa-arrow-up-from-ground-water"></i>
+                  </div>
+                  <h3>11th-12th</h3>
+                  <p>Students from HSC has a Competitive mindset for them we have an Personality and Aptitude examination. Personality assessment is most advanced and accurate online career test that will help to take informed career decisions.</p>
+                  <a href="/taketest-12" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div><!-- End Service Item -->
+
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-item position-relative">
+                  <div class="icon">
+                    <i class="fa-solid fa-compass-drafting"></i>
+                  </div>
+                  <h3>Under-Graduate</h3>
+                  <p>Students from UG/PG has a Competitive and skilled mindset for them we have an Personality and Talent Assessment. Discover your skills and know your skills.</p>
+                  <a href="/taketest-up" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div><!-- End Service Item -->
+            </div>
+          </div>
+        </section><!-- End Services Section -->
+
+        
+
+
+        <!-- ======= Get Started Section ======= -->
+        <section id="get-started" class="get-started explore-section-bg">
+          <div class="container">
+
+            <div class="row justify-content-between gy-4">
+
+              <div class="col-lg-6 d-flex align-items-center" data-aos="fade-up" styles="color=">
+                <div class="content">
+                  <h3>Explore Career Paths</h3>
+                  <p>Career Exploration is simply learning about various occupations and their "fit" with your unique career preferences. As EduKrishnaa provides vast range of job domain which can lead to future successs.</p>
+                </div>
+              </div>
+
+              <div class="col-lg-5" data-aos="fade">
+                <img src="../static/assets/img/home/explore-career.jpg"/>
+              </div>
+              <!-- End Quote Form -->
+            </div>
+          </div>
+        </section>
+        <!-- End Get Started Section -->
+
+          <!-- ======= Get Started Section ======= -->
+          <section id="get-started" class="get-started section-bg">
+            <div class="container">
+      
+              <div class="row justify-content-between gy-4">
+                <div class="col-md-6 col-lg-6" data-aos="fade">
+                  <img src="../static/assets/img/home/career-counselling-sessions.jpg"/>
+                </div>
+                
+                <div class="col-md-6 col-lg-5 d-flex align-items-center" data-aos="fade-up">
+                  <div class="content">
+                    <h3>Career counselling</h3>
+                    <p>We assessting your aptitude, personality, interests, and other aspects of you. We use this evaluation to suggest the best career options from all the available and relevant options and based on that offline Career Consultant will be provided.</p>
+                  </div>
+                </div>
+                <!-- End Quote Form -->
+              </div>
+            </div>
+          </section>
+          <!-- End Get Started Section -->
+
+        <!-- ======= Get Started Section ======= -->
+        <section id="get-started" class="get-started explore-section-bg">
+          <div class="container">
+
+            <div class="row justify-content-between gy-4">
+
+              <div class="col-lg-6 d-flex align-items-center" data-aos="fade-up">
+                <div class="content">
+                  <h3>Tests</h3>
+                  <p>The desires test helps you find careers that fit your desires. It simply gives insights into your desires by helping you organize your thoughts..</p>
+                </div>
+              </div>
+
+              <div class="col-lg-5" data-aos="fade">
+                <img src="../static/assets/img/home/testing.jpg"/>
+              </div>
+              <!-- End Quote Form -->
+            </div>
+          </div>
+        </section>
+        <!-- End Get Started Section -->
+
+
+
+
+
+
+        
+        <!-- Start of FAQ section -->
+          <div class="faq_area section_padding_130" id="faq" data-aos="fade">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-8 col-lg-6">
+                        <!-- Section Heading-->
+                        <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                            <h3><span>Frequently </span> Asked Questions</h3>
+                            <br>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center " data-aos="fade">
+                    <!-- FAQ Area-->
+                    <div class="col-12 col-sm-10 col-lg-8">
+                        <div class="accordion faq-accordian" id="faqAccordion">
+                            <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                                <div class="card-header" id="headingOne">
+                                    <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What is the objective of 'EduKrishnaa'?<span class="lni-chevron-up"></span></h6>
+                                </div>
+                                <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                        <p>EduKrishnaa is a platform wherein, through highly sophisticated psychometric mapping, we help the student in choosing his/her courses / career which are based on his/her Aptitude, Personality and Interests. Research has shown that correctly choosing one's career goes a long way in ensuring a more successful and satisfactory work-life. The platform uses behavioral sciences and it's techniques in correctly finding out the Aptitude, Personality and Interests of the student.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border-0 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                                <div class="card-header" id="headingTwo">
+                                    <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">How are skills different than aptitudes?<span class="lni-chevron-up"></span></h6>
+                                </div>
+                                <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                        <p>Aptitudes are inborn; Skills are learned. We are born with Aptitudes and Abilities that don't change with practice. For example, somebody has an Aptitude with numbers and other may have in visualizing in Three Dimensions.
+
+                                          We might as well do what we're best at; why bother with struggling at things that don't fit? A good rule of thumb, if you're struggling to learn, bored or not excelling in your work, chances are that you’ve landed in a stream or on a career track that doesn't suit your best talents and abilities.
+                                          
+                                          </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                                <div class="card-header" id="headingThree">
+                                    <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Contact form isn't working?<span class="lni-chevron-up"></span></h6>
+                                </div>
+                                <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quidem facere deserunt sint animi sapiente vitae suscipit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Support Button-->
+                        <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp" data-aos="fade" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                            <i class="lni-emoji-sad"></i>
+                            <p class="mb-0 px-2">Can't find your answers?</p>
+                            <a href="#"> Contact us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <!-- End of FAQ Section -->
+
+                  <!-- about us section -->
+        <div class="faq_area1 section_padding_130" id="faq" data-aos="fade">
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-12 col-sm-8 col-lg-6">
+                      <!-- Section Heading-->
+                      <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                          <h3><span>About US </span></h3>
+                          <div class="line"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row justify-content-center " data-aos="fade">
+                  <!-- FAQ Area-->
+                  <div class="col-12 col-sm-10 col-lg-8">
+                    <video width="750" controls>
+                      <source src="/static/assets/animation.mp4" type="video/mp4">
+                    </video>
+
+                      <!-- Support Button-->
+                      <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp" data-aos="fade" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                          <i class="lni-emoji-sad"></i>
+                          <p class="mb-0 px-2">Want to us know more?</p>
+                          <a href="#"> About Us</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        
+        
+        <!-- ======= Recent Blog Posts Section ======= -->
+        <section id="recent-blog-posts" class="recent-blog-posts">
+          <div class="container" data-aos="fade-up"">
+
+        
+        
+      <div class=" section-header">
+            <h2>Recent Blog Posts</h2>
+            <p>Explore the blogs of experts across the globe.</p>
+          </div>
+
+          <div class="row gy-5">
+
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="post-item position-relative h-100">
+
+                <div class="post-img position-relative overflow-hidden">
+                  <img src="../static/assets/img/blog/blog-1.jpg" class="img-fluid" alt="">
+                  <span class="post-date">June 01</span>
+                </div>
+
+                <div class="post-content d-flex flex-column">
+
+                  <h3 class="post-title">Career Counselling</h3>
+
+                  <div class="meta d-flex align-items-center">
+                    <div class="d-flex align-items-center">
+                      <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
+                    </div>
+                    <span class="px-3 text-black-50">/</span>
+                    <div class="d-flex align-items-center">
+                      <i class="bi bi-folder2"></i> <span class="ps-2">Politics</span>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+                </div>
+
+              </div>
+            </div><!-- End post item -->
+
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="post-item position-relative h-100">
+
+                <div class="post-img position-relative overflow-hidden">
+                  <img src="../static/assets/img/blog/blog-2.jpg" class="img-fluid" alt="">
+                  <span class="post-date">September 21</span>
+                </div>
+
+                <div class="post-content d-flex flex-column">
+
+                  <h3 class="post-title">What to do after 10th ?</h3>
+
+                  <div class="meta d-flex align-items-center">
+                    <div class="d-flex align-items-center">
+                      <i class="bi bi-person"></i> <span class="ps-2">Mario Douglas</span>
+                    </div>
+                    <span class="px-3 text-black-50">/</span>
+                    <div class="d-flex align-items-center">
+                      <i class="bi bi-folder2"></i> <span class="ps-2">Sports</span>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+                </div>
+
+              </div>
+            </div><!-- End post item -->
+
+            <div class="col-xl-4 col-md-6">
+              <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="300">
+
+                <div class="post-img position-relative overflow-hidden">
+                  <img src="../static/assets/img/blog/blog-3.jpg" class="img-fluid" alt="">
+                  <span class="post-date">February 16</span>
+                </div>
+
+                <div class="post-content d-flex flex-column">
+
+                  <h3 class="post-title">What is Career Assessment?</h3>
+
+                  <div class="meta d-flex align-items-center">
+                    <div class="d-flex align-items-center">
+                      <i class="bi bi-person"></i> <span class="ps-2">Lisa Hunter</span>
+                    </div>
+                    <span class="px-3 text-black-50">/</span>
+                    <div class="d-flex align-items-center">
+                      <i class="bi bi-folder2"></i> <span class="ps-2">Economics</span>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+                </div>
+
+              </div>
+            </div><!-- End post item -->
+
+          </div>
+
+          </div>
+        </section>
+        <!-- End Recent Blog Posts Section -->
+
+        <!-- ChatBot -->
+<div class="chat_icon">
+	<i class="fa fa-comments" aria-hidden="true"></i>
+</div>
+
+<div class="chat_box">
+	<div class="my-conv-form-wrapper">
+		<form action="" method="GET" class="hidden">
+
+      <select data-conv-question="Hello! How can I help you" name="category">
+        <option value="WebDevelopment">Login as 8-10th?</option>
+        <option value="WebDevelopment">Login as 11-12th?</option>
+        <option value="DigitalMarketing">How should i search for nanny?</option>
+      </select>
+
+      <div data-conv-fork="category">
+        <div data-conv-case="WebDevelopment">
+          <input type="text" name="domainName" data-conv-question="Your in 9th or 10th?">    
+        </div>
+        <div data-conv-case="DigitalMarketing" data-conv-fork="first-question2">
+          <input type="text" name="companyName" data-conv-question="You will be provided with geographical map to find nannies."> 
+        </div>
+      </div>
+
+      <input type="text" name="name" data-conv-question="Please, Enter your name">
+
+      <input type="text" data-conv-question="Hi {name}, <br> It's a pleasure to meet you." data-no-answer="true">
+
+      <input data-conv-question="Enter your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="email" name="email" required placeholder="What's your e-mail?">
+
+      <select data-conv-question="Please Confirm">
+        <option value="Yes">Confirm</option>
+      </select>
+
+  	</form>
+	</div>
+</div>
+<!-- ChatBot end -->
+
+
+    </div>
+  </div>
+</div>
+
+
+      </main><!-- End #main -->
+      <!-- ======= Footer ======= -->
+      
+        <footer id="footer" class="footer">
+
+          <div class="footer-content position-relative">
+
+
+            <div class="container">
+              <div class="row">
+
+                <div class="col-lg-4 col-md-6">
+                  <div class="footer-info">
+                    <h3>EduKrishnaa<span>.</span></h3>
+                    <p>
+                      Navi Mumbai<br><br>
+                      <strong>Email:</strong> info@something.com<br>
+                    </p>
+                    <div class="social-links d-flex mt-3">
+                      <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
+                      <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+                      <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+                      <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div><!-- End footer info column-->
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                  <h4>Class 10</h4>
+                  <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                  </ul>
+                </div><!-- End footer links column-->
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                  <h4>CLass 11-12</h4>
+                  <ul>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Product Management</a></li>
+                    <li><a href="#">Marketing</a></li>
+                    <li><a href="#">Graphic Design</a></li>
+                  </ul>
+                </div><!-- End footer links column-->
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                  <h4>UG/PG</h4>
+                  <ul>
+                    <li><a href="#">Molestiae accusamus iure</a></li>
+                    <li><a href="#">Excepturi dignissimos</a></li>
+                    <li><a href="#">Suscipit distinctio</a></li>
+                    <li><a href="#">Dilecta</a></li>
+                    <li><a href="#">Sit quas consectetur</a></li>
+                  </ul>
+                </div>     <!-- End footer links column-->
+                <!-- <div class="col-lg-2 col-md-3">
+                  <a href="/login">
+                    <button type="submit" class="footer_button ">Login  </button>
+                  </a>
+                  <br>
+                  <br>
+                  <a href="/registration">
+                    <button type="submit" class="footer_button">Signup</button>
+                  </a>
+                </div>     End footer links column -->
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-legal text-center position-relative">
+            <div class="container">
+              <div class="copyright">
+                &copy; Copyright <strong><span>EduKrishnaa  </span></strong>. All Rights Reserved
+              </div>
+            </div>
+          </div>
+        </footer>
+      <!-- End Footer -->
+
+      <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+      <div id="preloader"></div>
+
+      <!-- Vendor JS Files -->
+      <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="../static/assets/vendor/aos/aos.js"></script>
+      <script src="../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+      <script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <script src="../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+      <script src="../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+      <script src="../static/assets/vendor/php-email-form/validate.js"></script>
+
+      <!-- Template Main JS File -->
+      <script src="../static/assets/js/main.js"></script>
+
+        <!-- chatbot -->
+      <script type="text/javascript">
+        portfolioList = document.querySelectorAll('.portfolio-box');
+        portfolioList.forEach(function(portfolioPic) {
+          portfolioPic.addEventListener('click',function(){
+            bg = this.style.backgroundImage;
+            document.getElementById('port_pop_pic_bg').classList.add("active")
+            document.getElementById('port_pop_pic').style.backgroundImage = bg
+            document.getElementById('port_pop_pic').classList.add("active")
+          });	
+        })
+        document.getElementById('port_pop_pic_bg').addEventListener('click',function(){
+            document.getElementById('port_pop_pic_bg').classList.remove("active")
+            document.getElementById('port_pop_pic').classList.remove("active")
+        })
+      </script>
+      
+
+    </body>
+
+    </html>

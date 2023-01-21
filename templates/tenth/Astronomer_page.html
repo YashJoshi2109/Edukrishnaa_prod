@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>EduKrishnaa</title>
+  <meta content="Career Guidance System" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../static/assets//img/edugati_favicon-removebg-preview (1).png" rel="icon">
+  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets//vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets//vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/assets//vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../static/assets//vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/assets//vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/assets//vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/assets//css/data_science.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="../static/assets/css/main.css"> -->
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="../static/assets//img/edugati1-removebg-preview.png" alt="logo">
+        <h1>EduKrishnaa<span>.</span></h1>
+      </a>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/myhome" >Home</a></li>          
+          <li><a href="#">Courses</a></li> 
+          <li><a href="#">About</a></li>
+          <li class="dropdown"><a href="#"><span>Quizzie</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="/test1">Aptitude Test</a></li>
+              <!-- <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="Data_analyst.html">Deep Dropdown 5</a></li>
+                </ul>
+              </li> -->
+              <li><a href="/test2">Psychometric Test</a></li>
+              <li><a href="/test3">Skillset Test</a></li>
+              <li><a href="/resultpage" class="active">Result Page</a></li>
+            </ul>
+          </li>
+          <li><a href="#contactus">Contact Us</a></li>
+          <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <!-- <div class="media align-items-center">
+                    <span class="avatar avatar-sm rounded-circle">
+                    <img alt="Image placeholder" src="/static/assets/img/user.png">
+                    </span>
+                    <div class="media-body ml-2 d-none d-lg-block">
+                        <span class="mb-0 text-sm  font-weight-bold"><a href="/user-profile">Shreyas Ajgaonkar</a></span>
+                        <span class="mb-0 text-sm  font-weight-bold"></span>
+                    </div>
+            </div> -->
+          </a>
+          </li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+
+  <section id="hero" class="hero">
+
+    <div class="info d-flex align-items-center">
+      
+</div>
+     <section class="single-page-header  header-section" style="background-image: url('{{getRoles.video}}');" >
+      <div class="container">
+        <div class="row">
+          <div class="row justify-content-center">
+          <div class="col-md-12">
+            <h1>
+              <div>
+               <div class="col-lg-11 text-center">
+              <h2 data-aos="fade-down">{{ getRoles.roles }}</h2>
+              <h3 data-aos="fade-down">{{ getRoles.quote }}</h3>
+              <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started"></a>
+              </div>
+              </div>
+              </h1>
+              </div>
+              </div>
+          </div>
+        </div>    
+      </div>
+    </section>
+
+    <!-- <div class="info d-flex align-items-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h2 data-aos="fade-down">DATA ANALYST</h2>
+            <h3 data-aos="fade-down">"WITHOUT BIG DATA ANALYTICS COMPANIES ARE BIND AND DEAF, WANDERING OUT ONTP THE WEB LIKE DEER ON A FREEWAY."</h3>
+            <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">EXPLORE MORE !</a>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+      <div class="carousel-item active" style="background-image: url(assets/img/hero/carsoul_new4.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(assets/img/hero/carsoul_new2.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(assets/img/hero/carsoul_new3.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(assets/img/hero/carsoul_new4.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(assets/img/hero/carsoul_new5.jpg)"></div>
+
+      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div> -->
+
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+    <!-- ======= what is Data Analytics Section ======= -->
+    <section id="get-started" class="get-started explore-section-bg">
+      <div class="container">
+
+        <div class="row justify-content-between gy-4">
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="fade-up" styles="color=">
+            <div class="content">
+              <h3>Explore what is {{ getRoles.roles }}?</h3>
+              <p>{{ getRoles.explore }}</p>
+              <P> For more detailed information refer to the video</P>
+            </div>
+          </div>
+
+          <div class="col-lg-5" data-aos="fade">
+            <video width="600" controls>
+              <source src="./../static/assets//img/Video for Data scientists.mp4" type="video/mp4">
+            </video>
+          </div>
+          <!-- End Quote Form -->
+        </div>
+      </div>
+    </section>
+    <!-- End Get Started Section -->
+
+       <!-- ======= Get Started Section ======= -->
+       <section id="get-started" class="get-started section-bg">
+            <div class="center">
+              <H2>ROADMAP OF {{ getRoles.roles }}</H2>
+            </div>
+            <div class="timeline" data-aos="fade-up">
+            <div class="container1 left">
+              <div class="content" class="center">
+                <h4>role 1</h4>
+                <p><h5>Skills Required: </h5></p>
+                <p><h5>Average Income: </h5></p>
+              </div>
+            </div>
+            <div class="container1 right" data-aos="fade-up">
+              <div class="content">
+                <h4>role 2</h4>
+                <p><h5>Skills Required: </h5></p>
+                <p><h5>Average Income: </h5></p></div>
+            </div>
+            <div class="container1 left" data-aos="fade-up">
+              <div class="content">
+                <h4>role 3</h4>
+                <p><h5>Skills Required: </h5> </p>
+                <p><h5>Average Income: </h5></p></div>
+            </div>
+            <div class="container1 right"data-aos="fade-up">
+              <div class="content">
+                <h4>role 4</h4>
+                <p><h5>Skills Required: </h5></p>
+                <p><h5>Average Income: </h5></p> </div>
+            </div>
+            <div class="container1 left" data-aos="fade-up">
+              <div class="content">
+                <h4>role 5</h4>
+                <p><h5>Skills Required: </h5> </p>
+                <p><h5>Average Income: </h5></p> </div>
+            </div>
+            <div class="container1 right" data-aos="fade-up">
+              <div class="content">
+                <h4>role 6</h4>
+                <p><h5>Skills Required: </h5></p>
+                <p><h5>Average Income: </h5></p></div>
+            </div>
+          </div>
+      </section>
+      <!-- End Get Started Section -->
+
+    <!-- ======= Get Started Section ======= -->
+    <!-- <section id="get-started" class="get-started explore-section-bg">
+      <div class="container"> -->
+
+        <!-- <div class="row justify-content-between gy-4">
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="fade-up">
+            <div class="content">
+              
+            </div>
+          </div> -->
+
+          <!-- <div class="col-lg-5" data-aos="fade">
+            <img src="assets/img/stats.jpg"/>
+          </div> -->
+          <!-- End Quote Form -->
+        <!-- </div>
+      </div>
+    </section> -->
+
+    <section id="recommend" class="jobs-section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Internships & Job Recommendations</h2><br>
+          <p>EduKrishnaa brings to you scientific and meticulously designed. Our recommend to discover your true potential and interest ,learning styles and skills .</p><br>
+
+          <!-- Tab links -->
+          <div class="tab"data-aos="fade-down">
+            <button class="tablinks" onclick="openCity(event, 'London')">JOBS</button><span></span>
+            <button class="tablinks" onclick="openCity(event, 'Paris')">INTERNSHIP</button><span></span>
+            <button class="tablinks" onclick="openCity(event, 'Bhandup')">HIGHER STUDIES</button><span></span>
+            <button class="tablinks" onclick="openCity(event, 'project')">PROJECTS</button><span></span>
+          </div>
+         <!-- Tab content -->
+          <div id="London" class="tabcontent" data-aos="fade-down">
+            <div class="cards-wrapper">
+              <div class="card" style="background-color: #A5C9CA;">
+                <div class="col-lg-3 d-flex align-items-center" >
+                  <div class="a-box">
+                    <div class="img-container">
+                      <div class="img-inner">
+                        <div class="inner-skew">
+                          <img src="/static/assets/img/generalmills.jpeg">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-container-job">
+                      <a href="https://in.indeed.com/jobs?q=data%20analyst&l=mumbai&vjk=a1ac56b8ac486485"><h3>General Mills</h3></a>
+                      <div>
+                        <h6><a href="https://www.experian.com/careers/">Role: Data Scientist II</a></h6>
+                        <h6><b>Industry Type: Manufacturing</b></h6>
+                        <p>Rating: 3.9</p>
+                        <p>Location: Mumbai</p>
+                        <p>Salary: ₹86,707per Month</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+          <div id="Paris" class="tabcontent" data-aos="fade-down">
+              <div class="cards-wrapper">
+                {% for i in range(0, 5) %}
+                <div class="card" style="background-color: #A5C9CA;">
+                  <div class="col-lg-3 d-flex align-items-center" >
+                    <div class="a-box">
+                      <div class="img-container">
+                        <div class="img-inner">
+                          <div class="inner-skew">
+                            <img src="/static/assets/img/Black.png">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="text-container-job">
+                        <a href="#"><h3>Error: Find NoneType</h3></a>
+                        <div>
+                          <h6><a href="#">Error: Find NoneType</a></h6>
+                          <p>Error: Find NoneType</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+          </div>
+          <div id="Bhandup" class="tabcontent" data-aos="fade-down">
+            <div class="cards-wrapper">
+              <div class="card" style="background-color: #A5C9CA;">
+                <div class="col-lg-3 d-flex align-items-center" >
+                  <div class="a-box">
+                    <div class="img-container">
+                      <div class="img-inner">
+                        <div class="inner-skew">
+                          <img src="/static/assets/img/IIT_Guwahati_Logo.jpg">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-container-job">
+                      <a href="https://www.iitg.ac.in/"><h3 style="font-size: 25px;"><b>IIT GUWAHATI</b></h3></a>
+                      <div>
+                        <h6><a class="subtext"href="https://www.iitg.ac.in/ds/#about" style="color:#364d59">M.TECH IN DATA SCIENCE</a></h6>
+                        <h6><b>NIRF Ranking: 8th</b></h6>
+                          <p>Exam Criteria: GATE</p>
+                          <p>Duration: 2 Years</p>
+                          <p>Location: Assam</p>
+                      </div>
+                    </div>  
+                  </div>
+                </div>
+              </div>
+      
+              <div class="card" style="background-color: #A5C9CA;">
+                <div class="col-lg-3 d-flex align-items-center" >
+                  <div class="a-box">
+                    <div class="img-container">
+                      <div class="img-inner">
+                        <div class="inner-skew">
+                          <img src="/static/assets/img/washington.jpg">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-container-job">
+                      <a href="https://www.washington.edu"><h3 style="font-size: 25px;"><b>Washington University</b></h3></a>
+                      <div>
+                        <h6><a class="subtext"href="https://www.iitg.ac.in/ds/#about" style="color:#364d59">MS in Data Science</a></h6>
+                        <h6><b>WUSTL Ranking: 16th</b></h6>
+                          <p>Exam Criteria: GRE/IELTS</p>
+                          <p>Duration: 2 Years</p>
+                          <p>Location: Washington</p>
+                      </div>
+                    </div>  
+                  </div>
+                </div>
+              </div>
+      
+              <div class="card" style="background-color: #A5C9CA;">
+                <div class="col-lg-3 d-flex align-items-center" >
+                  <div class="a-box">
+                    <div class="img-container">
+                      <div class="img-inner">
+                        <div class="inner-skew">
+                          <img src="/static/assets/img/MIT.png">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-container-job">
+                      <a href="https://www2.deloitte.com/in/en.html"><h3 style="font-size: 25px;"><b>MIT University</b></h3></a>
+                      <div>
+                        <h6><a class="subtext"href="https://www.iitg.ac.in/ds/#about" style="color:#364d59">MS IN DATA SCIENCE</a></h6>
+                        <h6><b>NIRF Ranking: 150th</b></h6>
+                          <p>Exam Criteria: GATE</p>
+                          <p>Duration: 2 Years</p>
+                          <p>Location: Pune, Maharashtra</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--end of higher studies tab-->
+          <!-- projects -->
+          <div id="project" class="tabcontent" data-aos="fade-down">
+            <div class="cards-wrapper">
+              <div class="card" style="background-color: #A5C9CA;">
+                <div class="col-lg-3 d-flex align-items-center" >
+                  <div class="a-box">
+                    <div class="img-container">
+                      <div class="img-inner">
+                        <div class="inner-skew">
+                          <img src="/static/assets/img/projects/fake.jpg">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-container-job">
+                      <h3 style="font-size: 25px;"><b>Fake News Detection</b></h3>
+                      <div>
+                        <h6><b>Programming Language: Python</b></h6>
+                          <p>To combat the spread of fake news, it’s critical to determine the information’s legitimacy</p>
+                          <a href="https://github.com/nishitpatel01/Fake_News_Detection"><p>Source Code</p></a>
+                      </div>
+                    </div>  
+                  </div>
+                </div>
+              </div>
+      
+              <div class="card" style="background-color: #A5C9CA;">
+                <div class="col-lg-3 d-flex align-items-center" >
+                  <div class="a-box">
+                    <div class="img-container">
+                      <div class="img-inner">
+                        <div class="inner-skew">
+                          <img src="/static/assets/img/projects/fire.jpg">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-container-job">
+                      <h3 style="font-size: 25px;"><b>Detecting Forest Fire</b></h3>                      <div>
+                        <h6><b>Programming Language: Python</b></h6>
+                          <p>Developing a project for identifying the forest fire and wildfire system.</p>
+                          <a href="https://github.com/Skar0/fire-detection"><p>Click here for Source Code</p></a>
+                      </div>
+                    </div>  
+                  </div>
+                </div>
+              </div>
+      
+              <div class="card" style="background-color: #A5C9CA;">
+                <div class="col-lg-3 d-flex align-items-center" >
+                  <div class="a-box">
+                    <div class="img-container">
+                      <div class="img-inner">
+                        <div class="inner-skew">
+                          <img src="/static/assets/img/projects/Sentimental.png">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-container-job">
+                      <h3 style="font-size: 25px;"><b>Sentimental Analysis</b></h3>
+                      <div>
+                        <h6><b>Programming Language: Python</b></h6>
+                          <p>The act of evaluating words to determine sentiments and opinions that may be positive or negative.</p>
+                          <a href="https://github.com/yashspr/sentiment_analysis_ml_part"><p>Click here for Source Code</p></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- end of projects tab -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 
+
+GRADIENT BANNER DESIGN BY SIMON LURWER ON DRIBBBLE:
+https://dribbble.com/shots/14101951-Banners
+
+-->
+
+<div class="main-container" data-aos="fade-up">
+  <div class="heading">
+    <div class="section-header">
+    <b><h2 class="heading__title">Government Start-up Schemes</h2></b>
+    <p class="heading__credits"><a class="heading__link" target="_blank" href="https://www.startupindia.gov.in/content/dam/invest-india/Templates/public/5_years_Achievement_report%20_%20final%20(1).pdf">Access the latest information about the Startup India Scheme as per your domain.</a></p>
+  </div>
+  <div class="cards">
+    <div class="card card-1">
+      <img src="/static/assets/img/startup.jpg" width="100px" height="100px">
+      <h2 class="card__title">SIPP</h2>
+      <h3 class="card__title">Scheme for Facilitating Start-Ups Intellectual Property Protection</h3>
+      <p class="card__apply">
+        <a class="card__link" href="https://ipindia.gov.in/writereaddata/Portal/News/255_1_1statupUps_Scheme_05May2016.pdf">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </p>
+    </div>
+    <div class="card card-2">
+      <img src="/static/assets/img/startup1.jpg" width="100px" height="100px">
+      <h2 class="card__title">STP Scheme</h2>
+      <h3 class="card__title">Software Technology Park Scheme</h3>
+      <p class="card__apply">
+        <a class="card__link" href="https://www.startupindia.gov.in/content/sih/en/government-schemes/software-technology-park-scheme.html">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </p>
+    </div>
+    <div class="card card-3">
+      <img src="/static/assets/img/startup3.jpg" width="100px" height="100px">
+      <h2 class="card__title">STEP Scheme</h2>
+      <h3 class="card__title">Support to training and employment programme for women</h3>
+      <p class="card__apply">
+        <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </p>
+    </div>
+    <div class="card card-4">
+      <img src="/static/assets/img/startup4.jpg" width="100px" height="100px">
+      <h2 class="card__title">PRISM</h2>
+      <h3 class="card__title">Promoting Innovations in Individuals, Start-ups and MSMEs</h3>
+      <p class="card__apply">
+        <a class="card__link" href="https://www.startupindia.gov.in/content/sih/en/government-schemes/promoting-innovations-MSME.html">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </p>
+    </div>
+    <div class="card card-5">
+      <img src="/static/assets/img/startup5.jpg" width="100px" height="100px">
+      <h2 class="card__title">NewGen IEDC</h2>
+      <h3 class="card__title">NewGen Innovation and Entrepreneurship Development Centre</h3>
+      <p class="card__apply">
+        <a class="card__link" href="https://www.startupindia.gov.in/content/sih/en/government-schemes/newgen-innovation-and-entrepreneurship-development-centre.html">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </p>
+    </div>
+    <div class="card card-1">
+      <img src="/static/assets/img/startup6.jpg" width="100px" height="100px">
+      <h2 class="card__title">CGTMSE</h2>
+      <h3 class="card__title">Credit Guarantee Fund Trust for Micro and Small Enterprises</h3>
+      <p class="card__apply">
+        <a class="card__link" href="https://www.startupindia.gov.in/content/sih/en/government-schemes/cgtsme.html">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </p>
+    </div>
+  </div>
+  </div>
+</div>
+<center><a href="/start" class="readmore stretched-link"><span>Explore more about Start-Ups</span><i class="bi bi-arrow-right"></i></a></center>
+
+
+        <!-- ========= college section ========= -->
+      <section id="recommend" class="jobs-section-bg">
+            <div class="container" data-aos="fade-up">
+              <div class="section-header">
+                <h2>College Recommendations</h2>
+                <p>EduKrishnaa brings to you Classified and Conventional designed. Our College recommendation System to acknowledge your true potential and interest with Higher rank Universities .</p>
+              </div>
+          <div class="cards-wrapper">
+
+            {% for i in range(0, 5) %}
+
+            <div class="card" style="background-color: #ffffff00;">
+              <div class="col-lg-3 d-flex align-items-center" >
+                <div class="a-box">
+                  <div class="img-container">
+                    <div class="img-inner">
+                      <div class="inner-skew">
+                        <img src="/static/assets/img/IIST_Image_10th.jpg">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-container-job">
+                    <a href="{{ co_url }}"><h3>{{ co_tit }}</h3></a>
+                    <div>
+                      <h6><b>{{ co_org }}</b></h6>
+                      <p>{{ co_prof }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {% endfor %}
+          </div> 
+      </section><!-- End college Section -->
+    
+    
+  </main><!-- End #main -->
+
+
+  <!-- ======= Footer ======= -->
+  
+    <footer id="footer" class="footer">
+
+      <div class="footer-content position-relative">
+
+
+        <div class="container">
+          <div class="row">
+
+            <div class="col-lg-4 col-md-6">
+              <div class="footer-info">
+                <h3>EduKrishnaa<span>.</span></h3>
+                <p>
+                  Navi Mumbai<br><br>
+                  <strong>Email:</strong> info@something.com<br>
+                </p>
+                <div class="social-links d-flex mt-3">
+                  <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
+                  <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+                  <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+                  <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div><!-- End footer info column-->
+
+            <div class="col-lg-2 col-md-3 footer-links">
+              <h4>Class 10</h4>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Terms of service</a></li>
+                <li><a href="#">Privacy policy</a></li>
+              </ul>
+            </div><!-- End footer links column-->
+
+            <div class="col-lg-2 col-md-3 footer-links">
+              <h4>CLass 11-12</h4>
+              <ul>
+                <li><a href="#">Web Design</a></li>
+                <li><a href="#">Web Development</a></li>
+                <li><a href="#">Product Management</a></li>
+                <li><a href="#">Marketing</a></li>
+                <li><a href="#">Graphic Design</a></li>
+              </ul>
+            </div><!-- End footer links column-->
+
+            <div class="col-lg-2 col-md-3 footer-links">
+              <h4>UG/PG</h4>
+              <ul>
+                <li><a href="#">Molestiae accusamus iure</a></li>
+                <li><a href="#">Excepturi dignissimos</a></li>
+                <li><a href="#">Suscipit distinctio</a></li>
+                <li><a href="#">Dilecta</a></li>
+                <li><a href="#">Sit quas consectetur</a></li>
+              </ul>
+            </div><!-- End footer links column-->
+            <!-- <div class="col-lg-2 col-md-3">
+              <a href="/login">
+                <button type="submit" class="footer_button ">Login  </button>
+              </a>
+              <br>
+              <br>
+              <a href="/registration">
+                <button type="submit" class="footer_button">Signup</button>
+              </a>
+            </div>End footer links column -->
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-legal text-center position-relative">
+        <div class="container">
+          <div class="copyright">
+            &copy; Copyright <strong><span>EduKrishnaa  </span></strong>. All Rights Reserved
+          </div>
+        </div>
+      </div>
+    </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/assets//vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets//vendor/aos/aos.js"></script>
+  <script src="../static/assets//vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/assets//vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/assets//vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/assets//vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../static/assets//vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/assets//js/main.js">  </script>
+  <script src="../static/assets//js/script.js"></script>
+
+  <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    </script>
+
+</body>
+
+</html>

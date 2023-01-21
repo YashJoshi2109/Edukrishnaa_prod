@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <title>EduKrishnaa- Recruiters </title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="EduGati">
+  <meta name="generator" content="EduGati">
+  <!-- Favicons -->
+  <link href="../static/assets/img/edugati_favicon-removebg-preview (1).png" rel="icon">
+  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+  
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="../static/assets/vendor/bootstrap/css/bootstrap.min.css">
+  <!-- Lightbox.min css -->
+  <link rel="stylesheet" href="../static/assets/vendor/lightbox2/css/lightbox.min.css">
+  <!-- animation css -->
+  <link rel="stylesheet" href="../static/assets/vendor/animate/animate.css">
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" href="../static/assets/vendor/slick/slick.css">
+  <!-- Main Stylesheet -->
+  <!-- CSS================================================== -->
+  <link href="../static/assets/css/recruiter.css" rel="stylesheet">
+
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+	<!-- Vendor CSS Files -->
+	<link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+	<link href="../static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+	<link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+	<link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+	
+
+</head>
+<body id="body">
+<!-- ======= Header ======= -->
+<header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+		<a href="#" class="logo d-flex align-items-center">
+		  <!-- Uncomment the line below if you also wish to use an image logo -->
+		  <img src="../static/assets/img/White_font-removebg-preview.png" alt="logo">
+		  <h1>EduKrishnaa<span>.</span></h1>
+		</a>
+		<i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+		<i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+		<nav id="navbar" class="navbar">
+			<ul>
+			  <li><a href="/user_profile">home</a></li>
+			  <!-- <li><a href="/taketest">Talent Assesment</a></li>
+			  <li><a href="#">Courses</a></li> 
+			  <li><a href="/about">About</a></li> -->
+			  <!-- <li class="dropdown"><a href="#"><span>Quizzie</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+				<ul>
+				  <li><a href="/test1">Aptitude Test</a></li>
+				  <li><a href="/test2">Personality Test</a></li>
+				  <li><a href="/test3">Technical Test</a></li>
+				  <li><a href="/results">Result Page</a></li>
+				</ul>
+			  </li> -->
+			  <!-- <li><a href="#contactus">Contact Us</a></li> -->
+			  <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<div class="media align-items-center">
+						<span class="avatar avatar-sm rounded-circle">
+						<img alt="Image placeholder" src="../static/assets/img/profile.png">
+						</span>
+						<!-- <div class="media-body ml-2 d-none d-lg-block">
+							<span class="mb-0 text-sm  font-weight-bold"><a href="/user-profile">Shreyas Ajgaonkar</a></span>
+							<span class="mb-0 text-sm  font-weight-bold"></span>
+						</div> -->
+					</div>	
+			  </a>
+			  </li>
+			</ul>
+		  </nav><!-- .navbar -->
+	
+	  </div>
+  </header><!-- End Header -->
+
+<!--
+End Fixed Navigation
+==================================== -->
+
+<section class="single-page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>
+					<a href="" class="typewrite" style="color:white;" data-period="2000" data-type='[ "Your Ideal Career is waiting for you", "Choose the right career and shape your life towards success", "Finding your passion is the key to success" ]'>
+					  <span class="wrap"></span>
+					</a>
+				</h1>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="tableinfo table-section-bg">
+	<div class="table-responsive">
+		<table class="table table-hover table-nowrap">
+			<thead class="thead-light">
+				<tr>
+					<th scope="col">Name</th>
+					<th scope="col">Email</th>
+					<th scope="col">Purshing/Completed</th>
+					<th scope="col">Phone Number</th>
+					<th scope="col">Personality Trait</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for getdata in all_user %}
+				<tr>
+					<td>
+						<img alt="..." src="/../static/assets/img/team/default_pfp.png" class="avatar avatar-sm rounded-circle me-2">
+							<i><b>{{ getdata.fname }} {{ getdata.lname }}</b></i>
+					</td>
+					<td>
+						{{ getdata.email }}
+					</td>
+					<td>
+						<img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-1.png" class="avatar avatar-xs rounded-circle me-2">
+							{{ getdata.quali }}
+
+					</td>
+					<td>
+						{{ getdata.phone }}
+					</td>
+					<td>
+						<span class="badge badge-lg badge-dot">
+							<i class="bg-success"></i>NA
+						</span>
+					</td>
+					<td class="text-end">
+						<a href="recruiter/user/{{ getdata.id}}" class="btn btn-sm btn-neutral">View</a>
+						<button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+							<i class="bi bi-trash"></i>
+						</button>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</section>
+
+
+<!-- ======= Footer ======= -->
+  
+<footer id="footer" class="footer">
+
+	<div class="footer-content position-relative">
+
+
+	  <div class="container">
+		<div class="row">
+
+		  <div class="col-lg-4 col-md-6">
+			<div class="footer-info">
+			  <h3>EduKrishnaa<span>.</span></h3>
+			  <p>
+				Navi Mumbai<br><br>
+				<strong>Email:</strong> info@something.com<br>
+			  </p>
+			  <div class="social-links d-flex mt-3">
+				<a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
+				<a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+				<a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+				<a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+			  </div>
+			</div>
+		  </div><!-- End footer info column-->
+
+		  <div class="col-lg-2 col-md-3 footer-links">
+			<h4>Class 10</h4>
+			<ul>
+			  <li><a href="#">Home</a></li>
+			  <li><a href="#">About us</a></li>
+			  <li><a href="#">Services</a></li>
+			  <li><a href="#">Terms of service</a></li>
+			  <li><a href="#">Privacy policy</a></li>
+			</ul>
+		  </div><!-- End footer links column-->
+
+		  <div class="col-lg-2 col-md-3 footer-links">
+			<h4>CLass 11-12</h4>
+			<ul>
+			  <li><a href="#">Web Design</a></li>
+			  <li><a href="#">Web Development</a></li>
+			  <li><a href="#">Product Management</a></li>
+			  <li><a href="#">Marketing</a></li>
+			  <li><a href="#">Graphic Design</a></li>
+			</ul>
+		  </div><!-- End footer links column-->
+
+		  <div class="col-lg-2 col-md-3 footer-links">
+			<h4>UG/PG</h4>
+			<ul>
+			  <li><a href="#">Molestiae accusamus iure</a></li>
+			  <li><a href="#">Excepturi dignissimos</a></li>
+			  <li><a href="#">Suscipit distinctio</a></li>
+			  <li><a href="#">Dilecta</a></li>
+			  <li><a href="#">Sit quas consectetur</a></li>
+			</ul>
+		  </div><!-- End footer links column-->
+		</div>
+	  </div>
+	</div>
+
+	<div class="footer-legal text-center position-relative">
+	  <div class="container">
+		<div class="copyright">
+		  &copy; Copyright <strong><span>EduKrishnaa  </span></strong>. All Rights Reserved
+		</div>
+	  </div>
+	</div>
+  </footer>
+<!-- End Footer -->
+
+
+
+
+<!-- end Footer Area
+========================================== -->
+
+<!-- 
+    Essential Scripts
+    =====================================-->
+<!-- Main jQuery -->
+<script src="../static/assets/vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap4 -->
+<script src="../static/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="../static/assets/vendor/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="../static/assets/vendor/lightbox2/js/lightbox.min.js"></script>
+<!-- Owl Carousel -->
+<script src="../static/assets/vendor/slick/slick.min.js"></script>
+<!-- filter -->
+<script src="../static/assets/vendor/filterizr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="../static/assets/vendor/smooth-scroll/smooth-scroll.min.js"></script>
+
+
+<!-- Custom js -->
+<script src="../static/assets/js/script.js"></script>
+
+</body>
+<script>
+	var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+</script>
+</html>

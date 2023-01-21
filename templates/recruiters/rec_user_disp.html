@@ -1,0 +1,523 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	  
+		<title>EduKrishnaa - Recruiters</title>
+		<meta content="Career Guidance System" name="description">
+		<meta content="" name="keywords">
+	  
+		<!-- Favicons -->
+		<link href="../static/assets/img/logo_without_name.png" rel="icon">
+		<link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+	  
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+	  
+		<!-- Vendor CSS Files -->
+		<link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+		<link href="/static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+		<link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+		<link href="/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+		<link href="/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+	  
+		<!-- Template Main CSS File -->
+		<link href="/static/assets/css/recruiter.css" rel="stylesheet">
+		
+		<link href="/static/assets/css/view.css" rel="stylesheet">
+
+		<!-- <link href="/static/assets/css/main.css" rel="stylesheet"> -->
+	  
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	  
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		
+	  
+		<link href="../static/assets/scss/histo.scss">
+		<!-- Pie chart JS -->
+		<script src="/static/assets/js/result.js"></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+		<script src="/static/assets/js/custom.js"></script>
+	</head>
+	  
+	<body>
+		
+		<header id="header" class="header d-flex align-items-center">
+			<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+		
+			  <a href="/recruiter" class="logo d-flex align-items-center">
+				<!-- Uncomment the line below if you also wish to use an image logo -->
+				<img src="/static/assets/img/White_font-removebg-preview.png" alt="logo">
+				<h1>EduKrishnaa<span>.</span></h1>
+			  </a>
+			  <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+			  <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+			  <nav id="navbar" class="navbar">
+				<ul>
+				  <li><a href="/recruiter">Home</a></li>
+				  &ThickSpace;&ThickSpace;
+				  <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<div class="media align-items-center">
+							<span class="avatar avatar-sm rounded-circle">
+							<img href="/recruiter-profile" alt="Image placeholder" src="/static/assets/img/{{data.img}}">
+							</span>
+					</div>
+				  </a>
+				  {% if session['user'] == Flase: %}
+				  <li><a href="/login">Login</a></li>
+				  {% else: %}
+				  <!-- <li><a href="/user_profile">{{session['user']}}</a></li> -->
+				  <li class="dropdown"><a href=""><span>{{session['user']}}</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+					<ul>
+					  <li><a href="/user_profile">Profile</a></li>
+					  <li><a href="/logout">Logout</a></li>
+					</ul>
+				  </li>
+		
+				  {%  endif %}
+				  </li>
+				</ul>
+			  </nav><!-- .navbar -->
+		
+			</div>
+		  </header><!-- End Header -->
+		  <section class="single-page-header">
+			<div class="container">
+			  <div class="row justify-content-center" style="margin-top: 2%;">
+				<h1>
+					<a href="" class="typewrite" style="color:white;" data-period="2000" data-type='[ "Welcome Recruiters", "Welcome Recruiters", "Welcome Recruiters" ]'>
+					  <span class="wrap"></span>
+					</a>
+				</h1>
+		
+			  </div>
+			</div>
+		  </section>
+		  <main id="main">
+    
+			
+			  <!-- ======= Get Started Section ======= -->
+				<div class="container">
+
+					<div class="profile">
+						<br>
+						<div class="avatar">
+							<img  src="/../static/assets/img/{{showuser.img}}"  alt="Circle Image" class="img-squared img-responsive img-raised">
+						</div>
+						<div class="name">
+							<h3 class="title">{{showuser.fname}}&nbsp;{{showuser.lname}}</h3>
+							<h6>{{showuser.phone}}</h6>
+							<h6>{{showuser.city}}, {{showuser.state}}</h6>
+						<button onclick="https://mail.google.com/mail/u/0/?tab=wm#inbox?compose=new" class="btn btn-danger btn-round btn-sm">{{showuser.email}} &nbsp; <i class="material-icons"></i></button>
+						</div>
+					</div>
+					<br>
+					<div class="section section-tabs">
+						<div class="container">
+							<div id="nav-tabs">					   
+								<div class="row">			
+								<div class="col-md-3">
+								<center><small><h4>Personality Type  {{ showresult[0]}}</h4></small></center>
+													<ul class="links-vertical">
+														<!-- <li title="From given tests" data-toggle="tooltip">{{ showresult[0]}}</li> -->
+													</ul>
+								
+								</div>
+									<div class="col-md-9">		
+									<!-- Tabs with icons on Card -->
+										<div class="card card-nav-tabs">
+											<div class="tabheader header-danger">
+												<!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+												<div class="nav-tabs-navigation">
+													<div class="nav-tabs-wrapper">
+														<ul class="nav nav-tabs" data-tabs="tabs">
+															&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;
+															<li class="active">
+																<a href="#about" data-toggle="tab">
+																	<i class="material-icons">face</i>
+																	About
+																</a>
+															</li>
+															&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;
+															<li title="Check results here!" data-toggle="tooltip_li">
+																<a href="#messages" data-toggle="tab">
+																	<i class="material-icons">local_library</i>
+																	Study
+																</a>
+															</li>
+															&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;
+															<li title="Check results here!" data-toggle="tooltip">
+																<a href="#settings" data-toggle="tab">
+																	<i class="material-icons">book</i>
+																	Obtained Test Results
+																</a>
+															</li>
+															&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;
+															<!-- <li>
+																<a href="#contact" data-toggle="tab">
+																	<i class="material-icons">contact_phone</i>
+																	Contact
+																</a>
+															</li> -->
+														</ul>
+													</div>
+												</div>
+											</div>
+											<div class="content">
+												<div class="tab-content text-center">
+													<div class="tab-pane active" id="about">
+														 <table class="table" width="80px" align="center">
+												
+												<tbody >
+												
+												
+												
+												<tr>
+														<td class="text-right">Full Name:</td>
+														<td style="text-align:left;"><b>{{showuser.fname}}&MediumSpace;{{showuser.lname}}</b></td>
+														
+														
+													</tr>
+												
+													<tr>
+													   <td class="text-right">Age:</td>
+														<td style="text-align:left;"><b>{{showuser.age}}</b></td>
+														
+														
+													</tr>
+													
+													<tr>
+													   <td class="text-right">Date Of Birth:</td>
+														<td style="text-align:left;"><b>{{showuser.dob}}</b></td>
+														
+														
+													</tr>
+													<tr>
+													
+													<tr>
+													   <td class="text-right">Qualification:</td>
+														<td style="text-align:left;"><b>{{showuser.quali}} </b></td>
+														
+														
+													</tr>
+													
+													<tr>
+													   <td class="text-right">Gender:</td>
+														<td style="text-align:left;"><b>{{showuser.gender}} </b></td>
+														
+														
+													</tr>
+													
+													<tr>
+													   <td class="text-right">Personality Trait:</td>
+														<td style="text-align:left;"><b>NA</b></td>
+														
+														
+													</tr>
+													
+													<tr>
+													   <td class="text-right">Skills:</td>
+														<td style="text-align:left;"><b>NA</b></td>														
+													</tr>			
+													</tbody>			
+												</table>
+													
+													
+													
+													
+													</div>
+													<div class="tab-pane" id="messages">
+																	 <table class="table" width="80px" align="center">
+												
+												<tbody >
+												
+												
+												
+												<tr>
+														<td class="text-right">College/ School:</td>
+														<td style="text-align:left;"><b>{{showuser.clg_name}}</b></td>
+														
+														
+													</tr>
+												
+													<tr>
+													   <td class="text-right">Course/ STD:</td>
+														<td style="text-align:left;"><b>{{showuser.course}}</b></td>
+														
+														
+													</tr>
+													
+													<tr>
+													   <td class="text-right">Graduation:</td>
+														<td style="text-align:left;"><b>{{showuser.quali}}</b></td>
+														
+														
+													</tr>
+													
+													<tr>
+													   <td class="text-right">Year of Graduation/ SSC:</td>
+														<td style="text-align:left;"><b>{{showuser.graduation_year}}</b></td>
+														
+														
+													</tr>
+													
+													
+													
+													</tbody>
+												
+												</table>
+													</div>
+													
+													
+													<div class="tab-pane" id="settings">
+														
+														<table class="table" width="80px" align="center">
+												
+												<tbody >
+													
+													<tr>
+													   <td class="text-right">Assigned Roles</td>
+														<td style="text-align:left;"><b>
+															{% for op in ouputRoles %}
+																{{ op }},	
+															{% endfor %}
+														</b></td>
+														
+														
+													</tr>
+												</tbody>
+												
+												</table>
+												</div>
+														<div class="tab-pane" id="contact">
+														
+														<table class="table" width="80px" align="center">
+												
+												<tbody >
+												
+												
+													<tr>
+													   <td class="text-right">Address:</td>
+														<td style="text-align:left;"><b>{{showuser.address}}</b></td>
+																
+													</tr>
+													
+													<tr>
+													   <td class="text-right">City, State:</td>
+														<td style="text-align:left;"><b>{{showuser.city}}, {{showuser.state}}</b></td>
+													</tr>
+													<tr>
+													   <td class="text-right">Email:</td>
+														<td style="text-align:left;"><b>{{showuser.email}}</b></td>
+													</tr>
+												
+													<tr>
+													   <td class="text-right">Mobile:</td>
+														<td style="text-align:left;"><b>{{showuser.phone}} </b></td>			
+													</tr>
+												</tbody>	
+												</table>
+												</div>
+												</div>
+											</div>
+										</div>
+										<!-- End Tabs with icons on Card -->
+			
+									</div>
+								
+
+									
+								</div>
+							</div>
+				<!-- 	            end nav tabs -->
+							
+					
+					<script src="" async defer></script>
+		
+			  <!-- End Get Started Section -->
+		  </main>
+		
+
+
+		  <!-- ======= Footer ======= -->
+		  <footer id="footer" class="footer">
+
+			<div class="footer-content position-relative">
+	  
+	  
+			  <div class="container">
+				<div class="navbar-header">
+				<div class="row">
+	  
+				  <div class="col-lg-4 col-md-6">
+					<div class="footer-info">
+					  <h3>EduKrishnaa<span>.</span></h3>
+					  <p>
+						Navi Mumbai<br><br>
+						<strong>Email:</strong> info@something.com<br>
+					  </p>
+					  <div class="social-links d-flex mt-3">
+						<a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
+						<a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+						<a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+						<a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+					  </div>
+					</div>
+				  </div><!-- End footer info column-->
+	  
+				  <div class="col-lg-2 col-md-3 footer-links">
+					<h4>Class 10</h4>
+					<ul>
+					  <li><a href="#">Home</a></li>
+					  <li><a href="#">About us</a></li>
+					  <li><a href="#">Services</a></li>
+					  <li><a href="#">Terms of service</a></li>
+					  <li><a href="#">Privacy policy</a></li>
+					</ul>
+				  </div><!-- End footer links column-->
+	  
+				  <div class="col-lg-2 col-md-3 footer-links">
+					<h4>CLass 11-12</h4>
+					<ul>
+					  <li><a href="#">Web Design</a></li>
+					  <li><a href="#">Web Development</a></li>
+					  <li><a href="#">Product Management</a></li>
+					  <li><a href="#">Marketing</a></li>
+					  <li><a href="#">Graphic Design</a></li>
+					</ul>
+				  </div><!-- End footer links column-->
+	  
+				  <div class="col-lg-2 col-md-3 footer-links">
+					<h4>UG/PG</h4>
+					<ul>
+					  <li><a href="#">Molestiae accusamus iure</a></li>
+					  <li><a href="#">Excepturi dignissimos</a></li>
+					  <li><a href="#">Suscipit distinctio</a></li>
+					  <li><a href="#">Dilecta</a></li>
+					  <li><a href="#">Sit quas consectetur</a></li>
+					</ul>
+				  </div><!-- End footer links column-->
+				</div>
+			  </div>
+			</div>
+	  
+			<div class="footer-legal text-center position-relative">
+			  <div class="container">
+				<div class="copyright">
+				  &copy; Copyright <strong><span>EduKrishnaa  </span></strong>. All Rights Reserved
+				</div>
+			  </div>
+			</div>
+		  </footer>
+		<!-- End Footer -->
+		
+	  
+		<!-- Vendor JS Files -->
+		<script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="../static/assets/vendor/aos/aos.js"></script>
+		<script src="../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+		<script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+		<script src="../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+		<script src="../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+		<script src="../static/assets/vendor/php-email-form/validate.js"></script>
+	  
+		<!-- Template Main JS File -->
+		<script src="../static/assets/js/main.js"></script>
+		
+		<script>
+
+var transparent = true;
+var big_image;
+var transparentDemo = true;
+var fixedTop = false;
+
+var navbar_initialized = false;
+
+$(document).ready(function(){
+
+    // Init Material scripts for buttons ripples, inputs animations etc, more info on the next link https://github.com/FezVrasta/bootstrap-material-design#materialjs
+    $.material.init();
+
+    //  Activate the Tooltips
+    $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
+
+    // Check if we have the class "navbar-color-on-scroll" then add the function to remove the class "navbar-transparent" so it will transform to a plain color.
+    if($('.navbar-color-on-scroll').length != 0){
+        $(window).on('scroll', materialKit.checkScrollForTransparentNavbar)
+    }
+
+    // Activate Popovers
+    $('[data-toggle="popover"]').popover();
+
+    // Add parallax on header 
+    if ($(window).width() >= 992){
+        big_image = $('.paralla-header-image');
+        $(window).on('scroll', materialKitDemo.checkScrollForParallax);
+			}
+});
+
+materialKit = {
+    misc:{
+        navbar_menu_visible: 0
+    },
+
+    checkScrollForTransparentNavbar: debounce(function() {
+            if($(document).scrollTop() > 260 ) {
+                if(transparent) {
+                    transparent = false;
+                    $('.navbar-color-on-scroll').removeClass('navbar-transparent');
+                }
+            } else {
+                if( !transparent ) {
+                    transparent = true;
+                    $('.navbar-color-on-scroll').addClass('navbar-transparent');
+                }
+            }
+    }, 17)
+}
+
+materialKitDemo = {
+    checkScrollForParallax: debounce(function(){
+        var current_scroll = $(this).scrollTop();
+
+        oVal = ($(window).scrollTop() / 3);
+        big_image.css({
+            'transform':'translate3d(0,' + oVal +'px,0)',
+            '-webkit-transform':'translate3d(0,' + oVal +'px,0)',
+            '-ms-transform':'translate3d(0,' + oVal +'px,0)',
+            '-o-transform':'translate3d(0,' + oVal +'px,0)'
+        });
+
+    }, 6)
+
+}
+// Returns a function, that, as long as it continues to be invoked, will not
+// be triggered. The function will be called after it stops being called for
+// N milliseconds. If `immediate` is passed, trigger the function on the
+// leading edge, instead of the trailing.
+
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		clearTimeout(timeout);
+		timeout = setTimeout(function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		}, wait);
+		if (immediate && !timeout) func.apply(context, args);
+	};
+};
+		</script>
+
+	</body>
+</html>

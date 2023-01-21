@@ -1,0 +1,2387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personality Test</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- Favicons -->
+  <link href="../static/assets/img/edugati_favicon-removebg-preview (1).png" rel="icon">
+  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+<link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="../static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+<!-- Template Main CSS File -->
+<link href="../static/assets/css/test_main.css" rel="stylesheet">
+<link href="../static/assets/css/test.css" rel="stylesheet">
+<script src="EduGati_SIH_2022\static\assets\js\psycometric.js"></script>
+
+
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!-- timer script -->
+<script src="/static/assets/js/timer.js"></script>
+  
+</head>
+<body>
+    <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="#" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="../static/assets/img/logo.png" alt=""> -->
+        <h1>EduKrishnaa<span>.</span></h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <a class="nav-link pr-0" href="/user_profile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="media align-items-center">
+              {{session['user']}} &ThickSpace; &ThickSpace; &ThickSpace;
+                <span class="avatar avatar-sm rounded-circle">
+                <img alt="Image placeholder" src="/../static/assets/img/{{getinfo.img}}">
+                </span>
+                <!-- <div class="media-body ml-2 d-none d-lg-block">
+                  <span class="mb-0 text-sm  font-weight-bold"><a href="/user-profile">Shreyas</a></span>
+                  <span class="mb-0 text-sm  font-weight-bold"></span>
+                </div> -->
+              </div>	
+            </a>
+            </li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="hero">
+
+  <div class="info d-flex align-items-center">
+    
+  </div>
+  <section class="single-page-header">
+    <div class="container">
+      <div class="row">
+        <div class="row justify-content-center">
+        <div class="col-md-12">
+          <h1>
+            <div>
+             <div class="col-lg-11 text-center">
+              <div class="mid-container">
+                <h1 class="apti-header1">Personality Test</h1>
+                <h5 class="apti-header4">Be yourself and answer honestly to find out your personality type</h5>   
+
+                </div>
+              </div>
+            </div>
+            </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<!--Test Section-->
+  <!-- <div class="timer-container">
+  </div>
+  <div class="container-prog">
+    <div class="skill html" id="timer">
+    </div>
+  </div> -->
+<!-- Examination form -->
+<!-- <form  name="form1" method="POST" action="/sample" onclick="check()"> -->
+<!-- Examination form -->
+<form class="form1" id="form1" name="form1" method="POST" action="/results_10">
+  <h2>Linguistic</h2>
+  <div class="form-bg">
+    <div class="qt1">1. I find it easy to make up stories.</div>
+    <div class="form-check">
+
+      <input class="form-check-input" type="radio" name="linguistic1" id="question1" value="Mostly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="linguistic1" id="question1" value="Slightly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="linguistic1" id="question1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+
+      <input class="form-check-input" type="radio" name="linguistic1" id="question1" value="Mostly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+  </div>
+
+  <!-- Question2 -->
+  <div class="form-bg">
+    <div class="qt1">2. When talking to someone, I tend to listen to the words they use not just what they mean?</div>
+    <div class="form-check">
+
+      <input class="form-check-input" type="radio" name="linguistic2" id="question2" value="Mostly Disagree" required>
+
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="linguistic2" id="question2" value="Slightly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="linguistic2" id="question2" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+
+      <input class="form-check-input" type="radio" name="linguistic2" id="question2" value="Mostly Agree" required>
+
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="form-bg">
+    <div class="qt1">3. I enjoy cross words, word searches or other word puzzles</div>
+      <div class="form-check">
+
+      <input class="form-check-input" type="radio" name="linguistic3" id="flexRadioDefault1" value="Mostly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Disagree 
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="linguistic3" id="flexRadioDefault2" value="Slightly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="linguistic3" id="flexRadioDefault1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>    <div class="form-check">
+
+      <input class="form-check-input" type="radio" name="linguistic3" id="flexRadioDefault2" value="Mostly Agree" required>
+
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+  </div>
+
+  <!-- question 4 -->
+  <div class="form-bg">
+    <div class="qt1">4. I am a convincing liar</div>
+    <div class="form-check">
+
+      <input class="form-check-input" type="radio" name="linguistic4" id="flexRadioDefault1" value="Mostly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="linguistic4" id="flexRadioDefault2" value="Slightly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="linguistic4" id="flexRadioDefault1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="linguistic4" id="flexRadioDefault2" value="Mostly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+  </div>
+
+  <!-- Question 5  -->
+  <div class="form-bg">
+    <div class="qt1">5. I find it easy to remember quotes or phrases</div>
+      <div class="form-check">
+
+        <input class="form-check-input" type="radio" name="linguistic5" id="flexRadioDefault1" value="Mostly Disagree" required>
+        <label class="form-check-label" for="flexRadioDefault1">
+          Mostly Disagree
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="linguistic5" id="flexRadioDefault2" value="Slightly Disagree" required>
+        <label class="form-check-label" for="flexRadioDefault2">
+          Slightly Disagree
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="linguistic5" id="flexRadioDefault1" value="Slightly Agree" required>
+        <label class="form-check-label" for="flexRadioDefault1">
+          Slightly Agree
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="linguistic5" id="flexRadioDefault2" value="Mostly Agree" required>
+        <label class="form-check-label" for="flexRadioDefault2">
+          Mostly Agree
+        </label>
+      </div>
+  </div>
+
+  <!-- musically question 6-1************************************************ -->
+
+  <div class="form-bg">
+    <h2>Musical</h2>
+    <div class="qt1">1. I can play a musical instrument</div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="musical1" id="flexRadioDefault1" value="Mostly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="musical1" id="flexRadioDefault2" value="Slightly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+      </label>
+          Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="musical1" id="flexRadioDefault1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="musical1" id="flexRadioDefault2" value="Mostly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+  </div>
+
+  <!-- question 7 -->
+  <div class="form-bg">
+    <div class="qt1">2. I often have a song or piece of music in my head</div>
+      <div class="form-check">
+      <input class="form-check-input" type="radio" name="musical2" id="flexRadioDefault1" value="Mostly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Disagree 
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="musical2" id="flexRadioDefault2" value="Slightly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="musical2" id="flexRadioDefault1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="musical2" id="flexRadioDefault2" value="Mostly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+  </div>
+  <!-- question 8 -->
+  <div class="form-bg">
+    <div class="qt1">3. Music is very important to me</div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="musical3" id="flexRadioDefault1" value="Mostly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="musical3" id="flexRadioDefault2" value="Slightly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="musical3" id="flexRadioDefault1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="musical3" id="flexRadioDefault2" value="Mostly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+  </div>
+  <!-- question 9  -->
+  <div class="form-bg">
+    <div class="qt1">4. I find that the music that appeals to me is often based on how I feel emotionally</div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="musical4" id="flexRadioDefault1" value="Mostly Disagree" required>
+        <label class="form-check-label" for="flexRadioDefault1">
+          Mostly Disagree
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="musical4" id="flexRadioDefault2" value="Slightly Disagree" required>
+        <label class="form-check-label" for="flexRadioDefault2">
+          Slightly Disagree
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="musical4" id="flexRadioDefault1" value="Slightly Agree" required>
+        <label class="form-check-label" for="flexRadioDefault1">
+          Slightly Agree
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="musical4" id="flexRadioDefault2" value="Mostly Agree" required>
+        <label class="form-check-label" for="flexRadioDefault2">
+          Mostly Agree
+        </label>
+      </div>
+  </div>
+  <!-- Question10 -->
+  <div class="form-bg">
+  <div class="qt1">5. At school I loved / love music lessons</div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="musical5" id="flexRadioDefault1" value="Mostly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="musical5" id="flexRadioDefault2" value="Slightly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+    </label>
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="musical5" id="flexRadioDefault1" value="Slightly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="musical5" id="flexRadioDefault2" value="Mostly Agree"required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+</div>
+
+
+<!-- interpersonal question 10-1 -->
+
+  <div class="form-bg">
+    <h2>Interpersonal</h2>
+    <div class="qt1">1. coordinating work between team members in a class project</div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="interpersonal1" id="flexRadioDefault1"  value="Mostly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+       Mostly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="interpersonal1" id="flexRadioDefault2" value="Slightly Disagree"required>
+      <label class="form-check-label" for="flexRadioDefault2">
+      </label>
+       Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="interpersonal1" id="flexRadioDefault1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="interpersonal1" id="flexRadioDefault2" value="Mostly Agree"required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+  </div>
+
+  <!-- question 11 -->
+  <div class="form-bg">
+    <div class="qt1">2. I care about how those around me feel</div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="interpersonal2" id="flexRadioDefault1" value="Mostly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="interpersonal2" id="flexRadioDefault2" value="Slightly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="interpersonal2" id="flexRadioDefault1"  value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="interpersonal2" id="flexRadioDefault2" value="Mostly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+  </div>
+
+  <!-- question3 -->
+  <div class="form-bg">
+    <div class="qt1">3. I find it easy to talk to new people</div>
+      <div class="form-check">
+      <input class="form-check-input" type="radio" name="interpersonal3" id="flexRadioDefault1" value="Mostly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="interpersonal3" id="flexRadioDefault2" value="Slightly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="interpersonal3" id="flexRadioDefault1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="interpersonal3" id="flexRadioDefault2"  value="Mostly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+  </div>
+
+  <!-- Question 14 -->
+  <div class="form-bg">
+    <div class="qt1">4. I am very aware of other people’s body language</div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="interpersonal4" id="flexRadioDefault1" value="Mostly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Agree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="interpersonal4" id="flexRadioDefault2"  value="Slightly Disagree" required> 
+      <label class="form-check-label" for="flexRadioDefault2">
+        Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="interpersonal4" id="flexRadioDefault1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="interpersonal4" id="flexRadioDefault2" value="Mostly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+  </div>
+  <!-- Question 15 -->
+  <div class="form-bg">
+    <div class="qt1">5. I prefer team sports</div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="interpersonal5" id="flexRadioDefault1" value="Mostly Disagree" required>
+        <label class="form-check-label" for="flexRadioDefault1">
+          Mostly Disagree
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="interpersonal5" id="flexRadioDefault2" value="Slightly Disagree" required>
+        <label class="form-check-label" for="flexRadioDefault2">
+          Slightly Disagree
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="interpersonal5" id="flexRadioDefault1" value="Slightly Agree" required>
+        <label class="form-check-label" for="flexRadioDefault1">
+          Slightly Agree
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="interpersonal5" id="flexRadioDefault2" value="Mostly Agree" required>
+        <label class="form-check-label" for="flexRadioDefault2">
+          Mostly Agree
+        </label>
+      </div>
+  </div>
+
+<!-- Question 16   Logical -->
+
+  <div class="form-bg">
+    <h2>Logical</h2>
+    <div class="qt1">1. I find budgeting and managing my money easy</div>
+    <div class="form-check">
+
+      <input class="form-check-input" type="radio" name="logical1" id="flexRadioDefault1" value="Mostly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="logical1" id="flexRadioDefault2" value="Slightly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+      </label>
+         Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="logical1" id="flexRadioDefault1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="logical1" id="flexRadioDefault2" value="Mostly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+  </div>
+
+  <!-- Question 17 -->
+  <div class="form-bg">
+    <div class="qt1">2. I don’t like ambiguity, I like things to be clear</div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="logical2" id="flexRadioDefault1" value="Mostly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="logical2" id="flexRadioDefault2" value="Slightly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="logical2" id="flexRadioDefault1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="logical2" id="flexRadioDefault2" value="Mostly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+  </div>
+  <!-- Question 18 -->
+  <div class="form-bg">
+    <div class="qt1">3. I enjoy logic puzzles such as 'sudoku'</div>
+      <div class="form-check">
+
+      <input class="form-check-input" type="radio" name="logical3" id="flexRadioDefault1" value="Mostly Disagree" required>
+
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Disagree 
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="logical3" id="flexRadioDefault2" value="Slightly Disagree" required> 
+      <label class="form-check-label" for="flexRadioDefault2">
+        Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="logical3" id="flexRadioDefault1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+
+      <input class="form-check-input" type="radio" name="logical3" id="flexRadioDefault2" value="Mostly Agree" required>
+
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+  </div>
+
+  <!-- Question 19 -->
+  <div class="form-bg">
+    <div class="qt1">4. People behaving irrationally annoy me.</div>
+    <div class="form-check">
+
+      <input class="form-check-input" type="radio" name="logical4" id="flexRadioDefault1" value="Mostly Disagree" required>
+
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="logical4" id="flexRadioDefault2" value="Slightly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="logical4" id="flexRadioDefault1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="logical4" id="flexRadioDefault2" value="Mostly Agree" required>
+
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+  </div>
+  <!-- Question 20 -->
+  <div class="form-bg">
+    <div class="qt1">5. I don’t use my fingers when I count.</div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="logical5" id="flexRadioDefault1" value="Mostly Disagree" required>
+
+        <label class="form-check-label" for="flexRadioDefault1">
+          Mostly Disagree
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="logical5" id="flexRadioDefault2" value="Slightly Disagree" required>
+        <label class="form-check-label" for="flexRadioDefault2">
+          Slightly Disagree
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="logical5" id="flexRadioDefault1" value="Slightly Agree" required>
+        <label class="form-check-label" for="flexRadioDefault1">
+          Slightly Agree
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="logical5" id="flexRadioDefault2" value="Mostly Agree" required>
+
+        <label class="form-check-label" for="flexRadioDefault2">
+          Mostly Agree
+        </label>
+      </div>
+  </div>
+
+
+<!-- Question21  Section Bodily -->
+
+<div class="form-bg">
+  <h2>Bodily</h2>
+  <div class="qt1">1. I find it easiest to solve problems when I am doing something physical</div>
+  <div class="form-check">
+
+    <input class="form-check-input" type="radio" name="bodily1" id="flexRadioDefault1" value="Mostly Disagree" required>
+
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+
+    <input class="form-check-input" type="radio" name="bodily1" id="flexRadioDefault2" value="Slightly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+
+    <input class="form-check-input" type="radio" name="bodily1" id="flexRadioDefault1" value="Slightly Agree" required>
+
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="bodily1" id="flexRadioDefault2" value="Mostly Disagree" required>
+
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+
+<!-- Question 22 -->
+<div class="form-bg">
+  <div class="qt1">2. I have always been very co-ordinated</div>
+  <div class="form-check">
+
+    <input class="form-check-input" type="radio" name="bodily2" id="flexRadioDefault1" value="Mostly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="bodily2" id="flexRadioDefault2" value="Slightly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="bodily2" id="flexRadioDefault1" value="Slightly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+
+    <input class="form-check-input" type="radio" name="bodily2" id="flexRadioDefault2" value="Mostly Agree" required>
+
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+
+<!-- Question 23 -->
+<div class="form-bg">
+  <div class="qt1">3. I play a sport or dance</div>
+    <div class="form-check">
+
+    <input class="form-check-input" type="radio" name="bodily3" id="flexRadioDefault1" value="Mostly Disagree" required>
+
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree 
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="bodily3" id="flexRadioDefault2" value="Slightly Disagree"required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="bodily3" id="flexRadioDefault1" value="Slightly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="bodily3" id="flexRadioDefault2" value="Mostly Agree" required>
+
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+
+<!-- question 24 -->
+<div class="form-bg">
+  <div class="qt1">4. I can throw things well - darts, skimming pebbles, frisbees, etc </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="bodily4" id="flexRadioDefault1" value="Mostly Disagree" required>
+
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+
+    <input class="form-check-input" type="radio" name="bodily4" id="flexRadioDefault2"  value="Slightly Disagree" required>
+
+    <label class="form-check-label" for="flexRadioDefault2">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="bodily4" id="flexRadioDefault1" value="Slightly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="bodily4" id="flexRadioDefault2" value="Mostly Agree" required>
+
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+
+<!-- Question 25  -->
+<div class="form-bg">
+  <div class="qt1">5. I am a very tactile person</div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="bodily5" id="flexRadioDefault1" value="Mostly Disagree" required>
+
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+
+
+      <input class="form-check-input" type="radio" name="bodily5" id="flexRadioDefault2" value="Slightly Disagree" required>
+
+      <label class="form-check-label" for="flexRadioDefault2">
+        Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="bodily5" id="flexRadioDefault1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="bodily5" id="flexRadioDefault2" value="Mostly Agree" required>
+
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+</div>
+
+<!-- Spatial question 26-1************************************************ -->
+
+<div class="form-bg">
+  <h2>Spatial</h2>
+  <div class="qt1">1. I find graphs and charts easy to understand </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="spatial1" id="flexRadioDefault1" value="Mostly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="spatial1" id="flexRadioDefault2" value="Slightly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+    </label>
+        Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="spatial1" id="flexRadioDefault1" value="Slightly Agree"required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="spatial1" id="flexRadioDefault2" value="Mostly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+<div class="form-bg">
+  <div class="qt1">2. I can always recognise places that I have been before, even when I was very young</div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="spatial2" id="flexRadioDefault1" value="Mostly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="spatial2" id="flexRadioDefault2" value="Slightly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="spatial2" id="flexRadioDefault1" value="Slightly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="spatial2" id="flexRadioDefault2" value="Mostly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+<!-- question 7 -->
+<div class="form-bg">
+  <div class="qt1">3. When I am concentrating I tend to doodle</div>
+    <div class="form-check">
+    <input class="form-check-input" type="radio" name="spatial3" id="flexRadioDefault1" value="Mostly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree 
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="spatial3" id="flexRadioDefault2" value="Slightly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="spatial3" id="flexRadioDefault1" value="Slightly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="spatial3" id="flexRadioDefault2" value="Mostly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+<!-- question 8 -->
+<div class="form-bg">
+  <div class="qt1">4. I never get lost when I am on my own in a new place</div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="spatial4" id="flexRadioDefault1" value="Mostly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="spatial4" id="flexRadioDefault2" value="Slightly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="spatial4" id="flexRadioDefault1" value="Slightly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="spatial4" id="flexRadioDefault2" value="Mostly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+<!-- question 9  -->
+<div class="form-bg">
+  <div class="qt1">5. If I am learning how to do something, I like to see drawings and diagrams of how it works</div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="spatial5" id="flexRadioDefault1" value="Mostly Disagree"required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="spatial5" id="flexRadioDefault2" value="Slightly Disagree"required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="spatial5" id="flexRadioDefault1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="spatial5" id="flexRadioDefault2" value="Mostly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+</div>
+  
+<!-- intrapersonal question 10-1 -->
+
+<div class="form-bg">
+  <h2>Intrapersonal</h2>
+  <div class="qt1">1. I like to learn more about myself</div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="intrapersonal1" id="flexRadioDefault1" value="Mostly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="intrapersonal1" id="flexRadioDefault2" value="Slightly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+    </label>
+        Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="intrapersonal1" id="flexRadioDefault1" value="Slightly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="intrapersonal1" id="flexRadioDefault2" value="Mostly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+
+<!-- question 11 -->
+<div class="form-bg">
+  <div class="qt1">2. I can predict my feelings and behaviours in certain situations fairly accurately</div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="intrapersonal2" id="flexRadioDefault1" value="Mostly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="intrapersonal2" id="flexRadioDefault2" value="Slightly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="intrapersonal2" id="flexRadioDefault1" value="Slightly Agree" required> 
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="intrapersonal2" id="flexRadioDefault2" value="Mostly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+<div class="form-bg">
+  <div class="qt1">3. I enjoy individual sports best</div>
+    <div class="form-check">
+    <input class="form-check-input" type="radio" name="intrapersonal3" id="flexRadioDefault1" value="Mostly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="intrapersonal3" id="flexRadioDefault2" value="Slightly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="intrapersonal3" id="flexRadioDefault1" value="Slightly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="intrapersonal3" id="flexRadioDefault2" value="Mostly Agree"required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+
+<!-- Question 14 -->
+<div class="form-bg">
+  <div class="qt1">4. I keep a diary</div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="intrapersonal4" id="flexRadioDefault1" value="Mostly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="intrapersonal4" id="flexRadioDefault2" value="Slightly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="intrapersonal4" id="flexRadioDefault1" value="Slightly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="intrapersonal4" id="flexRadioDefault2" value="Mostly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+<!-- Question 15 -->
+<div class="form-bg">
+  <div class="qt1">5. I am happy spending time alone</div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="intrapersonal5" id="flexRadioDefault1" value="Mostly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="intrapersonal5" id="flexRadioDefault2" value="Slightly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Slightly Disagree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="intrapersonal5" id="flexRadioDefault1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="intrapersonal5" id="flexRadioDefault2" value="Mostly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+</div>
+
+<!-- Question 16   Logical -->
+
+<div class="form-bg">
+  <h2>Naturalistic  </h2>
+  <div class="qt1">1. I like walking through the mountains, camping, visits to zoos and aquariums</div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="naturalistic1" id="flexRadioDefault1" value="Mostly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="naturalistic1" id="flexRadioDefault2" value="Slightly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+    </label>
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="naturalistic1" id="flexRadioDefault1" value="Slightly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="naturalistic1" id="flexRadioDefault2" value="Mostly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+
+<!-- Question 17 -->
+<div class="form-bg">
+  <div class="qt1">2. I am good at identifying fauna and flora.</div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="naturalistic2" id="flexRadioDefault1" value="Mostly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="naturalistic2" id="flexRadioDefault2" value="Slightly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="naturalistic2" id="flexRadioDefault1" value="Slightly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="naturalistic2" id="flexRadioDefault2" value="Mostly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+<!-- Question 18 -->
+<div class="form-bg">
+  <div class="qt1">3. I like planting seeds at home or collecting fossils, stones, leaves, etc.</div>
+    <div class="form-check">
+    <input class="form-check-input" type="radio" name="naturalistic3" id="flexRadioDefault1" value="Mostly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree 
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="naturalistic3" id="flexRadioDefault2" value="Slightly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="naturalistic3" id="flexRadioDefault1" value="Slightly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="naturalistic3" id="flexRadioDefault2" value="Mostly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+
+<!-- Question 19 -->
+<div class="form-bg">
+  <div class="qt1">4. I read books and articles about nature and the environment.</div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="naturalistic4" id="flexRadioDefault1" value="Mostly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Mostly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="naturalistic4" id="flexRadioDefault2" value="Slightly Disagree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="naturalistic4" id="flexRadioDefault1" value="Slightly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="naturalistic4" id="flexRadioDefault2" value="Mostly Agree" required>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Mostly Agree
+    </label>
+  </div>
+</div>
+<!-- Question 20 -->
+<div class="form-bg">
+  <div class="qt1">5. I am interested in using tools to help observation — microscopes, binoculars, telescopes.</div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="naturalistic5" id="flexRadioDefault1" value="Mostly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Mostly Agree
+     </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="naturalistic5" id="flexRadioDefault2" value="Slightly Disagree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Slightly Disagree
+     </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="naturalistic5" id="flexRadioDefault1" value="Slightly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Slightly Agree
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="naturalistic5" id="flexRadioDefault2" value="Mostly Agree" required>
+      <label class="form-check-label" for="flexRadioDefault2">
+        Mostly Agree
+      </label>
+    </div>
+</div>
+
+<div class="wrapper">
+
+      <!-- <button type="submit" class="btn1" onclick="Linguistic_calc()">submit</button> -->
+      <!-- <button type="submit" class="btn1" onclick="Linguistic_calc()">submit</button> -->
+
+
+      <button type="submit" class="btn1"  id="myButton" onclick="location.href ='/results_10'">submit</button>
+      <p id="result0"></p>
+      <p id="result1"></p>
+      <p id="result2"></p>
+      <p id="result3"></p>
+      <p id="result4"></p>
+      <p id="result5"></p>
+
+      <p id="result6"></p>
+      <p id="result7"></p>
+
+      <p id="result10" name="result10"></p>
+    </div>   
+</form> 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="wrapper">
+    <input type="submit" value="submit"  onclick="check()">
+  </div> -->
+<!-- </form>  -->
+  <!-- ======= Footer ======= -->
+  
+ 
+<!-- End Footer -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<!-- <script>
+  var numericalValues = new Array();
+  numericalValues["Mostly Disagree"]= 1;
+  numericalValues["Slightly Disagree"]= 2;
+  numericalValues["Slightly Agree"]= 3;
+  numericalValues["Mostly Agree"]= 4;
+  
+function Linguistic_calc()
+  { 
+    var scoreChoco = 0;
+    var form = document.forms["form1"];
+    sum=0;
+    for (var j=1;j<=5;j++){
+    var choco = form.elements[`linguistic${j}`];
+    for(var i=0; i<choco.length; i++)
+    {   
+        if(choco[i].checked)
+        { 
+        scoreChoco = numericalValues[choco[i].value];
+        sum+=scoreChoco;
+        break;
+        }
+    }
+  }
+  return sum;
+}; 
+
+function Musical_calc()
+  { 
+    var scoreChoco = 0;
+    var form = document.forms["form1"];
+    sum=0;
+    for (var j=1;j<=5;j++){
+    var choco = form.elements[`musical${j}`];
+    for(var i=0; i<choco.length; i++)
+    {   
+        if(choco[i].checked)
+        { 
+        scoreChoco = numericalValues[choco[i].value];
+        sum+=scoreChoco;
+        break;
+        }
+    }
+  }
+  return sum;
+};
+
+
+function Interpersonal_calc()
+  { 
+    var scoreChoco = 0;
+    var form = document.forms["form1"];
+    sum=0;
+    for (var j=1;j<=5;j++){
+    var choco = form.elements[`interpersonal${j}`];
+    for(var i=0; i<choco.length; i++)
+    {   
+        if(choco[i].checked)
+        { 
+        scoreChoco = numericalValues[choco[i].value];
+        sum+=scoreChoco;
+        break;
+        }
+    }
+  }
+  return sum;
+};
+
+
+function Logical_calc()
+  { 
+    var scoreChoco = 0;
+    var form = document.forms["form1"];
+    sum=0;
+    for (var j=1;j<=5;j++){
+    var choco = form.elements[`logical${j}`];
+   
+    for(var i=0; i<choco.length; i++)
+    {   
+        if(choco[i].checked)
+        { 
+        scoreChoco = numericalValues[choco[i].value];
+        sum+=scoreChoco;
+        break;
+        }
+    }
+  }
+  return sum;
+};
+
+
+function Bodily_calc()
+  { 
+    var scoreChoco = 0;
+    var form = document.forms["form1"];
+    sum=0;
+    for (var j=1;j<=5;j++){
+    var choco = form.elements[`bodily${j}`];
+   
+    for(var i=0; i<choco.length; i++)
+    {   
+        if(choco[i].checked)
+        { 
+        scoreChoco = numericalValues[choco[i].value];
+        sum+=scoreChoco;
+        break;
+        }
+    }
+  }
+  return sum;
+};
+
+  // function quest1()
+  //   {
+  //   var scoreChoco = 0;
+  //   var form = document.forms["form1"];
+  //   var choco = form.elements["question1"];
+  //   for(var i=0; i<choco.length; i++)
+  //   {
+  //       if(choco[i].checked)
+  //       {
+  //       scoreChoco = numericalValues[choco[i].value];
+  //       break;
+  //       }
+  
+  //   }
+  //   return scoreChoco;
+  // };
+  
+  // function quest2()
+  //   {
+  //   var scoreCake = 0;
+  //   var form = document.forms["form1"];
+  //   var cake = form.elements["question2"];
+  
+  //   for(var i=0; i<cake.length; i++)
+  //   {
+  //     if(cake[i].checked)
+  //     {
+  //     scoreCake = numericalValues[cake[i].value];
+  //     break;
+  //     }
+  
+  //   }
+  //   return scoreCake;
+  // };
+  
+  // function quest3()
+  //   {
+  //   var scoreCake = 0;
+  //   var form = document.forms["form1"];
+  //   var cake = form.elements["question3"];
+  
+  //   for(var i=0; i<cake.length; i++)
+  //   {
+  //     if(cake[i].checked)
+  //     {
+  //     scoreCake = numericalValues[cake[i].value];
+  //     break;
+  //     }
+  
+  //   }
+  //   return scoreCake;
+  // };
+  
+  // function quest4()
+  //   {
+  //   var scoreCake = 0;
+  //   var form = document.forms["form1"];
+  //   var cake = form.elements["question4"];
+  
+  //   for(var i=0; i<cake.length; i++)
+  //   {
+  //     if(cake[i].checked)
+  //     {
+  //     scoreCake = numericalValues[cake[i].value];
+  //     break;
+  //     }
+  
+  //   }
+  //   return scoreCake;
+  // };
+  
+  // function quest5()
+  //   {
+  //   var scoreCake = 0;
+  //   var form = document.forms["form1"];
+  //   var cake = form.elements["question5"];
+  
+  //   for(var i=0; i<cake.length; i++)
+  //   {
+  //     if(cake[i].checked)
+  //     {
+  //     scoreCake = numericalValues[cake[i].value];
+  //     break;
+  //     }
+  
+  //   }
+  //   return scoreCake;
+  // };
+
+
+function Spatial_calc()
+  { 
+    var scoreChoco = 0;
+    var form = document.forms["form1"];
+    sum=0;
+    for (var j=1;j<=5;j++){
+    var choco = form.elements[`spatial${j}`];
+    
+    for(var i=0; i<choco.length; i++)
+    {   
+        if(choco[i].checked)
+        { 
+        scoreChoco = numericalValues[choco[i].value];
+        sum+=scoreChoco;
+        break;
+        }
+    }
+  }
+  return sum;
+}; 
+
+function Intrapersonal_calc()
+  { 
+    var scoreChoco = 0;
+    var form = document.forms["form1"];
+    sum=0;
+    for (var j=1;j<=5;j++){
+    var choco = form.elements[`intrapersonal${j}`];
+    for(var i=0; i<choco.length; i++)
+    {   
+        if(choco[i].checked)
+        { 
+        scoreChoco = numericalValues[choco[i].value];
+        sum+=scoreChoco;
+        break;
+        }
+    }
+  }
+  return sum;
+}; 
+
+
+function Naturalist_calc()
+  { 
+    var scoreChoco = 0;
+    var form = document.forms["form1"];
+    sum=0;
+    for (var j=1;j<=5;j++){
+    var choco = form.elements[`naturalistic${j}`];
+    for(var i=0; i<choco.length; i++)
+    {   
+        if(choco[i].checked)
+        { 
+        scoreChoco = numericalValues[choco[i].value];
+        sum+=scoreChoco;
+        break;
+        }
+    }
+  }
+  return sum;
+}; 
+
+
+
+function getTotal()
+  {
+    // var arr[];
+    var linguistic = Linguistic_calc();
+    var logical = Logical_calc();
+    var musical = Musical_calc();
+    var bodily = Bodily_calc();
+    var spatial = Spatial_calc();
+    var interpersonal = Interpersonal_calc();
+    var intrapersonal= Intrapersonal_calc();
+    var naturalist = Naturalist_calc();
+
+    // document.getElementById('result').innerHTML =linguistic;
+    // document.getElementById('result1').innerHTML =musical;
+    // document.getElementById('result2').innerHTML =interpersonal;
+    // document.getElementById('result3').innerHTML =logical;
+
+    // // var bodily = bodilyquest1() +bodilyquest2()+ bodilyquest3()+ bodilyquest4()+ bodilyquest5();
+    document.getElementById('result0').innerHTML ="Your total score is: "+linguistic;
+    document.getElementById('result1').innerHTML ="Your total score is: "+logical;
+    document.getElementById('result2').innerHTML ="Your total score is: "+musical;
+    document.getElementById('result3').innerHTML ="Your total score is: "+bodily;
+    document.getElementById('result4').innerHTML ="Your total score is: "+spatial;
+    document.getElementById('result5').innerHTML ="Your total score is: "+interpersonal;
+    document.getElementById('result6').innerHTML ="Your total score is: "+intrapersonal;
+    document.getElementById('result7').innerHTML ="Your total score is: "+naturalist;
+
+
+    // const arrLength = arr.unshift(totalScore,musically,interpersonal,logical);
+    // var arr=[totalScore,musically,interpersonal,logical];
+
+    
+    
+    // var stringArray = new Array();
+    // stringArray.push(Linguistic);
+    // stringArray.push(musical);
+    // stringArray.push(interpersonal);
+    // stringArray.push(logical);
+    // stringArray.push(bodily);
+
+
+    // document.getElementById('result4').innerHTML ="Your Array is: "+stringArray;
+    // document.getElementById('result5').innerHTML ="Your Array is: "+typeof(stringArray);
+
+    const dict_value={linguistic,logical,musical,bodily,spatial,interpersonal,intrapersonal,naturalist}
+    // const array_val=[totalScore,musically,interpersonal,logical]
+    const s= JSON.stringify(dict_value);
+    console.log(s);
+    $.ajax({
+      url: "test.py",
+      type: "POST",
+      contentType: "application/json",
+      data: JSON.stringify(s),
+
+    }
+    );
+    
+};
+
+ 
+  
+
+
+
+  // function quest1()
+  //   {
+  //   var scoreChoco = 0;
+  //   var form = document.forms["form1"];
+  //   var choco = form.elements["question1"];
+  //   for(var i=0; i<choco.length; i++)
+  //   {
+  //       if(choco[i].checked)
+  //       {
+  //       scoreChoco = numericalValues[choco[i].value];
+  //       break;
+  //       }
+  
+  //   }
+  //   return scoreChoco;
+  // };
+  
+  // function quest2()
+  //   {
+  //   var scoreCake = 0;
+  //   var form = document.forms["form1"];
+  //   var cake = form.elements["question2"];
+  
+  //   for(var i=0; i<cake.length; i++)
+  //   {
+  //     if(cake[i].checked)
+  //     {
+  //     scoreCake = numericalValues[cake[i].value];
+  //     break;
+  //     }
+  
+  //   }
+  //   return scoreCake;
+  // };
+  
+  // function quest3()
+  //   {
+  //   var scoreCake = 0;
+  //   var form = document.forms["form1"];
+  //   var cake = form.elements["question3"];
+  
+  //   for(var i=0; i<cake.length; i++)
+  //   {
+  //     if(cake[i].checked)
+  //     {
+  //     scoreCake = numericalValues[cake[i].value];
+  //     break;
+  //     }
+  
+  //   }
+  //   return scoreCake;
+  // };
+  
+  // function quest4()
+  //   {
+  //   var scoreCake = 0;
+  //   var form = document.forms["form1"];
+  //   var cake = form.elements["question4"];
+  
+  //   for(var i=0; i<cake.length; i++)
+  //   {
+  //     if(cake[i].checked)
+  //     {
+  //     scoreCake = numericalValues[cake[i].value];
+  //     break;
+  //     }
+  
+  //   }
+  //   return scoreCake;
+  // };
+  
+  // function quest5()
+  //   {
+  //   var scoreCake = 0;
+  //   var form = document.forms["form1"];
+  //   var cake = form.elements["question5"];
+  
+  //   for(var i=0; i<cake.length; i++)
+  //   {
+  //     if(cake[i].checked)
+  //     {
+  //     scoreCake = numericalValues[cake[i].value];
+  //     break;
+  //     }
+  
+  //   }
+  //   return scoreCake;
+  // };
+
+
+
+
+  // //Musically score calculation
+
+//   function musicquest1()
+//     {
+//     var scoreCake = 0;
+//     var form = document.forms["form1"];
+//     var music1 = form.elements["question6"];
+  
+//     for(var i=0; i<music1.length; i++)
+//     {
+//       if(music1[i].checked)
+//       {
+//       scoreCake = numericalValues[music1[i].value];
+//       break;
+//       }
+  
+//     }
+//     return scoreCake;
+//   };
+
+//   function musicquest2()
+//     {
+//     var scoreCake = 0;
+//     var form = document.forms["form1"];
+//     var music2 = form.elements["question7"];
+  
+//     for(var i=0; i<music2.length; i++)
+//     {
+//       if(music2[i].checked)
+//       {
+//       scoreCake = numericalValues[music2[i].value];
+//       break;
+//       }
+  
+//     }
+//     return scoreCake;
+//   };
+//   function musicquest3()
+//     {
+//     var scoreCake = 0;
+//     var form = document.forms["form1"];
+//     var music3 = form.elements["question8"];
+  
+//     for(var i=0; i<music3.length; i++)
+//     {
+//       if(music3[i].checked)
+//       {
+//       scoreCake = numericalValues[music3[i].value];
+//       break;
+//       }
+  
+//     }
+//     return scoreCake;
+//   };
+//   function musicquest4()
+//     {
+//     var scoreCake = 0;
+//     var form = document.forms["form1"];
+//     var music4 = form.elements["question9"];
+  
+//     for(var i=0; i<music4.length; i++)
+//     {
+//       if(music4[i].checked)
+//       {
+//       scoreCake = numericalValues[music4[i].value];
+//       break;
+//       }
+  
+//     }
+//     return scoreCake;
+//   };
+//   function musicquest5()
+//     {
+//     var scoreCake = 0;
+//     var form = document.forms["form1"];
+//     var music5 = form.elements["question10"];
+  
+//     for(var i=0; i<music5.length; i++)
+//     {
+//       if(music5[i].checked)
+//       {
+//       scoreCake = numericalValues[music5[i].value];
+//       break;
+//       }
+  
+//     }
+//     return scoreCake;
+//   };
+
+  
+// // Interpersonal Score calculation
+
+
+// function interquest1()
+//     {
+//     var scoreCake = 0;
+//     var form = document.forms["form1"];
+//     var inter1 = form.elements["question11"];
+  
+//     for(var i=0; i<inter1.length; i++)
+//     {
+//       if(inter1[i].checked)
+//       {
+//       scoreCake = numericalValues[inter1[i].value];
+//       break;
+//       }
+  
+//     }
+//     return scoreCake;
+//   };
+
+//   function interquest2()
+//     {
+//     var scoreCake = 0;
+//     var form = document.forms["form1"];
+//     var inter2 = form.elements["question12"];
+  
+//     for(var i=0; i<inter2.length; i++)
+//     {
+//       if(inter2[i].checked)
+//       {
+//       scoreCake = numericalValues[inter2[i].value];
+//       break;
+//       }
+  
+//     }
+//     return scoreCake;
+//   };
+
+
+//   function interquest3(){
+//     var scoreCake = 0;
+//     var form = document.forms["form1"];
+//     var inter3 = form.elements["question13"];
+  
+//     for(var i=0; i<inter3.length; i++)
+//     {
+//       if(inter3[i].checked)
+//       {
+//       scoreCake = numericalValues[inter3[i].value];
+//       break;
+//       }
+  
+//     }
+//     return scoreCake;
+//   };
+
+
+//   function interquest4()
+//     {
+//     var scoreCake = 0;
+//     var form = document.forms["form1"];
+//     var inter4 = form.elements["question14"];
+  
+//     for(var i=0; i<inter4.length; i++)
+//     {
+//       if(inter4[i].checked)
+//       {
+//       scoreCake = numericalValues[inter4[i].value];
+//       break;
+//       }
+  
+//     }
+//     return scoreCake;
+//   };
+
+//   function interquest5()
+//     {
+//     var scoreCake = 0;
+//     var form = document.forms["form1"];
+//     var inter5 = form.elements["question15"];
+  
+//     for(var i=0; i<inter5.length; i++)
+//     {
+//       if(inter5[i].checked)
+//       {
+//       scoreCake = numericalValues[inter5[i].value];
+//       break;
+//       }
+  
+//     }
+//     return scoreCake;
+//   };
+
+
+// // Logical Score calculation
+
+
+// function logicalquest1()
+//     {
+//     var scoreCake = 0;
+//     var form = document.forms["form1"];
+//     var logical1 = form.elements["question16"];
+  
+//     for(var i=0; i<logical1.length; i++)
+//     {
+//       if(logical1[i].checked)
+//       {
+//       scoreCake = numericalValues[logical1[i].value];
+//       break;
+//       }
+  
+//     }
+//     return scoreCake;
+//   };
+
+
+//   function logicalquest2()
+//     {
+//     var scoreCake = 0;
+//     var form = document.forms["form1"];
+//     var logical2 = form.elements["question17"];
+  
+//     for(var i=0; i<logical2.length; i++)
+//     {
+//       if(logical2[i].checked)
+//       {
+//       scoreCake = numericalValues[logical2[i].value];
+//       break;
+//       }
+//     }
+//     return scoreCake;
+//   };
+
+
+//   function logicalquest3(){
+//     var scoreCake = 0;
+//     var form = document.forms["form1"];
+//     var logical3 = form.elements["question18"];
+  
+//     for(var i=0; i<logical3.length; i++)
+//     {
+//       if(logical3[i].checked)
+//       {
+//       scoreCake = numericalValues[logical3[i].value];
+//       break;
+//       }
+  
+//     }
+//     return scoreCake;
+//   };
+
+
+
+//   function logicalquest4()
+//     {
+//     var scoreCake = 0;
+//     var form = document.forms["form1"];
+//     var logical4 = form.elements["question19"];
+  
+//     for(var i=0; i<logical4.length; i++)
+//     {
+//       if(logical4[i].checked)
+//       {
+//       scoreCake = numericalValues[logical4[i].value];
+//       break;
+//       }
+  
+//     }
+//     return scoreCake;
+//   };
+
+
+
+//   function logicalquest5()
+//     {
+//     var scoreCake = 0;
+//     var form = document.forms["form1"];
+//     var logical5 = form.elements["question20"];
+  
+//     for(var i=0; i<logical5.length; i++)
+//     {
+//       if(logical5[i].checked)
+//       {
+//       scoreCake = numericalValues[logical5[i].value];
+//       break;
+//       }
+  
+//     }
+//     return scoreCake;
+//   };
+
+
+//   // Bodily Score calculation
+
+// // function bodilyquest1()
+// //     {
+// //     var scoreCake = 0;
+// //     var form = document.forms["form1"];
+// //     var bodily1 = form.elements["question21"];
+  
+// //     for(var i=0; i<bodily1.length; i++)
+// //     {
+// //       if(bodily1[i].checked)
+// //       {
+// //       scoreCake = numericalValues[bodily1[i].value];
+// //       break;
+// //       }
+  
+// //     }
+// //     return scoreCake;
+// //   };
+
+
+// //   function bodilyquest2()
+// //     {
+// //     var scoreCake = 0;
+// //     var form = document.forms["form1"];
+// //     var bodily2 = form.elements["question22"];
+  
+// //     for(var i=0; i<bodily2.length; i++)
+// //     {
+// //       if(bodily2[i].checked)
+// //       {
+// //       scoreCake = numericalValues[bodily2[i].value];
+// //       break;
+// //       }
+// //     }
+// //     return scoreCake;
+// //   };
+
+
+// //   function bodilyquest3(){
+// //     var scoreCake = 0;
+// //     var form = document.forms["form1"];
+// //     var bodily3 = form.elements["question23"];
+  
+// //     for(var i=0; i<bodily3.length; i++)
+// //     {
+// //       if(bodily3[i].checked)
+// //       {
+// //       scoreCake = numericalValues[bodily3[i].value];
+// //       break;
+// //       }
+  
+// //     }
+// //     return scoreCake;
+// //   };
+
+
+
+// //   function bodilyquest4()
+// //     {
+// //     var scoreCake = 0;
+// //     var form = document.forms["form1"];
+// //     var bodily4 = form.elements["question24"];
+  
+// //     for(var i=0; i<bodily4.length; i++)
+// //     {
+// //       if(bodily4[i].checked)
+// //       {
+// //       scoreCake = numericalValues[bodily4[i].value];
+// //       break;
+// //       }
+  
+// //     }
+// //     return scoreCake;
+// //   };
+
+
+
+// //   function bodilyquest5()
+// //     {
+// //     var scoreCake = 0;
+// //     var form = document.forms["form1"];
+// //     var bodily5 = form.elements["question25"];
+  
+// //     for(var i=0; i<bodily5.length; i++)
+// //     {
+// //       if(bodily5[i].checked)
+// //       {
+// //       scoreCake = numericalValues[bodily5[i].value];
+// //       break;
+// //       }
+  
+// //     }
+// //     return scoreCake;
+// //   };
+
+
+
+
+
+
+
+
+
+
+
+  // function getTotal()
+  // {
+  //   // var arr[];
+  //   var totalScore = quest1() + quest2()+ quest3() + quest4()+ quest5();
+  //   var musically = musicquest1() +musicquest2()+ musicquest3()+ musicquest4()+ musicquest5();
+  //   var interpersonal = interquest1() +interquest2()+ interquest3()+ interquest4()+ interquest5();
+  //   var logical = logicalquest1() +logicalquest2()+ logicalquest3()+ logicalquest4()+ logicalquest5();
+
+  //   document.getElementById('result').innerHTML =totalScore;
+  //   document.getElementById('result1').innerHTML =musically;
+  //   document.getElementById('result2').innerHTML =interpersonal;
+  //   document.getElementById('result3').innerHTML =logical;
+
+  //   // var bodily = bodilyquest1() +bodilyquest2()+ bodilyquest3()+ bodilyquest4()+ bodilyquest5();
+  //   document.getElementById('result').innerHTML ="Your total score is: "+totalScore;
+  //   document.getElementById('result1').innerHTML ="Your total score is: "+musically;
+  //   document.getElementById('result2').innerHTML ="Your total score is: "+interpersonal;
+  //   document.getElementById('result3').innerHTML ="Your total score is: "+logical;
+  //   // document.getElementById('result4').innerHTML ="Your total score is: "+bodily;
+
+
+  //   // const arrLength = arr.unshift(totalScore,musically,interpersonal,logical);
+  //   // var arr=[totalScore,musically,interpersonal,logical];
+
+    
+    
+  //   var stringArray = new Array();
+  //   stringArray.push(totalScore);
+  //   stringArray.push(musically);
+  //   stringArray.push(interpersonal);
+  //   stringArray.push(logical);
+  //   stringArray.push(bodily);
+
+
+  //   document.getElementById('result4').innerHTML ="Your Array is: "+stringArray;
+  //   document.getElementById('result5').innerHTML ="Your Array is: "+typeof(stringArray);
+
+  //   const dict_value={totalScore,musically,interpersonal,logical}
+  //   const array_val=[totalScore,musically,interpersonal,logical]
+  //   const s= JSON.stringify(array_val);
+  //   console.log(s);
+  //   $.ajax({
+  //     url: "/test",
+  //     type: "POST",
+  //     contentType: "application/json",
+  //     data: JSON.stringify(s)
+  //   });
+
+
+  // }
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  // var stringArray = new Array();
+    // stringArray.push(totalScore);
+    // stringArray.push(musically);
+    // stringArray.push(interpersonal);
+    // stringArray.push(logical);
+
+
+    // document.getElementById('result4').innerHTML ="Your Array is: "+stringArray;
+    // document.getElementById('result5').innerHTML ="Your Array is: "+typeof(stringArray);
+
+    // $.ajax({
+    //   url: "/test",
+    //   type: "POST",
+    //   contentType: "application/json",
+    //   data: JSON.stringify(stringArray)
+    // });
+
+
+
+
+
+
+
+
+  
+  
+
+  //document.getElementById('calculate').onclick=getTotal;
+
+  // document.getElementById('calculate').onclick=getTotal;
+
+  //document.getElementById('calculate').onclick=getTotal;
+  // document.getElementById('calculate').onclick=getTotal;
+
+  </script> -->
+
+
+<!-- <script>
+  function check(){
+
+    var lin=0;
+    var lin2=0;
+    var lin3=0;
+    var lin4=0;
+    var lin5=0;
+    var p1=0  //variable for Lingustic traits.
+    // var num=new array();
+    // num["1"]= 1;
+    // num["2"]= 2;
+    // num["3"]= 3;
+    // num["4"]= 4;
+
+    var q1 = document.form1.question1.value;
+
+    if(q1==1){
+        lin=lin+1;
+    }
+    else if(q1==2){
+        lin=lin+2;
+    }
+    else if(q1==3){
+        lin=lin+3;
+    }
+    else if(q1==4){
+        lin=lin+4;
+    }
+    
+    var q2 = document.form1.question2.value;
+
+    if(q2==1){
+        lin2=lin2+1;
+    }
+    else if(q2==2){
+        lin2=lin2+2;
+    }
+    else if(q2==3){
+        lin2=lin2+3;
+    }
+    else if(q2==4){
+        lin2=lin2+4;
+    }
+
+    var q3 = document.form1.question3.value;
+
+    if(q3==1){
+        lin3=lin3+1;
+    }
+    else if(q3==2){
+        lin3=lin3+2;
+    }
+    else if(q3==3){
+        lin3=lin3+3;
+    }
+    else if(q3==4){
+        lin3=lin3+4;
+    }
+
+    var q4 = document.form1.question4.value;
+
+    if(q4==1){
+        lin4=lin4+1;
+    }
+    else if(q4==2){
+        lin4=lin4+2;
+    }
+    else if(q4==3){
+        lin4=lin4+3;
+    }
+    else if(q4==4){
+        lin4=lin4+4;
+    }
+
+    var q5 = document.form1.question5.value;
+
+    if(q5==1){
+        lin5=lin5+1;
+    }
+    else if(q5==2){
+        lin5=lin5+2;
+    }
+    else if(q5==3){
+        lin5=lin5+3;
+    }
+    else if(q5==4){
+        lin5=lin5+4;
+    }
+
+    p1=int(q1+q2+q3+q4+q5);
+    
+        
+    document.write(lin);
+    document.write(lin2);
+    document.write(lin3);
+    document.write(lin4);
+    document.write(lin5);
+    document.write("\n");
+    document.write(p1);
+  }
+</script> -->
+
+</body>
+</html>

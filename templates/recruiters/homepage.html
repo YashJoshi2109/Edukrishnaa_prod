@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>EduKrishnaa - Home</title>
+  <meta content="Career Guidance System" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../static/assets/img/logo_without_name.png" rel="icon">
+  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/assets/css/homepage.css" rel="stylesheet">
+  <!-- <link href="../static/assets/css/recruiter.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="/static/assets/css/chatbot/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/static/assets/css/chatbot/style1.css">
+  <link rel="stylesheet" type="text/css" href="/static/assets/css/chatbot/responsive.css">
+
+  <!-- ChatBot -->
+  <link rel="stylesheet" type="text/css" href="/static/assets/css/chatbot/jquery.convform.css">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+  <script src="/static/assets/js/jquery-3.1.1.min.js"></script>
+  <script src="/static/assets/js/jquery.convform.js"></script>
+  <script src="/static/assets/js/custom.js"></script>
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="/homepage" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="../static/assets/img/White_font-removebg-preview.png" alt="logo">
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <!-- ======= Breadcrumbs ======= -->
+
+        <ul>
+          <li><a href="/myhome" class="active">Home</a></li>
+          <!-- <li><a href="/start">Start UP</a></li>  -->
+          <li><a href="/404">About</a></li>
+          <li><a href="/404">Contact Us</a></li>
+          {% if session['user'] == Flase: %}
+          <li><a href="/login">Login</a></li>
+          {% else: %}
+          <!-- <li><a href="/user_profile">{{session['user']}}</a></li> -->
+          <li class="dropdown"><a href=""><span>{{session['user']}}</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="/404">Profile</a></li>
+              <li><a href="/logout">Logout</a></li>
+            </ul>
+          </li>
+
+          {% endif %}
+
+
+
+          <!-- <div class="col-lg-2 col-md-3">
+              <a href="/login">
+                <button type="submit" class="footer_button ">Login  </button>
+              </a>
+            </l1>
+              <li><a href="/registration">
+                <button type="submit" class="footer_button">Signup</button>
+              </a>
+              </li>
+            </div>  -->
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+
+  </header><!-- End Header -->
+  <main id="main">
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="get-started" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <br><br>
+          <h2>Welcome to Edukrishnaa</h2>
+          <p>EduKrishnaa provides Recruiters significant interface to reach professionals with right skills and
+            experience. Our Services to discover potential professionals at one place.</p>
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100" title="Add a Job Post"
+            data-toggle="tooltip">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <h3 data-aos="fade-up" data-aos-delay="100">JOB POSTING</h3>
+              <p>2 Minutes to Post - Quick and easy to post job posting with highly optimised job posting form.</p>
+              <a href="#jobpost" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" title="Look for specific Personality"
+            data-toggle="tooltip">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>LOOK FOR SPECIFIC PERSONALITY.</h3>
+              <p>Search for candidates who have specific personality traits like Interpersonal, Spacial, Linguistic,
+                Logistic and more.</p>
+              <a href="#skillful" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300" title="Check Users Profile"
+            data-toggle="tooltip">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="fa-solid fa-users-between-lines"></i>
+              </div>
+              <h3>CANDIDATE PROFILE</h3>
+              <p>Check each candidate's profile who has given the test in our system.</p>
+              <a href="#candidate" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+        </div>
+      </div>
+    </section><!-- End Services Section -->
+
+
+
+
+    <!-- ======= job posting Section ======= -->
+    <section id="jobpost" class="get-started explore-section-bg" data-aos="fade-up">
+      <div class="container">
+
+        <div class="row justify-content-between gy-4">
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="fade-up" styles="color=">
+            <div class="content" data-aos="fade-up">
+              <!-- <h3>Explore Career Paths</h3>
+              <p>Career Exploration is simply learning about various occupations and their "fit" with your unique career preferences. As EduKrishnaa provides vast range of job domain which can lead to future successs.</p> -->
+              <h1 class="form-title">Add Job Post</h1>
+              <form method="POST" action="/addjobpost">
+                <input type="text" name="co_name" placeholder="Company Name">
+                <input type="text" name="designation" placeholder="Designation">
+                <div class="beside">
+                  <input type="text" name="job_type" placeholder="Job Type">
+                  <input type="text" name="job_link" placeholder="Company Website link">
+                </div>
+                <div class="beside">
+                  <input type="textarea" name="location" placeholder="Job Location"><br>
+                  <input type="text" name="jobid" placeholder="Job ID"><br>
+                </div>
+                <div class="beside">
+                  <input type="text" name="department" placeholder="Department">
+                  <!-- <input type="text" name="req_skills" placeholder="Skills Required"> -->
+                  <select type=dropdown id="req_skills" name="req_skills">
+                    <option>Select Domain</option>
+                    <option value="Cybersecurity">Cybersecurity</option>
+                    <option value="AI- ML- Data Science">AI- ML- Data Science</option>
+                    <option value="Web Technology">Web Technology</option>
+                    <option value="Network and Infrastructure Management">Network and Infrastructure Management</option>
+                    <option value="Project Management">Project Management</option>
+                    <option value="IOT">IOT</option>
+                  </select>
+
+                </div>
+                <input type="text" name="job_description" placeholder="Job Description - min 100 words">
+                <button data-aos="fade">Submit</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-5" data-aos="fade">
+            <img src="static\assets\img\jobposting.png" />
+          </div>
+          <!-- End Quote Form -->
+        </div>
+      </div>
+    </section>
+    <!-- End job posting Section -->
+
+    <!-- ======= skillful professionals Section ======= -->
+    <section id="skillful" class="get-started section-bg">
+      <div class="container">
+
+        <div class="row justify-content-between gy-4">
+          <div class="col-md-6 col-lg-6" data-aos="fade">
+            <img src="../static/assets/img/home/career-counselling-sessions.jpg" />
+          </div>
+
+          <div class="col-md-6 col-lg-5 d-flex align-items-center" data-aos="fade-up">
+            <div class="content">
+              <h3>What Personalities you are looking for?</h3>
+              <form action="" class="search-bar">
+                <div class="box" title="Click to Select" data-toggle="tooltip">
+                  <!-- <input type="search" list="perso" placeholder="Search here" name="q" autocomplete="off" /> -->
+                  <select name="cars" id="cars" placeholder="select">
+                    <option value="volvo">Linguistic Personality</option>
+                    <option value="saab">Logical Personality</option>
+                    <option value="opel">Spatial Personality</option>
+                    <option value="audi">Intrapersonal Personality</option>
+                    <option value="audi">Interpersonal Personality</option>
+                    <option value="audi">Bodily Personality</option>
+                    <option value="audi">Musically Personality</option>
+                  </select>
+                </div>
+                <button type="submit" title="Search" data-toggle="tooltip"><i class="fa fa-search"></i></button>
+                <!-- <datalist id="perso" style="background-color: #fff">
+                    <option value="Interpersonal" />
+                    <option value="Spacial" />
+                    <option value="Intrapersonal" />
+                    <option value="Naturialist" />
+                    <option value="Logical" />
+                    <option value="Linguistic" />
+                    <option value="Musical" />
+                    <option value="Bodily" />
+                  </datalist> -->
+
+              </form>
+
+
+            </div>
+          </div>
+          <!-- End Quote Form -->
+        </div>
+      </div>
+    </section>
+    <!-- End Get Started Section -->
+
+    <!-- ======= candidate display Section ======= -->
+    <section id="candidate" class="tableinfo table-section-bg" data-aos="fade-up">
+      <div class="table-section-head" data-aos="fade-up">
+        <center>
+          <h2>Candidate's Data</h2>
+        </center>
+      </div>
+      <div class="table-responsive" data-aos="fade-up">
+        <table class="table table-hover table-nowrap">
+          <thead class="thead-light">
+            <tr data-aos="fade-up">
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Purshing/Completed</th>
+              <th scope="col">Phone Number</th>
+              <th>
+              </th>
+            </tr>
+          </thead>
+          <tbody data-aos="fade-up">
+            {% for getdata in all_user %}
+            <tr>
+              <td>
+                <img alt="..." src="/../static/assets/img/{{getdata.img}}" class="avatar avatar-sm rounded-circle me-2">
+                <i><b>{{ getdata.fname }} {{ getdata.lname }}</b></i>
+              </td>
+              <td>
+                {{ getdata.email }}
+              </td>
+              <td>
+                {{ getdata.quali }}
+
+              </td>
+              <td>
+                {{ getdata.phone }}
+              </td>
+
+              <td class="text-end">
+                <a href="recruiter/user/{{ getdata.id}}" class="btn btn-sm btn-neutral">View</a>
+                <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover" data-aos="fade-up">
+                </button>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <!-- End Get Started Section -->
+
+
+    <!-- Start of FAQ section -->
+    <div class="faq_area section_padding_130" id="faq" data-aos="fade">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-8 col-lg-6">
+            <!-- Section Heading-->
+            <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s"
+              style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+              <h3><span>Frequently </span> Asked Questions</h3>
+              <br>
+              <div class="line"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center " data-aos="fade">
+          <!-- FAQ Area-->
+          <div class="col-12 col-sm-10 col-lg-8">
+            <div class="accordion faq-accordian" id="faqAccordion">
+              <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s"
+                style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;" title="Click to expand!"
+                data-toggle="tooltip">
+                <div class="card-header" id="headingOne" data-aos="fade-up">
+                  <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                    aria-controls="collapseOne">What is the objective of 'EduKrishnaa'?<span
+                      class="lni-chevron-up"></span></h6>
+                </div>
+                <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                  <div class="card-body" data-aos="fade-up">
+                    <p>EduKrishnaa is a platform wherein, through highly sophisticated psychometric mapping, we help the
+                      student in choosing his/her courses / career which are based on his/her Aptitude, Personality and
+                      Interests. Research has shown that correctly choosing one's career goes a long way in ensuring a
+                      more successful and satisfactory work-life. The platform uses behavioral sciences and it's
+                      techniques in correctly finding out the Aptitude, Personality and Interests of the student.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card border-0 wow fadeInUp" data-wow-delay="0.3s"
+                style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                <div class="card-header" id="headingTwo" data-aos="fade-up">
+                  <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+                    aria-controls="collapseTwo">How are skills different than aptitudes?<span
+                      class="lni-chevron-up"></span></h6>
+                </div>
+                <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                  <div class="card-body" data-aos="fade-up">
+                    <p>Aptitudes are inborn; Skills are learned. We are born with Aptitudes and Abilities that don't
+                      change with practice. For example, somebody has an Aptitude with numbers and other may have in
+                      visualizing in Three Dimensions.
+
+                      We might as well do what we're best at; why bother with struggling at things that don't fit? A
+                      good rule of thumb, if you're struggling to learn, bored or not excelling in your work, chances
+                      are that you’ve landed in a stream or on a career track that doesn't suit your best talents and
+                      abilities.
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s"
+                style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                <div class="card-header" id="headingThree" data-aos="fade-up">
+                  <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
+                    aria-controls="collapseThree">Contact form isn't working?<span class="lni-chevron-up"></span></h6>
+                </div>
+                <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                  <div class="card-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quidem facere deserunt sint
+                      animi sapiente vitae suscipit.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Support Button-->
+            <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp"
+              data-aos="fade" data-wow-delay="0.5s"
+              style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+              <i class="lni-emoji-sad"></i>
+              <p class="mb-0 px-2">Can't find your answers?</p>
+              <a href="#"> Contact us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of FAQ Section -->
+
+  </main><!-- End #main -->
+  <!-- ======= Footer ======= -->
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-content position-relative">
+
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>EduKrishnaa<span>.</span></h3>
+              <p>
+                Navi Mumbai<br><br>
+                <strong>Email:</strong> info@something.com<br>
+              </p>
+              <div class="social-links d-flex mt-3">
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div><!-- End footer info column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Class 10</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>CLass 11-12</h4>
+            <ul>
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Product Management</a></li>
+              <li><a href="#">Marketing</a></li>
+              <li><a href="#">Graphic Design</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>UG/PG</h4>
+            <ul>
+              <li><a href="#">Molestiae accusamus iure</a></li>
+              <li><a href="#">Excepturi dignissimos</a></li>
+              <li><a href="#">Suscipit distinctio</a></li>
+              <li><a href="#">Dilecta</a></li>
+              <li><a href="#">Sit quas consectetur</a></li>
+            </ul>
+          </div> <!-- End footer links column-->
+          <!-- <div class="col-lg-2 col-md-3">
+              <a href="/login">
+                <button type="submit" class="footer_button ">Login  </button>
+              </a>
+              <br>
+              <br>
+              <a href="/registration">
+                <button type="submit" class="footer_button">Signup</button>
+              </a>
+            </div>     End footer links column -->
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-legal text-center position-relative">
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>EduKrishnaa </span></strong>. All Rights Reserved
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets/vendor/aos/aos.js"></script>
+  <script src="../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/assets/js/main.js"></script>
+
+  <!-- chatbot -->
+  <script type="text/javascript">
+    portfolioList = document.querySelectorAll('.portfolio-box');
+    portfolioList.forEach(function (portfolioPic) {
+      portfolioPic.addEventListener('click', function () {
+        bg = this.style.backgroundImage;
+        document.getElementById('port_pop_pic_bg').classList.add("active")
+        document.getElementById('port_pop_pic').style.backgroundImage = bg
+        document.getElementById('port_pop_pic').classList.add("active")
+      });
+    })
+    document.getElementById('port_pop_pic_bg').addEventListener('click', function () {
+      document.getElementById('port_pop_pic_bg').classList.remove("active")
+      document.getElementById('port_pop_pic').classList.remove("active")
+    })
+  </script>
+
+
+</body>
+
+</html>
