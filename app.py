@@ -299,15 +299,6 @@ def admin():
     #         return redirect(url_for("user_profile"))
 
 
-@ app.route('/user')
-def user():
-    if "user" in session:
-        user = session['user']
-        # return f"<h1>{user}</h1>"
-    else:
-        return redirect(url_for("login"))
-
-
 @ app.route('/googlesign')
 def googlesign():
     return render_template("/log_reg_pro/googlesignup.html")
