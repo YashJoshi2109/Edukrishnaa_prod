@@ -1209,25 +1209,17 @@ def addpost():
     # check email db
     if User.query.filter_by(email=email).first() == None:
         pass
-    else:
-        temp_email = User.query.filter_by(email=email).first()
-        # calling fullmatch function by passing pattern and n
-        phoneverify = re.fullmatch('[6-9][0-9]{9}', phone)
-        print("verify phone - ", phoneverify)
-        # store_email=temp_email.email
+    elif User.query.filter_by(email=email).first() != None:
+        flash("Email already exsists.")
+        # return redirect(url_for("/"))
+        return render_template("/log_reg_pro/registration.html")
+    phoneverify = re.fullmatch('[6-9][0-9]{9}', phone)
+    # print("verify phone - ", phoneverify)
 
-        # if temp_email is None:
-        #     temp_email=""
-
-        if email == temp_email.email:
-            flash("Email already exsists.")
-            # return redirect(url_for("/"))
-            return render_template("/log_reg_pro/registration.html")
-
-        if phoneverify == None:
-            flash("Enter a valid phone number.")
-            # return redirect(url_for("/"))
-            return render_template("/log_reg_pro/registration.html")
+    if phoneverify == None:
+        flash("Enter a valid phone number.")
+        # return redirect(url_for("/"))
+        return render_template("/log_reg_pro/registration.html")
 
     # else:
     #     print('Not a valid number')

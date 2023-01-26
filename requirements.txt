@@ -5,8 +5,9 @@ Flask_SQLAlchemy==2.5.1
 numpy==1.23.3
 pandas==1.4.1
 pdfminer==20191125
+phonenumbers==8.13.4
 requests==2.28.1
-scikit_learn==1.2.0
-selenium==4.7.2
+scikit_learn==1.2.1
+selenium==4.8.0
 spacy==3.5.0
 SQLAlchemy==1.4.32
