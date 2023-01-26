@@ -30,6 +30,16 @@
 
   <!-- Template Main CSS File -->
   <link href="../static/assets/css/main.css" rel="stylesheet">
+  <link href="../static/assets/css/feedback.css" rel="stylesheet">
+
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
@@ -74,20 +84,36 @@
           <li><a href="/start">Start UP</a></li>
           <li><a href="/aboutus">About</a></li>
           <li><a href="/404">Contact Us</a></li>
-          {% if session['user'] == Flase: %}
+
+          {% if session['user'] == Flase and session['recruiter']==Flase: %}
           <li><a href="/login">Login</a></li>
           {% else: %}
+          <!-- <li style="color: aliceblue;">{{session['user']}}</li> -->
           <!-- <li><a href="/user_profile">{{session['user']}}</a></li> -->
           <li class="dropdown"><a href=""><span>{{session['user']}}</span> <i
                 class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
+              {% if session['recruiter'] %}
+              <li><a href="/homepage">Homepage</a></li>
+              {% else %}
               <li><a href="/user_profile">Profile</a></li>
+              {% endif %}
               <li><a href="/logout">Logout</a></li>
             </ul>
           </li>
-
           {% endif %}
 
+          <!-- {% if session['recruiter'] == Flase: %}
+          {% else: %}
+       <li><a href="/user_profile">{{session['user']}}</a></li> -->
+          <!-- <li class="dropdown"><a href=""><span>{{session['recruiter']}}</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="/homepage">homepage</a></li>
+              <li><a href="/logout">Logout</a></li>
+            </ul>
+          </li> -->
+          <!-- {% endif %} -->
 
 
           <!-- <div class="col-lg-2 col-md-3">
@@ -382,13 +408,49 @@
         
         
       <div class=" section-header">
-        <h2>Recent Blog Posts</h2>
-        <p>Explore the blogs of experts across the globe.</p>
+        <h2>Customer Testimonials</h2>
+        <p>Explore what people review about us.</p>
       </div>
 
-      <div class="row gy-5">
+      {% if get_feed %}
 
-        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+
+
+      <div class="row gy-5">
+        <div class="col-md-12">
+          <div id="testimonial-slider" class="owl-carousel">
+            {% for feed in get_feed %}
+            <div class="testimonial">
+              <div class="pic">
+                <img src="../static/assets/img/{{feed.f_profile_photo}}">
+              </div>
+              <div>
+                <h5>{{feed.f_first_name}} {{feed.f_last_name}}</h5>
+              </div>
+              <div class="feed_desc">
+
+                {{feed.feedback}}
+
+              </div>
+              <!-- <h6>{{ feed.f_type }}</h6> -->
+              <small class="post">{{ feed.f_date }} - {{ feed.f_time }}</small>
+            </div>
+            {% endfor %}
+
+
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <h3 style="text-align-last: center;">No Testimonials availabe for now!</h3>
+      <h1 style="text-align-last: center;">No Feedback available for now!</h1>
+      {% endif %}
+
+
+
+
+
+      <!-- <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
           <div class="post-item position-relative h-100">
 
             <div class="post-img position-relative overflow-hidden">
@@ -418,9 +480,9 @@
             </div>
 
           </div>
-        </div><!-- End post item -->
+        </div>End post item -->
 
-        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+      <!-- <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
           <div class="post-item position-relative h-100">
 
             <div class="post-img position-relative overflow-hidden">
@@ -450,9 +512,9 @@
             </div>
 
           </div>
-        </div><!-- End post item -->
+        </div>  -->
 
-        <div class="col-xl-4 col-md-6">
+      <!-- <div class="col-xl-4 col-md-6">
           <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="300">
 
             <div class="post-img position-relative overflow-hidden">
@@ -482,7 +544,7 @@
             </div>
 
           </div>
-        </div><!-- End post item -->
+        </div>  -->
 
       </div>
 
@@ -649,7 +711,25 @@
     })
   </script>
 
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
 
+  <script>
+    $(document).ready(function () {
+      $("#testimonial-slider").owlCarousel({
+        items: 2,
+        itemsDesktop: [1000, 2],
+        itemsDesktopSmall: [990, 2],
+        itemsTablet: [768, 1],
+        pagination: true,
+        navigation: false,
+        navigationText: ["", ""],
+        slideSpeed: 1000,
+        autoPlay: true
+      });
+    });
+  </script>
 </body>
 
 </html>

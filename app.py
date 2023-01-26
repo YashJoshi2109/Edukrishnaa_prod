@@ -1,5 +1,6 @@
 # from crypt import methods
 import csv
+import re
 from glob import glob
 import pandas as pd
 from sklearn.svm import SVC
@@ -16,7 +17,7 @@ from BE_jobresult import predict_jobrole_BE
 from cryptography.fernet import Fernet
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 from traceback import print_tb
 from sys import dont_write_bytecode
 import sqlite3
@@ -28,6 +29,10 @@ import random
 from doctest import OutputChecker
 from distutils.command.upload import upload
 from datetime import date
+from sqlalchemy.exc import SQLAlchemyError
+# import phonenumbers
+
+
 # import easygui
 # from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from getUserData import *
@@ -172,6 +177,18 @@ class JobPost(db.Model):
     job_desc2 = db.Column(db.String(3000))
 
 
+class Feedback(db.Model):
+    f_id = db.Column(db.Integer, primary_key=True)
+    f_userid = db.Column(db.String(20))
+    f_profile_photo = db.Column(db.String(40))
+    f_first_name = db.Column(db.String(40))
+    f_last_name = db.Column(db.String(40))
+    feedback = db.Column(db.String(3000))
+    f_date = db.Column(db.String(100))
+    f_time = db.Column(db.String(100))
+    f_type = db.Column(db.String(50))
+
+
 @ app.route('/sample', methods=['POST'])
 def mlkmd1():
     log1 = request.form['lin11']
@@ -209,7 +226,7 @@ def chatbot():
 
 @ app.route('/homepage', methods=['GET', 'POST'])
 def homepage():
-    user = session['user']
+    user = session['recruiter']
     getinfo = User.query.first()
     rec_user_data = User.query.all()
     recruiter = Recruiter.query.filter_by(co_email=user).first()
@@ -218,7 +235,7 @@ def homepage():
 
 @ app.route('/recruiter', methods=['GET', 'POST'])
 def recruiter():
-    user = session['user']
+    user = session['recruiter']
     getinfo = User.query.first()
     rec_user_data = User.query.all()
     recruiter = Recruiter.query.filter_by(co_email=user).first()
@@ -242,18 +259,16 @@ def login():
     if request.method == "POST":
         user = request.form["email"]
         password = request.form["pass"]
-        otp = request.form["otp"]
         # randomNumber = random.randint(1000, 9999)
         # print(randomNumber)
 
         username = User.query.filter_by(uname=user).first()
         # print("This is username from database ***************************************", username.uname)
-        if user == username.uname and password == username.password and otp == username.otp:
+        if user == username.uname and password == username.password:
             session["user"] = user
             return redirect(url_for("myhome"))
-        # else:
-        #     easygui.msgbox(
-        #         "YOU HAVE ENTER WRONG USERNAME OR PASSWORD!", title="LOGIN ERROR")
+        else:
+            flash("You have entered wrong username or password.")
 
     else:
         if "user" in session:
@@ -270,7 +285,7 @@ def admin():
         username = Recruiter.query.filter_by(co_email=user).first()
         # print("This is username from database ***************************************", username.uname)
         if user == username.co_email and password == username.recruite_password:
-            session["user"] = user
+            session["recruiter"] = user
             return redirect(url_for("homepage"))
         # else:
 
@@ -299,6 +314,15 @@ def admin():
     #         return redirect(url_for("user_profile"))
 
 
+@ app.route('/user')
+def user():
+    if "user" in session:
+        user = session['user']
+        return f"<h1>{user}</h1>"
+    else:
+        return redirect(url_for("login"))
+
+
 @ app.route('/googlesign')
 def googlesign():
     return render_template("/log_reg_pro/googlesignup.html")
@@ -307,6 +331,7 @@ def googlesign():
 @ app.route('/logout')
 def logout():
     session.pop("user", None)
+    session.pop("recruiter", None)
     return redirect(url_for("login"))
 
 
@@ -346,14 +371,18 @@ def myhome():
     # return redirect(url_for("myhome"))
     # username1 = session['user']
     # getinfo = User.query.filter_by(uname=username1).first()
-    return render_template("index.html")
+    get_feed = Feedback.query.all()
+    return render_template("index.html",  get_feed=get_feed)
 
     # return redirect(url_for("myhome"), username.uname)
 
 
 @ app.route('/404', methods=['GET', 'POST'])
 def page404():
-    return render_template("404page.html")
+    user = session['user']
+    getinfo = User.query.first()
+    rec_user_data = User.query.all()
+    return render_template("404page.html", rec_user_data=rec_user_data, getinfo=getinfo)
 
 
 @ app.route('/aboutus', methods=['GET', 'POST'])
@@ -396,9 +425,13 @@ def take_test():
 # 10th students routes
 @ app.route('/taketest-10', methods=['GET', 'POST'])
 def take_test_10():
-    username1 = session['user']
-    getinfo = User.query.filter_by(uname=username1).first()
-    return render_template("/tenth/take_test.html", getinfo=getinfo)
+
+    if "user" in session:
+        username1 = session['user']
+        getinfo = User.query.filter_by(uname=username1).first()
+        return render_template("/tenth/take_test.html", getinfo=getinfo)
+    else:
+        return render_template("/log_reg_pro/login.html")
 
 
 @ app.route('/test2-10', methods=['GET', 'POST'])
@@ -539,6 +572,59 @@ def role_page(roleid):
     # return render_template("/tenth/Astronomer_page.html", getRoles=getRoles, com=int_company, tit=int_title, loc=int_loc, link=int_link, getinfo=getinfo)
 
 
+# @app.route('/results_10/Dancer', methods=['GET', 'POST'])
+# def dancer():
+#     username1 = session['user']
+#     # Scrap_Internshala("https://internshala.com", roleid, "mumbai")
+#     return render_template("/tenth/Astronomer_page.html")
+
+
+@ app.route('/add_feed', methods=['GET', 'POST'])
+def add_feedback():
+    username1 = session['user']
+    getinfo = User.query.filter_by(uname=username1).first()
+
+    review_text = request.form['review_text']
+    # Textual month, day and year
+    today = date.today()
+    current_date = today.strftime("%B %d, %Y")
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    feed_type = "Regular User"
+
+    adddata = Feedback(f_userid=getinfo.id, feedback=review_text, f_date=current_date,
+                       f_time=current_time, f_type=feed_type)
+
+    db.session.add(adddata)
+
+    db.session.commit()
+
+    return redirect("/")
+
+
+@ app.route('/add_recruiter_feed', methods=['GET', 'POST'])
+def add_recruiter_feedback():
+    username1 = session['recruiter']
+    getinfo = Recruiter.query.filter_by(co_email=username1).first()
+
+    review_text = request.form['review_text']
+    # Textual month, day and year
+    today = date.today()
+    current_date = today.strftime("%B %d, %Y")
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    feed_type = "Recruiter"
+
+    adddata = Feedback(f_userid=getinfo.req_id, f_profile_photo=getinfo.co_photo_id, f_first_name=getinfo.emp_name, f_last_name=getinfo.co_name, feedback=review_text, f_date=current_date,
+                       f_time=current_time, f_type=feed_type)
+
+    db.session.add(adddata)
+
+    db.session.commit()
+
+    return redirect("/homepage")
+
+
 @ app.route('/Astronomer_page', methods=['GET', 'POST'])
 def Astronomer_page():
     return render_template("/tenth/Astronomer_page.html")
@@ -552,7 +638,10 @@ def Music_Teacher_page():
 # 12th students routes
 @ app.route('/taketest-12', methods=['GET', 'POST'])
 def take_test_12():
-    return render_template("/twelve/take_test.html")
+    if "user" in session:
+        return render_template("/twelve/take_test.html")
+    else:
+        return render_template("/log_reg_pro/login.html")
 
 
 @ app.route('/test1-12', methods=['GET', 'POST'])
@@ -578,7 +667,10 @@ def results_12():
 # UG PG students routes
 @ app.route('/taketest-up', methods=['GET', 'POST'])
 def take_test_up():
-    return render_template("/ug-pg/take_test.html")
+    if user in session:
+        return render_template("/ug-pg/take_test.html")
+    else:
+        return render_template("/log_reg_pro/login.html")
 
 
 @ app.route('/test1-se', methods=['GET', 'POST'])
@@ -853,7 +945,8 @@ def recommend1():
 
 @ app.route('/')
 def home():
-    return render_template("index.html")
+    get_feed = Feedback.query.all()
+    return render_template("index.html", get_feed=get_feed)
 
 
 @ app.route('/resume_1')
@@ -1101,13 +1194,43 @@ def addpost():
     # e_city = city.encode()
     uname = request.form['uname']
     # e_uname = uname.encode()
-    password1 = request.form['password1']
-    password2 = request.form['password2']
+    # password1 = request.form['password1']
+    # password2 = request.form['password2']
     # pass1 = password1.encode()
     gender = request.form['gender']
     account = request.form['account']
     income = request.form['income']
     roles = request.form['roles']
+
+    # my_string_number = "+40021234567"
+    # my_number = phonenumbers.parse(my_string_number)
+    # print(phonenumbers.is_possible_number(my_number))
+
+    # check email db
+    if User.query.filter_by(email=email).first() == None:
+        pass
+    else:
+        temp_email = User.query.filter_by(email=email).first()
+        # calling fullmatch function by passing pattern and n
+        phoneverify = re.fullmatch('[6-9][0-9]{9}', phone)
+        print("verify phone - ", phoneverify)
+        # store_email=temp_email.email
+
+        # if temp_email is None:
+        #     temp_email=""
+
+        if email == temp_email.email:
+            flash("Email already exsists.")
+            # return redirect(url_for("/"))
+            return render_template("/log_reg_pro/registration.html")
+
+        if phoneverify == None:
+            flash("Enter a valid phone number.")
+            # return redirect(url_for("/"))
+            return render_template("/log_reg_pro/registration.html")
+
+    # else:
+    #     print('Not a valid number')
 
     # key = Fernet.generate_key()  # Store this key or get if you already have it
     # f = Fernet(key)
@@ -1123,23 +1246,79 @@ def addpost():
     server = smtplib.SMTP('smtp.gmail.com', 587)
     otp = str(random.randint(1000, 9999))
     print(otp, type(otp))
+
+    finalotp = "<h1>You are going to be registered in Edukrishna<h1>, Please find the below OTP and complete the verification. YOUR OTP IS " + \
+        otp+". Do not share this OTP with anyone."
 # randomnew = "OTP ", randomNumber
 
     server.starttls()
     server.login('pranavjore@gmail.com', 'bgxvrcjsvbiojylu')
     server.sendmail('yashjosh7486@gmail.com', email,
-                    otp)
+                    finalotp)
     print("*********Mail sent !*********")
 
     adddata = User(fname=name, lname=lname, email=email, dob=date_time_str, age=age,
-                   phone=phone, state=state, city=city, uname=uname, password=password1, re_password=password2, gender=gender, quali=account, fam_income=income, roles=roles,
+                   phone=phone, state=state, city=city, uname=uname, gender=gender, quali=account, fam_income=income, roles=roles,
                    img=None, address=None, clg_name=None, graduation_year=None, course=None, certificate=None, otp=otp)
 
     db.session.add(adddata)
 
     db.session.commit()
 
-    return redirect(url_for("myhome"))
+    session["user1"] = uname
+
+    return render_template("/log_reg_pro/OtpVerify.html")
+
+
+@ app.route('/verifyotp', methods=['POST'])
+def verifyotp():
+    checkotp = request.form['verify']
+    pass1 = request.form['password1']
+    pass2 = request.form['password2']
+    flag = 0
+    username1 = session['user1']
+    getinfo = User.query.filter_by(uname=username1).first()
+
+    while True:
+        if (len(pass1) <= 8):
+            flag = -1
+            break
+        elif not re.search("[a-z]", pass1):
+            flag = -1
+            break
+        elif not re.search("[A-Z]", pass1):
+            flag = -1
+            break
+        elif not re.search("[0-9]", pass1):
+            flag = -1
+            break
+        elif not re.search("[_@$]", pass1):
+            flag = -1
+            break
+        elif re.search("\s", pass1):
+            flag = -1
+            break
+
+    if flag == -1:
+        flash("Please enter a valid password or password does not match!")
+        return render_template("/log_reg_pro/OtpVerify.html")
+
+    if pass1 == pass2:
+        if checkotp == getinfo.otp and pass1 == pass2:
+            getinfo.password = pass1
+            getinfo.re_password = pass2
+            db.session.commit()
+            session.pop('user1', None)
+            return redirect(url_for("login"))
+        else:
+            db.session.delete(getinfo)
+            # commit (or flush)
+            db.session.commit()
+            session.pop('user1', None)
+            return redirect(url_for("register"))
+    else:
+        flash("Password Do Not Match! Try Again")
+        return render_template("/log_reg_pro/OtpVerify.html")
 
 
 # Calcuating Age with help of DOB
@@ -1274,4 +1453,4 @@ def server_error():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3000)
+    app.run(debug=True)

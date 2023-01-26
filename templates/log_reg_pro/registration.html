@@ -198,6 +198,7 @@
             <label id="icon" for="phone"><i class="icon-phone"></i></label>
             <input type="text" name="phone" id="phone" placeholder="Phone Number" />
 
+
             <label id="icon" for="state"><i class="icon-home"></i></label>
             <select type=dropdown id="inputState" name="state">
                 <option value="SelectState">Select State</option>
@@ -295,14 +296,6 @@
             <label id="icon" for="uname"><i class="icon-refresh icon-spin"></i></label>
             <input type="text" name="uname" id="uname" placeholder="Username" />
 
-            <label id="icon" for="password1"><i class="icon-key"></i></label>
-            <input type="password" name="password1" id="password1" placeholder="Password" />
-
-            <label id="icon" for="password2"><i class="icon-key"></i></label>
-            <input type="password" name="password2" id="password2" placeholder="Re-Type Password" />
-            <span id="StrengthDisp" class="badge displayBadge">Weak</span>
-
-
             <hr>
             <div class="gender1">
                 <!-- <div><h3>Enter Gender</h3></div> -->
@@ -349,27 +342,14 @@
                 <input type="radio" value="Admin" id="role2" name="roles" />
                 <label for="role2" class="radio">Login as an Admin</label>
             </div>
-
-
-
             <hr>
-            <p1>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p1>
-            <input type="submit" class="button"></input>
-        </form>
-    </div>
-
-    <div class="card">
-        <div class="inside">
-            <p>Merry Christmas</p>
-        </div>
-        <div class="outside">
-            <div class="front">
-                <div class="belt"></div>
-                <div class="mouth"></div>
-                <div class="beard"></div>
+            <div style="color: #BE0F04; text-align: center;">
+                {% for email_flash in get_flashed_messages() %}
+                <h4>{{ email_flash }}</h4>
+                {% endfor %}
             </div>
-            <div class="back"></div>
-        </div>
+            <center><input type="submit" class="button"></input></center>
+        </form>
     </div>
 
 
