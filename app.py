@@ -1,4 +1,3 @@
-# from crypt import methods
 import csv
 import re
 from glob import glob
@@ -29,10 +28,6 @@ import random
 from doctest import OutputChecker
 from distutils.command.upload import upload
 from datetime import date
-from sqlalchemy.exc import SQLAlchemyError
-# import phonenumbers
-
-
 # import easygui
 # from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from getUserData import *
@@ -55,7 +50,7 @@ CLIENT_ID = '411974903638-tuco5kc4h5pql62sshrjs7bqoaimn61k.apps.googleuserconten
 # Read from a file or environmental variable in a real app
 CLIENT_SECRET = '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'
 SCOPE = 'https://www.googleapis.com/auth/drive.metadata.readonly'
-REDIRECT_URI = 'https://edukrishnaa-production.up.railway.app/'
+REDIRECT_URI = 'http://127.0.0.1:5000//oauth2callback'
 getRoles = ""
 
 # uname = db.Column(db.String(500))
@@ -267,8 +262,9 @@ def login():
         if user == username.uname and password == username.password:
             session["user"] = user
             return redirect(url_for("myhome"))
-        else:
-            flash("You have entered wrong username or password.")
+        # else:
+        #     easygui.msgbox(
+        #         "YOU HAVE ENTER WRONG USERNAME OR PASSWORD!", title="LOGIN ERROR")
 
     else:
         if "user" in session:
@@ -371,8 +367,7 @@ def myhome():
     # return redirect(url_for("myhome"))
     # username1 = session['user']
     # getinfo = User.query.filter_by(uname=username1).first()
-    get_feed = Feedback.query.all()
-    return render_template("index.html",  get_feed=get_feed)
+    return render_template("index.html")
 
     # return redirect(url_for("myhome"), username.uname)
 
@@ -425,13 +420,9 @@ def take_test():
 # 10th students routes
 @ app.route('/taketest-10', methods=['GET', 'POST'])
 def take_test_10():
-
-    if "user" in session:
-        username1 = session['user']
-        getinfo = User.query.filter_by(uname=username1).first()
-        return render_template("/tenth/take_test.html", getinfo=getinfo)
-    else:
-        return render_template("/log_reg_pro/login.html")
+    username1 = session['user']
+    getinfo = User.query.filter_by(uname=username1).first()
+    return render_template("/tenth/take_test.html", getinfo=getinfo)
 
 
 @ app.route('/test2-10', methods=['GET', 'POST'])
@@ -592,7 +583,7 @@ def add_feedback():
     current_time = now.strftime("%H:%M:%S")
     feed_type = "Regular User"
 
-    adddata = Feedback(f_userid=getinfo.id, f_profile_photo=getinfo.img, f_first_name=getinfo.fname, f_last_name=getinfo.lname, feedback=review_text, f_date=current_date,
+    adddata = Feedback(f_userid=getinfo.id, feedback=review_text, f_date=current_date,
                        f_time=current_time, f_type=feed_type)
 
     db.session.add(adddata)
@@ -638,10 +629,7 @@ def Music_Teacher_page():
 # 12th students routes
 @ app.route('/taketest-12', methods=['GET', 'POST'])
 def take_test_12():
-    if "user" in session:
-        return render_template("/twelve/take_test.html")
-    else:
-        return render_template("/log_reg_pro/login.html")
+    return render_template("/twelve/take_test.html")
 
 
 @ app.route('/test1-12', methods=['GET', 'POST'])
@@ -667,10 +655,7 @@ def results_12():
 # UG PG students routes
 @ app.route('/taketest-up', methods=['GET', 'POST'])
 def take_test_up():
-    if user in session:
-        return render_template("/ug-pg/take_test.html")
-    else:
-        return render_template("/log_reg_pro/login.html")
+    return render_template("/ug-pg/take_test.html")
 
 
 @ app.route('/test1-se', methods=['GET', 'POST'])
@@ -1202,28 +1187,6 @@ def addpost():
     income = request.form['income']
     roles = request.form['roles']
 
-    # my_string_number = "+40021234567"
-    # my_number = phonenumbers.parse(my_string_number)
-    # print(phonenumbers.is_possible_number(my_number))
-
-    # check email db
-    if User.query.filter_by(email=email).first() == None:
-        pass
-    elif User.query.filter_by(email=email).first() != None:
-        flash("Email already exsists.")
-        # return redirect(url_for("/"))
-        return render_template("/log_reg_pro/registration.html")
-    phoneverify = re.fullmatch('[6-9][0-9]{9}', phone)
-    # print("verify phone - ", phoneverify)
-
-    if phoneverify == None:
-        flash("Enter a valid phone number.")
-        # return redirect(url_for("/"))
-        return render_template("/log_reg_pro/registration.html")
-
-    # else:
-    #     print('Not a valid number')
-
     # key = Fernet.generate_key()  # Store this key or get if you already have it
     # f = Fernet(key)
     date_time_str = datetime.strptime(str(dob), "%Y-%m-%d")
@@ -1289,6 +1252,10 @@ def verifyotp():
             break
         elif re.search("\s", pass1):
             flag = -1
+            break
+        else:
+            flag = 0
+            flash("Valid Password")
             break
 
     if flag == -1:
