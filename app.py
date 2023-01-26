@@ -412,18 +412,23 @@ def recruiter_profile():
 
 @ app.route('/taketest', methods=['GET', 'POST'])
 def take_test():
-    username1 = session['user']
-
-    getinfo = User.query.filter_by(uname=username1).first()
-    return render_template("take_test.html", getinfo=getinfo)
+    if "user" in session:
+        username1 = session['user']
+        getinfo = User.query.filter_by(uname=username1).first()
+        return render_template("take_test.html", getinfo=getinfo)
+    else:
+        return render_template("/log_reg_pro/login.html")
 
 
 # 10th students routes
 @ app.route('/taketest-10', methods=['GET', 'POST'])
 def take_test_10():
-    username1 = session['user']
-    getinfo = User.query.filter_by(uname=username1).first()
-    return render_template("/tenth/take_test.html", getinfo=getinfo)
+    if "user" in session:
+        username1 = session['user']
+        getinfo = User.query.filter_by(uname=username1).first()
+        return render_template("/tenth/take_test.html", getinfo=getinfo)
+    else:
+        return render_template("/log_reg_pro/login.html")
 
 
 @ app.route('/test2-10', methods=['GET', 'POST'])
@@ -630,7 +635,10 @@ def Music_Teacher_page():
 # 12th students routes
 @ app.route('/taketest-12', methods=['GET', 'POST'])
 def take_test_12():
-    return render_template("/twelve/take_test.html")
+    if user in session:
+        return render_template("/twelve/take_test.html")
+    else:
+        return render_template("/log_reg_pro/login.html")
 
 
 @ app.route('/test1-12', methods=['GET', 'POST'])
@@ -656,7 +664,10 @@ def results_12():
 # UG PG students routes
 @ app.route('/taketest-up', methods=['GET', 'POST'])
 def take_test_up():
-    return render_template("/ug-pg/take_test.html")
+    if user in session:
+        return render_template("/ug-pg/take_test.html")
+    else:
+        return render_template("/log_rec_pro/login.html")
 
 
 @ app.route('/test1-se', methods=['GET', 'POST'])
