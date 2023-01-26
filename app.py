@@ -592,7 +592,7 @@ def add_feedback():
     current_time = now.strftime("%H:%M:%S")
     feed_type = "Regular User"
 
-    adddata = Feedback(f_userid=getinfo.id, feedback=review_text, f_date=current_date,
+    adddata = Feedback(f_userid=getinfo.id, f_profile_photo=getinfo.img, f_first_name=getinfo.fname, f_last_name=getinfo.lname, feedback=review_text, f_date=current_date,
                        f_time=current_time, f_type=feed_type)
 
     db.session.add(adddata)
