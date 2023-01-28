@@ -191,6 +191,7 @@ with app.app_context():
 
     print("posgresql users")
 
+
 @ app.route('/sample', methods=['POST'])
 def mlkmd1():
     log1 = request.form['lin11']
