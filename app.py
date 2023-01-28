@@ -39,7 +39,7 @@ from getUserData import *
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://smatevvb:r1jWlvwdryGUmyJ2tXViUAb3PlzYnUz7@satao.db.elephantsql.com/smatevvb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 db.create_all()
@@ -76,13 +76,13 @@ class User(db.Model):
     quali = db.Column(db.String(500))
     fam_income = db.Column(db.String(500))
     roles = db.Column(db.String(500))
-    img = db.Column(db.TEXT(100))
-    address = db.Column(db.TEXT(255))
-    clg_name = db.Column(db.TEXT(255))
+    img = db.Column(db.String(100))
+    address = db.Column(db.String(255))
+    clg_name = db.Column(db.String(255))
     graduation_year = db.Column(db.Date)
-    course = db.Column(db.TEXT(255))
-    certificate = db.Column(db.TEXT(255))
-    otp = db.Column(db.TEXT(100))
+    course = db.Column(db.String(255))
+    certificate = db.Column(db.String(255))
+    otp = db.Column(db.String(100))
 
     # valdate =datetime.strptime('1776-01-01 00:00:00',"%Y-%m-%d %H:%M:%S")
 
@@ -117,7 +117,7 @@ class Results(db.Model):
 class Recruiter(db.Model):
     req_id = db.Column(db.Integer, primary_key=True)
     co_logo = db.Column(db.String(255))
-    co_photo_id = db.Column(db.TEXT(255))
+    co_photo_id = db.Column(db.String(255))
     emp_id = db.Column(db.Integer)
     emp_name = db.Column(db.String(255))
     co_name = db.Column(db.String(255))
@@ -183,6 +183,13 @@ class Feedback(db.Model):
     f_time = db.Column(db.String(100))
     f_type = db.Column(db.String(50))
 
+
+with app.app_context():
+    db.create_all()
+
+    db.session.commit()
+
+    print("posgresql users")
 
 @ app.route('/sample', methods=['POST'])
 def mlkmd1():
