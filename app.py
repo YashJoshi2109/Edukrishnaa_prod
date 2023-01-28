@@ -222,6 +222,7 @@ def chatbot():
 @ app.route('/homepage', methods=['GET', 'POST'])
 def homepage():
     user = session['recruiter']
+    # user1 = session['user']
     getinfo = User.query.first()
     rec_user_data = User.query.all()
     recruiter = Recruiter.query.filter_by(co_email=user).first()
@@ -239,12 +240,14 @@ def recruiter():
 
 @ app.route('/recruiter/user/<userid>', methods=['GET', 'POST'])
 def recruiter_user_page(userid):
-    username1 = session['user']
-    getinfo = User.query.filter_by(uname=username1).first()
+    # username1 = session['user']
+    user = session['recruiter']
+    getinfo = User.query.all()
     getuserid = User.query.filter_by(id=userid).first()
+    recruiter = Recruiter.query.filter_by(co_email=user).first()
     getPersonalList, getRoles = getResultData(userid)
 
-    return render_template("/recruiters/rec_user_disp.html", showuser=getuserid, data=getinfo, showresult=getPersonalList, ouputRoles=getRoles)
+    return render_template("/recruiters/rec_user_disp.html", showuser=getuserid, data=getinfo, showresult=getPersonalList, ouputRoles=getRoles, recruiter=recruiter)
 
 # LOGIN route
 
@@ -361,14 +364,13 @@ def recruiterregister():
 
 @app.route('/myhome', methods=['GET', 'POST'])
 def myhome():
-    get_feed = Feedback.query.all()
     # user = session['user']
     # username = User.query.filter_by(uname=user).first()
     # userhoon = username.uname
     # return redirect(url_for("myhome"))
     # username1 = session['user']
     # getinfo = User.query.filter_by(uname=username1).first()
-    return render_template("index.html", get_feed=get_feed)
+    return render_template("index.html")
 
     # return redirect(url_for("myhome"), username.uname)
 
@@ -589,7 +591,7 @@ def add_feedback():
     current_time = now.strftime("%H:%M:%S")
     feed_type = "Regular User"
 
-    adddata = Feedback(f_userid=getinfo.id, feedback=review_text, f_date=current_date,
+    adddata = Feedback(f_userid=getinfo.id, f_profile_photo=getinfo.img, f_first_name=getinfo.fname, f_last_name=getinfo.lname, feedback=review_text, f_date=current_date,
                        f_time=current_time, f_type=feed_type)
 
     db.session.add(adddata)
@@ -1424,4 +1426,4 @@ def server_error():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3000)
+    app.run(debug=True)
