@@ -364,13 +364,14 @@ def recruiterregister():
 
 @app.route('/myhome', methods=['GET', 'POST'])
 def myhome():
+    get_feed = Feedback.query.all()
     # user = session['user']
     # username = User.query.filter_by(uname=user).first()
     # userhoon = username.uname
     # return redirect(url_for("myhome"))
     # username1 = session['user']
     # getinfo = User.query.filter_by(uname=username1).first()
-    return render_template("index.html")
+    return render_template("index.html", get_feed=get_feed)
 
     # return redirect(url_for("myhome"), username.uname)
 
