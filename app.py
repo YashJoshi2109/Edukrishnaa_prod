@@ -50,7 +50,7 @@ CLIENT_ID = '411974903638-tuco5kc4h5pql62sshrjs7bqoaimn61k.apps.googleuserconten
 # Read from a file or environmental variable in a real app
 CLIENT_SECRET = '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'
 SCOPE = 'https://www.googleapis.com/auth/drive.metadata.readonly'
-REDIRECT_URI = 'http://127.0.0.1:5000//oauth2callback'
+REDIRECT_URI = 'https://edukrishnaa-production.up.railway.app/'
 getRoles = ""
 
 # uname = db.Column(db.String(500))
