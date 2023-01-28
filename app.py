@@ -1177,8 +1177,8 @@ def recruite():
     # print("************************UPDATED INFORMATION********",  email,
     #       city, state, address, phone, college_name, course)
 
-    adddata = Recruiter(co_photo_id=None, re_password=repass, co_email=email, industry=course, co_state=state, emp_name=emp_name, emp_id=emp_id,
-                        phone=phone, co_city=city, recruite_password=password, co_logo=None, co_add1=address, co_name=company_name, co_req_designation=co_req_designation, role=role)
+    adddata = Recruiter(co_photo_id="None", re_password=repass, co_email=email, industry=course, co_state=state, emp_name=emp_name, emp_id=emp_id,
+                        phone=phone, co_city=city, recruite_password=password, co_logo="None", co_add1=address, co_name=company_name, co_req_designation=co_req_designation, role=role)
 
     db.session.add(adddata)
 
