@@ -126,7 +126,7 @@ class Recruiter(db.Model):
     co_city = db.Column(db.String(255))
     co_state = db.Column(db.String(255))
     co_req_designation = db.Column(db.String(255))
-    phone = db.Column(db.Integer)
+    phone = db.Column(db.String(100))
     recruite_password = db.Column(db.String(255))
     industry = db.Column(db.String(255))
     re_password = db.Column(db.String(255))
