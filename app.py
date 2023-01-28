@@ -1122,18 +1122,18 @@ app.config['COMPANY_LOGO'] = "static\\assets\company_logo"
 @ app.route('/recruite', methods=['GET', 'POST'])
 def recruite():
     emp_photo = request.files['emp_photo']
-    if emp_photo.filename != '':
-        global co_photo_id
-        filepath = os.path.join(
-            app.config['RECRUITER'], emp_photo.filename)
-        emp_photo.save(filepath)
-        co_photo_id = emp_photo.filename
+    # if emp_photo.filename != '':
+    #     global co_photo_id
+    #     filepath = os.path.join(
+    #         app.config['RECRUITER'], emp_photo.filename)
+    #     emp_photo.save(filepath)
+    #     co_photo_id = emp_photo.filename
 
         # cur.execute(
         #     "UPDATE User SET img='upload_image.filename' WHERE uname = ")
         # cur.execute("INSERT INTO User(img)VALUES(?)", (upload_image.filename,))
         # con.commit()
-        print("recruiter image File Uploaded Successfully")
+        # print("recruiter image File Uploaded Successfully")
         # adddata = User(img=upload_image.filename)
 
     # e_name = name.encode()
@@ -1151,19 +1151,19 @@ def recruite():
     state = request.form['co_state']
 
     # e_phone = phone.encode()
-    phone = request.form['phone']
+    # phone = request.form['phone']
 
     # e_uname = uname.encode()
     company_name = request.form['co_name']
 
     certificate = request.files['co_logo']
-    if certificate.filename != '':
-        global co_logo
-        filepath = os.path.join(
-            app.config['RECRUITER'], certificate.filename)
-        certificate.save(filepath)
-        co_logo = certificate.filename
-        print("co_logo File Uploaded Successfully")
+    # if certificate.filename != '':
+    #     global co_logo
+    #     filepath = os.path.join(
+    #         app.config['RECRUITER'], certificate.filename)
+    #     certificate.save(filepath)
+    #     co_logo = certificate.filename
+    #     print("co_logo File Uploaded Successfully")
 
     password = request.form['password1']
 
@@ -1178,8 +1178,8 @@ def recruite():
     # print("************************UPDATED INFORMATION********",  email,
     #       city, state, address, phone, college_name, course)
 
-    adddata = Recruiter(co_photo_id=co_photo_id, re_password=repass, co_email=email, industry=course, co_state=state, emp_name=emp_name, emp_id=emp_id,
-                        phone=phone, co_city=city, recruite_password=password, co_logo=co_logo, co_add1=address, co_name=company_name, co_req_designation=co_req_designation, role=role)
+    adddata = Recruiter(co_photo_id=None, re_password=repass, co_email=email, industry=course, co_state=state, emp_name=emp_name, emp_id=emp_id,
+                        phone=None, co_city=city, recruite_password=password, co_logo=None, co_add1=address, co_name=company_name, co_req_designation=co_req_designation, role=role)
 
     db.session.add(adddata)
 
