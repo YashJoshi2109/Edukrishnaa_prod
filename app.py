@@ -386,10 +386,7 @@ def myhome():
 
 @ app.route('/404', methods=['GET', 'POST'])
 def page404():
-    user = session['user']
-    getinfo = User.query.first()
-    rec_user_data = User.query.all()
-    return render_template("404page.html", rec_user_data=rec_user_data, getinfo=getinfo)
+    return render_template("404page.html")
 
 
 @ app.route('/aboutus', methods=['GET', 'POST'])
@@ -1129,12 +1126,12 @@ def recruite():
     #     emp_photo.save(filepath)
     #     co_photo_id = emp_photo.filename
 
-        # cur.execute(
-        #     "UPDATE User SET img='upload_image.filename' WHERE uname = ")
-        # cur.execute("INSERT INTO User(img)VALUES(?)", (upload_image.filename,))
-        # con.commit()
-        # print("recruiter image File Uploaded Successfully")
-        # adddata = User(img=upload_image.filename)
+    # cur.execute(
+    #     "UPDATE User SET img='upload_image.filename' WHERE uname = ")
+    # cur.execute("INSERT INTO User(img)VALUES(?)", (upload_image.filename,))
+    # con.commit()
+    # print("recruiter image File Uploaded Successfully")
+    # adddata = User(img=upload_image.filename)
 
     # e_name = name.encode()
     email = request.form['co_email']
