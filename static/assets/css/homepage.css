@@ -305,6 +305,27 @@
       margin: -77px;
     }
 
+    .services .section-header h2{
+      font-size: 20px;
+      margin: 1px;
+      padding: 1px;
+    }
+    .services .section-header h2:before{
+      margin: 0 15px 10px 0;
+    }
+    .section-header h2:after {
+      margin: 0 0 10px 15px;
+    }
+
+    .section-header h2:before,  
+    .section-header h2:after {
+      content: "";
+      width: 50px;
+      height: 2px;
+      background: black;
+      display: none;
+    }
+
   }
 
   
@@ -596,13 +617,13 @@
   
     .mobile-nav-hide {
       color: #fff;
-      font-size: 32px;
+      font-size: 55px;
       cursor: pointer;
       line-height: 0;
-      transition: 0.5s;
+      transition: 5.5s;
       position: fixed;
       right: 20px;
-      top: 20px;
+      top: 45px;
       z-index: 9999;
     }
   
