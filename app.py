@@ -263,24 +263,23 @@ def recruiter_user_page(userid):
 @ app.route('/login', methods=['GET', 'POST'])
 def login():
 
-    
     if "user1" in session:
         print("user1")
         getVerifyUser = session['user1']
         print("before if verfy")
         if User.query.filter_by(uname=getVerifyUser).first() != None:
             print("after if verify")
-            get_verify_details = User.query.filter_by(uname=getVerifyUser).first()
+            get_verify_details = User.query.filter_by(
+                uname=getVerifyUser).first()
             print("before delete")
             temp = get_verify_details.password
-            print("temp check",temp)
+            print("temp check", temp)
             # temp2 = get_verify_details.password
             if temp == None:
                 print("checking delete")
                 db.session.delete(get_verify_details)
                 db.session.commit()
                 session.pop("user1", None)
-
 
     if request.method == "POST":
         user = request.form["email"]
@@ -380,7 +379,7 @@ def oauth2callback():
 
 
 @app.route('/register', methods=['GET', 'POST'])
-def register():            
+def register():
     return render_template("/log_reg_pro/registration.html")
 
 
@@ -393,24 +392,25 @@ def recruiterregister():
 def myhome():
     get_feed = Feedback.query.all()
 
-    #deleting the session from verify otp 
+    # deleting the session from verify otp
     if "user1" in session:
         print("user1")
         getVerifyUser = session['user1']
         print("before if verfy")
         if User.query.filter_by(uname=getVerifyUser).first() != None:
             print("after if verify")
-            get_verify_details = User.query.filter_by(uname=getVerifyUser).first()
+            get_verify_details = User.query.filter_by(
+                uname=getVerifyUser).first()
             print("before delete")
             temp = get_verify_details.password
-            print("temp check",temp)
+            print("temp check", temp)
             # temp2 = get_verify_details.password
             if temp == None:
                 print("checking delete")
                 db.session.delete(get_verify_details)
                 db.session.commit()
-                session.pop("user1", None)    
-    
+                session.pop("user1", None)
+
     # user = session['user']
     # username = User.query.filter_by(uname=user).first()
     # userhoon = username.uname
@@ -993,17 +993,18 @@ def recommend1():
 @ app.route('/')
 def home():
     get_feed = Feedback.query.all()
-    #deleting the session from verify otp 
+    # deleting the session from verify otp
     if "user1" in session:
         print("user1")
         getVerifyUser = session['user1']
         print("before if verfy")
         if User.query.filter_by(uname=getVerifyUser).first() != None:
             print("after if verify")
-            get_verify_details = User.query.filter_by(uname=getVerifyUser).first()
+            get_verify_details = User.query.filter_by(
+                uname=getVerifyUser).first()
             print("before delete")
             temp = get_verify_details.password
-            print("temp check",temp)
+            print("temp check", temp)
             # temp2 = get_verify_details.password
             if temp == None:
                 print("checking delete")
@@ -1270,9 +1271,9 @@ def addpost():
     if User.query.filter_by(email=email).first() == None:
         pass
     else:
-        temp_email=User.query.filter_by(email=email).first()
+        temp_email = User.query.filter_by(email=email).first()
 
-        if email==temp_email.email:
+        if email == temp_email.email:
             flash("Email already exsists.")
             # return redirect(url_for("/"))
             return render_template("/log_reg_pro/registration.html")
@@ -1325,7 +1326,7 @@ def verifyotp():
     getinfo = User.query.filter_by(uname=username1).first()
 
     while True:
-        if (len(pass1) <= 8):
+        if (len(pass1) < 7):
             flag = -1
             break
         elif not re.search("[a-z]", pass1):
@@ -1337,7 +1338,7 @@ def verifyotp():
         elif not re.search("[0-9]", pass1):
             flag = -1
             break
-        elif not re.search("[_@$]", pass1):
+        elif not re.search("[_@$&#]", pass1):
             flag = -1
             break
         elif re.search("\s", pass1):
