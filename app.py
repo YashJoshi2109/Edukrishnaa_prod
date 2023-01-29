@@ -1211,6 +1211,16 @@ def addpost():
     income = request.form['income']
     roles = request.form['roles']
 
+    if User.query.filter_by(email=email).first() == None:
+        pass
+    else:
+        temp_email=User.query.filter_by(email=email).first()
+
+        if email==temp_email.email:
+            flash("Email already exsists.")
+            # return redirect(url_for("/"))
+            return render_template("/log_reg_pro/registration.html")
+
     # key = Fernet.generate_key()  # Store this key or get if you already have it
     # f = Fernet(key)
     date_time_str = datetime.strptime(str(dob), "%Y-%m-%d")
@@ -1226,8 +1236,8 @@ def addpost():
     otp = str(random.randint(1000, 9999))
     print(otp, type(otp))
 
-    finalotp = "<h1>You are going to be registered in Edukrishna<h1>, Please find the below OTP and complete the verification. YOUR OTP IS " + \
-        otp+". Do not share this OTP with anyone."
+    finalotp = "You are going to be registered in Edukrishna, Please find the below OTP and complete the verification. YOUR OTP IS " + \
+        otp+". Do not share this OTP with anyone. - Team Edukrishnaa"
 # randomnew = "OTP ", randomNumber
 
     server.starttls()
