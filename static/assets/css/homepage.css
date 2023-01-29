@@ -266,6 +266,47 @@
       transition-delay: 0 !important;
     }
   }
+
+  @media (max-width: 1279px) {
+    .mobile-main-img{
+      max-width: 100%;
+    }
+    .mobile-fix{
+      margin: -66px;
+    }
+    .form-title{
+      font-size: 25px;
+    }
+    .search-tittle h3{
+      font-size: larger;
+    }
+
+    .get-started .content h3 {
+      font-size: 36px;
+      color: #000;
+      font-weight: 600;
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+      position: relative;
+    }
+    
+    .get-started .content h3:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #000;
+      left: 0;
+      bottom: 0;
+    }
+    
+    .mobile-table{
+      margin: -77px;
+    }
+
+  }
+
   
   /*--------------------------------------------------------------
   # Header
