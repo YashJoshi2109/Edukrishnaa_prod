@@ -142,8 +142,10 @@
           <div class="row justify-content-center">
             <div class="col-lg-6 text-center">
               <!-- <h2 data-aos="fade-down">Welcome to EduKrishnaa</h2>-->
-              <img data-aos="fade-down" src="../static/assets/img/edukrishnaa_white.png">
-              <h3 data-aos="fade-down">SEE THE SUCCESS IN YOUR CAREER</h3>
+              <!-- <div class="mobile-main-img"> -->
+                <img data-aos="fade-down" class="mobile-main-img" src="../static/assets/img/edukrishnaa_white.png">
+              <!-- </div> -->
+              <h3 data-aos="fade-down" class="h3-mobile">SEE THE SUCCESS IN YOUR CAREER</h3>
               <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">Get Started</a>
             </div>
           </div>
@@ -186,8 +188,8 @@
     <!-- ======= Services Section ======= -->
     <section id="get-started" class="services section-bg">
       <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>Our Career Services</h2>
+        <div class="section-header section-header-mobile">
+          <h2 class="h2-mobile">Our Career Services</h2>
           <p>EduKrishnaa brings to you scientific and meticulously designed. Our Services to discover your true
             potential and interest ,learning styles and skills .</p>
         </div>
@@ -252,7 +254,7 @@
           </div>
 
           <div class="col-lg-5" data-aos="fade">
-            <img src="../static/assets/img/home/explore-career.jpg" />
+            <img class="mobile-main-img" src="../static/assets/img/home/explore-career.jpg" />
           </div>
           <!-- End Quote Form -->
         </div>
@@ -266,7 +268,7 @@
 
         <div class="row justify-content-between gy-4">
           <div class="col-md-6 col-lg-6" data-aos="fade">
-            <img src="../static/assets/img/home/career-counselling-sessions.jpg" />
+            <img class="mobile-main-img" src="../static/assets/img/home/career-counselling-sessions.jpg" />
           </div>
 
           <div class="col-md-6 col-lg-5 d-flex align-items-center" data-aos="fade-up">
@@ -298,7 +300,7 @@
           </div>
 
           <div class="col-lg-5" data-aos="fade">
-            <img src="../static/assets/img/home/testing.jpg" />
+            <img  class="mobile-main-img" src="../static/assets/img/home/testing.jpg" />
           </div>
           <!-- End Quote Form -->
         </div>
@@ -407,10 +409,10 @@
 
         
         
-      <div class=" section-header">
-        <h2>Customer Testimonials</h2>
-        <p>Explore what people review about us.</p>
-      </div>
+        <div class=" section-header section-header-mobile2 h2">
+          <h2>Customer Testimonials</h2>
+          <p style="font-size: medium;">Explore what people review about us.</p>
+        </div>
 
       {% if get_feed %}
 
@@ -442,8 +444,8 @@
         </div>
       </div>
       {% else %}
-      <h3 style="text-align-last: center;">No Testimonials availabe for now!</h3>
-      <h1 style="text-align-last: center;">No Feedback available for now!</h1>
+      <h3 style="text-align-last: center; font-size: medium;">No Testimonials availabe for now!</h3>
+      <h1 style="text-align-last: center; font-size: medium;">No Feedback available for now!</h1>
       {% endif %}
 
 

@@ -477,8 +477,65 @@ section {
 # Mobile Navigation
 --------------------------------------------------------------*/
 @media (max-width: 1279px) {
+
+  
+  .mobile-main-img{
+    max-width: 100%;
+
+  }
+  .h3-mobile{
+    font-size: medium;
+  }
+  .section-header-mobile h2 {
+    font-size: 34px;
+    text-align: initial;
+  }
+  .section-header-mobile2 h2 {
+    font-size: 30px;
+    text-align: initial;
+  }
+
+  .section-header-mobile h2:before,
+  .section-header-mobile h2:after {
+    content: "";
+    width: 14px;
+    height: 2px;
+    background: var(--color-primary);
+    display: inline-block;
+  }
+
+  .section-header-mobile h2:before {
+    margin: 13px 17px 8px 0px;
+  }
+
+  .section-header-mobile h2:after {
+    margin: 0 0 10px 15px;
+  }
+
+
+
+
+  .section-header-mobile2 h2:before,
+  .section-header-mobile2 h2:after {
+    content: "";
+    width: 14px;
+    height: 2px;
+    background: var(--color-primary);
+    display: inline-block;
+  }
+
+  .section-header-mobile2 h2:before {
+    margin: 13px 17px 8px 0px;
+  }
+
+  .section-header-mobile2 h2:after {
+    margin: 0 0 10px 15px;
+  }
+
+
+
   .navbar {
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     right: -100%;
     width: 100%;
@@ -491,9 +548,9 @@ section {
   .navbar ul {
     position: absolute;
     inset: 0;
-    padding: 500px 10px 10px 10px;
+    padding: 25px 1px 222px 31px;
     background: rgba(0, 0, 0, 0.8);
-    overflow-y: auto;
+    overflow-y: scroll;
     transition: 0.3s;
     z-index: 9998;
   }
