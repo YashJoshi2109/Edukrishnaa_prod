@@ -1059,29 +1059,29 @@ def womenstartup():
 #     print(type(result))  # this shows the json converted as a python dictionary
 #     return result
 
-app.config['PROFILE_IMAGE'] = "static\\assets\img"
-app.config['FILE_STORE'] = "static\\assets\certificate"
+# app.config['PROFILE_IMAGE'] = "static\\assets\img"
+# app.config['FILE_STORE'] = "static\\assets\certificate"
 
 
 @ app.route('/update', methods=['GET', 'POST'])
 def updatepost():
-    upload_image = request.files['file']
-    if upload_image.filename != '':
-        user = session['user']
-        filepath = os.path.join(
-            app.config['PROFILE_IMAGE'], upload_image.filename)
-        upload_image.save(filepath)
-        con = sqlite3.connect("db.sqlite3")
-        cur = con.cursor()
-        admin = User.query.filter_by(uname=user).first()
-        admin.img = upload_image.filename
-        # cur.execute(
-        #     "UPDATE User SET img='upload_image.filename' WHERE uname = ")
-        # cur.execute("INSERT INTO User(img)VALUES(?)", (upload_image.filename,))
-        db.session.commit()
-        # con.commit()
-        print("Image File Uploaded Successfully")
-        # adddata = User(img=upload_image.filename)
+    # upload_image = request.files['file']
+    # if upload_image.filename != '':
+    #     user = session['user']
+    #     filepath = os.path.join(
+    #         app.config['PROFILE_IMAGE'], upload_image.filename)
+    #     upload_image.save(filepath)
+    #     con = sqlite3.connect("db.sqlite3")
+    #     cur = con.cursor()
+    #     admin = User.query.filter_by(uname=user).first()
+    #     admin.img = upload_image.filename
+    # cur.execute(
+    #     "UPDATE User SET img='upload_image.filename' WHERE uname = ")
+    # cur.execute("INSERT INTO User(img)VALUES(?)", (upload_image.filename,))
+    # db.session.commit()
+    # con.commit()
+    # print("Image File Uploaded Successfully")
+    # adddata = User(img=upload_image.filename)
 
     # e_name = name.encode()
     email = request.form['update_email']
@@ -1133,18 +1133,18 @@ def updatepost():
         db.session.commit()
         print("Updated College Uploaded Successfully")
 
-    certificate = request.files['certificate']
-    if certificate.filename != '':
-        user = session['user']
-        filepath = os.path.join(
-            app.config['FILE_STORE'], certificate.filename)
-        upload_image.save(filepath)
-        con = sqlite3.connect("db.sqlite3")
-        cur = con.cursor()
-        admin = User.query.filter_by(uname=user).first()
-        admin.certificate = certificate.filename
-        db.session.commit()
-        print("Certificate File Uploaded Successfully")
+    # certificate = request.files['certificate']
+    # if certificate.filename != '':
+    #     user = session['user']
+    #     filepath = os.path.join(
+    #         app.config['FILE_STORE'], certificate.filename)
+    #     upload_image.save(filepath)
+    #     con = sqlite3.connect("db.sqlite3")
+    #     cur = con.cursor()
+    #     admin = User.query.filter_by(uname=user).first()
+    #     admin.certificate = certificate.filename
+    #     db.session.commit()
+    #     print("Certificate File Uploaded Successfully")
 
     graduation_year = request.form['graduation_year']
     if graduation_year != '':
@@ -1281,6 +1281,11 @@ def addpost():
     # key = Fernet.generate_key()  # Store this key or get if you already have it
     # f = Fernet(key)
     date_time_str = datetime.strptime(str(dob), "%Y-%m-%d")
+    if gender == 'Male':
+        profile = 'male_preview.jpg'
+
+    elif gender == 'Female':
+        profile = 'female_preview.jpg'
 
     today = date.today()
     age = today.year - date_time_str.year - \
@@ -1305,7 +1310,7 @@ def addpost():
 
     adddata = User(fname=name, lname=lname, email=email, dob=date_time_str, age=age,
                    phone=phone, state=state, city=city, uname=uname, gender=gender, quali=account, fam_income=income, roles=roles,
-                   img=None, address=None, clg_name=None, graduation_year=None, course=None, certificate=None, otp=otp)
+                   address=None, clg_name=None, graduation_year=None, course=None, certificate=None, otp=otp, img=profile)
 
     db.session.add(adddata)
 
@@ -1503,4 +1508,5 @@ def server_error():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3000)
+    # app.run(host="0.0.0.0", port=3000)
+    app.run(debug=True)

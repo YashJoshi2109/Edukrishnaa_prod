@@ -68,19 +68,19 @@
           <li><a href="#">About</a></li>
           <li><a href="#contactus">Contact Us</a></li>
           </li>
-            {% if session['user'] == Flase: %}
-            <li><a href="/login">Login</a></li>
-            {% else: %}
-            <!-- <li><a href="/user_profile">{{session['user']}}</a></li> -->
-            <li class="dropdown"><a href=""><span>{{session['user']}}</span> <i
-                  class="bi bi-chevron-down dropdown-indicator"></i></a>
-              <ul>
-                <li><a href="/user_profile">Profile</a></li>
-                <li><a href="/logout">Logout</a></li>
-              </ul>
-            </li>
+          {% if session['user'] == Flase: %}
+          <li><a href="/login">Login</a></li>
+          {% else: %}
+          <!-- <li><a href="/user_profile">{{session['user']}}</a></li> -->
+          <li class="dropdown"><a href=""><span>{{session['user']}}</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="/user_profile">Profile</a></li>
+              <li><a href="/logout">Logout</a></li>
+            </ul>
+          </li>
 
-            {% endif %}
+          {% endif %}
           </li>
 
           <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -708,16 +708,7 @@
               <li><a href="#">Sit quas consectetur</a></li>
             </ul>
           </div><!-- End footer links column-->
-          <div class="col-lg-2 col-md-3">
-            <a href="/login">
-              <button type="submit" class="footer_button ">Login </button>
-            </a>
-            <br>
-            <br>
-            <a href="/registration">
-              <button type="submit" class="footer_button">Signup</button>
-            </a>
-          </div><!-- End footer links column-->
+
         </div>
       </div>
     </div>
