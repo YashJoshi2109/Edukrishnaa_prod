@@ -69,6 +69,17 @@
     margin-bottom: 15px;
 
   }
+  .maps{ 
+    /* display: inline-block; */
+    /* width: 100px;
+    height: 10px; */
+    left: 10px;
+    margin: 10px;
+    margin-left:615px ;
+    padding: 20px;
+    
+   }
+
   .testimonial .post {
     display: inline-block;
     font-size: 17px;
@@ -97,4 +108,9 @@
       margin: 0 auto 15px;
     }
   }
+
+  #map {
+  height: 400px; /* The height is 400 pixels */
+  width: 100%; /* The width is the width of the web page */
+}
   
