@@ -998,6 +998,7 @@ def recommend1():
 def home():
     get_feed = Feedback.query.all()
     # deleting the session from verify otp
+    getuse = ""
     if "user1" in session:
         print("user1")
         getVerifyUser = session['user1']
@@ -1016,7 +1017,11 @@ def home():
                 db.session.commit()
                 session.pop("user1", None)
 
-    return render_template("index.html", get_feed=get_feed)
+    if "user" in session:
+        getuser = session['user']
+        getuse = User.query.filter_by(uname=getuser).first()
+
+    return render_template("index.html", get_feed=get_feed, getuse=getuse)
 
 
 @ app.route('/resume_1')
