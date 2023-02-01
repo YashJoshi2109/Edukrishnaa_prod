@@ -391,7 +391,7 @@ def recruiterregister():
 @app.route('/myhome', methods=['GET', 'POST'])
 def myhome():
     get_feed = Feedback.query.all()
-
+    getuse = ""
     # deleting the session from verify otp
     if "user1" in session:
         print("user1")
@@ -411,13 +411,17 @@ def myhome():
                 db.session.commit()
                 session.pop("user1", None)
 
+    if "user" in session:
+        getuser = session['user']
+        getuse = User.query.filter_by(uname=getuser).first()
+
     # user = session['user']
     # username = User.query.filter_by(uname=user).first()
     # userhoon = username.uname
     # return redirect(url_for("myhome"))
     # username1 = session['user']
     # getinfo = User.query.filter_by(uname=username1).first()
-    return render_template("index.html", get_feed=get_feed)
+    return render_template("index.html", get_feed=get_feed, getuse=getuse)
 
     # return redirect(url_for("myhome"), username.uname)
 

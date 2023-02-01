@@ -48,17 +48,46 @@
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="/" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="./static/assets/img/logo_without_name.png" alt="logo">
-        <h1>EduKrishnaa<span>.</span></h1> -->
+        <!-- <img src="../static/assets/img/White_font-removebg-preview.png" alt="logo"> -->
       </a>
+
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-      <!-- .navbar -->
+      <nav id="navbar" class="navbar">
+        <!-- ======= Breadcrumbs ======= -->
+
+        <ul>
+          <li><a href="/myhome">Home</a></li>
+          <li><a href="/start" class="active">Start UP</a></li>
+          <li><a href="/aboutus">About</a></li>
+          <li><a href="#footer">Contact Us</a></li>
+
+          {% if session['user'] == Flase and session['recruiter']==Flase: %}
+          <li><a href="/login">Login</a></li>
+          {% else: %}
+          <!-- <li style="color: aliceblue;">{{session['user']}}</li> -->
+          <!-- <li><a href="/user_profile">{{session['user']}}</a></li> -->
+          <li class="dropdown"><a href=""><span>{{session['user']}}</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              {% if session['recruiter'] %}
+              <li><a href="/homepage">Homepage</a></li>
+              {% else %}
+              <li><a href="/user_profile">Profile</a></li>
+              {% endif %}
+              <li><a href="/logout">Logout</a></li>
+            </ul>
+          </li>
+          {% endif %}
+
+        </ul>
+      </nav><!-- .navbar -->
 
     </div>
-  </header><!-- End Header -->
+
+  </header>
 
   <!-- ======= Hero Section ======= -->
 
@@ -888,61 +917,64 @@
             <div class="footer-info">
               <h3>EduKrishnaa<span>.</span></h3>
               <p>
-                Navi Mumbai<br><br>
-                <strong>Email:</strong> info@something.com<br>
+                Datta Meghe College of Engineeering<br>
+                Airoli, Navi Mumbai<br>
+                Feel Free to contact us:<br>
+                <a href="tel:9819851925" style="color:azure"><strong class="fa fa-phone"> : </strong> <b>+91 98198
+                    51925</a> &ThickSpace; Mr. Shreyas Ajgaonkar</b><br>
+                <a href="tel:7021082886" style="color:azure"><strong class="fa fa-phone"> : </strong> <b>+91 70210
+                    82886</a> &ThickSpace; Ms. Deepali Kadam</b><br>
+                <a href="tel:8779624069" style="color:azure"><strong class="fa fa-phone"> : </strong> <b>+91 87796
+                    24069</a> &ThickSpace; Mr. Pranav Jore</b><br>
               </p>
-              <div class="social-links d-flex mt-3">
+              <!-- <div class="social-links d-flex mt-3">
                 <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
                 <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
                 <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
                 <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
-              </div>
+              </div> -->
             </div>
-          </div><!-- End footer info column-->
+          </div>
+        </div><!-- End footer info column-->
+        <!-- End footer links column-->
+        <!-- <div class="col-md-6 starters text-white">
+          <div class="col-wrapper-10">
+            <div id="map-canvas"></div>
+            <script src="//maps.googleapis.com/maps/api/js?extension=.js&output=embed"></script>
+          </div>
+        </div> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Class 10</h4>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Terms of service</a></li>
-              <li><a href="#">Privacy policy</a></li>
-            </ul>
-          </div><!-- End footer links column-->
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>CLass 11-12</h4>
-            <ul>
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Web Development</a></li>
-              <li><a href="#">Product Management</a></li>
-              <li><a href="#">Marketing</a></li>
-              <li><a href="#">Graphic Design</a></li>
-            </ul>
-          </div><!-- End footer links column-->
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>UG/PG</h4>
-            <ul>
-              <li><a href="#">Molestiae accusamus iure</a></li>
-              <li><a href="#">Excepturi dignissimos</a></li>
-              <li><a href="#">Suscipit distinctio</a></li>
-              <li><a href="#">Dilecta</a></li>
-              <li><a href="#">Sit quas consectetur</a></li>
-            </ul>
-          </div><!-- End footer links column-->
-          <!-- <div class="col-lg-2 col-md-3">
-              <a href="/login">
-                <button type="submit" class="footer_button ">Login  </button>
-              </a>
-              <br>
-              <br>
-              <a href="/registration">
-                <button type="submit" class="footer_button">Signup</button>
-              </a>
-            </div> End footer links column -->
+        <div class="map">
+          <div id="map"></div>
         </div>
+
+        <script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOVRTzClCZIK37o28OfnZ_7ukciHE4eJI&callback=initMap"
+          async defer></script>
+        <!-- <div class="footer-info">
+          <div class="col-md-6 starters text-white">
+            <div class="mapcanva">
+              <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+              <div class="sec2map" style='overflow:hidden;height:550px;width:100%;'>
+                <div id='gmap_canvas' style='height:100%;width:100%;'></div>
+                <div><small><a href="http://embedgooglemaps.com"> embed google maps </a></small></div>
+                <div><small><a href="http://freedirectorysubmissionsites.com/">free web directories</a></small></div>
+                <style>
+                  #gmap_canvas img {
+                    max-width: none !important;
+                    background: none !important
+                  }
+                </style>
+              </div>
+              <script
+                type='text/javascript'>function init_map() { var myOptions = { zoom: 14, center: new google.maps.LatLng(19.075314480255834, 72.88153973865361), mapTypeId: google.maps.MapTypeId.ROADMAP }; map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions); marker = new google.maps.Marker({ map: map, position: new google.maps.LatLng(19.075314480255834, 72.88153973865361) }); infowindow = new google.maps.InfoWindow({ content: '<strong>My Location</strong><br>mumbai<br>' }); google.maps.event.addListener(marker, 'click', function () { infowindow.open(map, marker); }); infowindow.open(map, marker); } google.maps.event.addDomListener(window, 'load', init_map);</script>
+            </div>
+          </div>
+        </div> -->
+
       </div>
     </div>
 
@@ -973,6 +1005,97 @@
   <!-- Template Main JS File -->
   <script src="../static/assets//js/main.js">  </script>
   <script src="../static/assets//js/script.js"></script>
+
+  <script>
+    function initMap() {
+      // Styles a map in night mode.
+      var map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 19.16040055, lng: 72.99559438940238 },
+        zoom: 18,
+        styles: [
+          { elementType: "geometry", stylers: [{ color: "#000000" }] },
+          { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+          { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+          {
+            featureType: "administrative.locality",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#d59563" }]
+          },
+          {
+            featureType: "poi",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#d59563" }]
+          },
+          {
+            featureType: "poi.park",
+            elementType: "geometry",
+            stylers: [{ color: "#263c3f" }]
+          },
+          {
+            featureType: "poi.park",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#6b9a76" }]
+          },
+          {
+            featureType: "road",
+            elementType: "geometry",
+            stylers: [{ color: "#38414e" }]
+          },
+          {
+            featureType: "road",
+            elementType: "geometry.stroke",
+            stylers: [{ color: "#212a37" }]
+          },
+          {
+            featureType: "road",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#9ca5b3" }]
+          },
+          {
+            featureType: "road.highway",
+            elementType: "geometry",
+            stylers: [{ color: "#746855" }]
+          },
+          {
+            featureType: "road.highway",
+            elementType: "geometry.stroke",
+            stylers: [{ color: "#1f2835" }]
+          },
+          {
+            featureType: "road.highway",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#f3d19c" }]
+          },
+          {
+            featureType: "transit",
+            elementType: "geometry",
+            stylers: [{ color: "#2f3948" }]
+          },
+          {
+            featureType: "transit.station",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#d59563" }]
+          },
+          {
+            featureType: "water",
+            elementType: "geometry",
+            stylers: [{ color: "#17263c" }]
+          },
+          {
+            featureType: "water",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#515c6d" }]
+          },
+          {
+            featureType: "water",
+            elementType: "labels.text.stroke",
+            stylers: [{ color: "#17263c" }]
+          }
+        ]
+      });
+    }
+
+  </script>
 
 </body>
 

@@ -55,6 +55,11 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <!-- 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"> </script> -->
+
 
   <script src="/static/assets/js/jquery-3.1.1.min.js"></script>
   <script src="/static/assets/js/jquery.convform.js"></script>
@@ -83,7 +88,7 @@
           <li><a href="/myhome" class="active">Home</a></li>
           <li><a href="/start">Start UP</a></li>
           <li><a href="/aboutus">About</a></li>
-          <li><a href="/404">Contact Us</a></li>
+          <li><a href="#footer">Contact Us</a></li>
 
           {% if session['user'] == Flase and session['recruiter']==Flase: %}
           <li><a href="/login">Login</a></li>
@@ -204,20 +209,38 @@
               <h3 data-aos="fade-up" data-aos-delay="100">8th-10th</h3>
               <p>Students from SSC has a broad mindset for them we have an aptitude examination. An aptitude is a
                 component of a competence to do a certain kind of work at a certain level.</p>
+              {% if getuse.quali =="8th-10th" %}
               <a href="/taketest-10" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+              {% elif session['user'] %}
+              <a href="#" onclick="func()" class="readmore stretched-link">Learn more <i
+                  class="bi bi-arrow-right"></i></a>
+              {% else %}
+              <a href="/taketest-10" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+              {% endif %}
+
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class=" col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative">
               <div class="icon">
                 <i class="fa-solid fa-arrow-up-from-ground-water"></i>
               </div>
               <h3>11th-12th</h3>
-              <p>Students from HSC has a Competitive mindset for them we have an Personality and Aptitude examination.
-                Personality assessment is most advanced and accurate online career test that will help to take informed
+              <p>Students from HSC has a Competitive mindset for them we have an Personality and Aptitude
+                examination.
+                Personality assessment is most advanced and accurate online career test that will help to take
+                informed
                 career decisions.</p>
+              {% if getuse.quali =="SSC passed" %}
               <a href="/taketest-12" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+              {% elif session['user'] %}
+              <a href="#" onclick="func()" class="readmore stretched-link">Learn more <i
+                  class="bi bi-arrow-right"></i></a>
+              {% else %}
+              <a href="/taketest-12" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+              {% endif %}
+
             </div>
           </div><!-- End Service Item -->
 
@@ -229,7 +252,14 @@
               <h3>Under-Graduate</h3>
               <p>Students from UG/PG has a Competitive and skilled mindset for them we have an Personality and Talent
                 Assessment. Discover your skills and know your skills.</p>
+              {% if getuse.quali == "Pursing UG" %}
               <a href="/taketest-up" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+              {% elif session['user'] %}
+              <a href="#" onclick="func()" class="readmore stretched-link">Learn more <i
+                  class="bi bi-arrow-right"></i></a>
+              {% else %}
+              <a href="/taketest-up" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+              {% endif %}
             </div>
           </div><!-- End Service Item -->
         </div>
@@ -615,11 +645,11 @@
                 Airoli, Navi Mumbai<br>
                 Feel Free to contact us:<br>
                 <a href="tel:9819851925" style="color:azure"><strong class="fa fa-phone"> : </strong> <b>+91 98198
-                    51925</b><br></a>
+                    51925</a> &ThickSpace; Mr. Shreyas Ajgaonkar</b><br>
                 <a href="tel:7021082886" style="color:azure"><strong class="fa fa-phone"> : </strong> <b>+91 70210
-                    82886</b><br></a>
+                    82886</a> &ThickSpace; Ms. Deepali Kadam</b><br>
                 <a href="tel:8779624069" style="color:azure"><strong class="fa fa-phone"> : </strong> <b>+91 87796
-                    24069</b><br></a>
+                    24069</a> &ThickSpace; Mr. Pranav Jore</b><br>
               </p>
               <!-- <div class="social-links d-flex mt-3">
                 <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
@@ -840,7 +870,15 @@
 
   </script>
 
-
+  <script>
+    function func() {
+      // $(window).load(function () {
+      // $('.alertbox').click(function () {
+      alert('You are not eligible for this Test');
+      // });
+      // })
+    }
+  </script>
 
 
 </body>
