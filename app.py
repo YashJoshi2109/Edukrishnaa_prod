@@ -591,6 +591,7 @@ def results_10():
 
 # Job description code starts here
     descRoles = []
+    desccopy = []
     roles = [item.strip() for item in roles]
     for i in roles:
         print("printing roles plz", i)
@@ -602,15 +603,17 @@ def results_10():
         # tempting = Roles.query.order_by(inI).all()
         print("printing the temp variable", tempting)
         descRoles.append(tempting.image)
+        desccopy.append(tempting.quote)
+        img_dict = list(zip(roles, descRoles, desccopy))
         print("getting quotes", descRoles)
 
     # creating list
     personality_list = list(sorted_dict.keys())
     temp_score = list(sorted_dict.values())
     score_values = [str(x) for x in temp_score]
-    storeResult(personality_list, score_values, roles)
+    storeResult(personality_list, score_values, roles, )
 
-    return render_template("/tenth/resultpage.html", roles=new_list, mylist=my_list, getinfo=getinfo, descRoles=descRoles)
+    return render_template("/tenth/resultpage.html", roles=new_list, mylist=my_list, getinfo=getinfo, descRoles=descRoles, img_dict=img_dict)
 
 
 @app.route('/results_10/<roleid>', methods=['GET', 'POST'])

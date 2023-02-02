@@ -249,7 +249,7 @@
 
 
           <!-- section start -->
-          {% for i,j in zip(roles,descRoles): %}
+          {% for i,j,k in img_dict %}
           <div class="col-sm-3 d-flex align-items-center">
             <div class="a-box">
               <div class="img-container">
@@ -261,10 +261,10 @@
               </div>
               <div class="text-container">
                 <a href="/results_10/{{i}}">
-                  <h3>{{ i }}</h3>
+                  <h3>{{i}}</h3>
                 </a>
                 <div>
-                  Sample check description
+                  {{k}}
                 </div>
               </div>
             </div>
