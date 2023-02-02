@@ -104,7 +104,7 @@ class Roles(db.Model):
     roles = db.Column(db.String(500))
     quote = db.Column(db.String(500))
     explore = db.Column(db.String(3000))
-    video = db.Column(db.String(200))
+    image = db.Column(db.String(200))
 
 
 class Results(db.Model):
@@ -1517,5 +1517,5 @@ def server_error():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3000)
-    # app.run(debug=True)
+    # app.run(host="0.0.0.0", port=3000)
+    app.run(debug=True)
