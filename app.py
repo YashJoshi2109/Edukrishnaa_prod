@@ -534,6 +534,7 @@ def test():
 def results_10():
     username1 = session['user']
     getinfo = User.query.filter_by(uname=username1).first()
+    getRoles = Roles.query.all()
 
     scoreList = []
     numericalValues = ["Mostly Disagree",
@@ -590,15 +591,18 @@ def results_10():
 
 # Job description code starts here
     descRoles = []
+    roles = [item.strip() for item in roles]
     for i in roles:
         print("printing roles plz", i)
         inI = str(i)
+        print(type(i))
         print(i)
-        # temp = Roles.query.filter_by(roles=inI)
-        temp = Roles.query.filter_by(roles=i).first()
-        print("printing the temp variable", temp)
-        descRoles.append(temp)
-    print("getting quotes", descRoles)
+        # temp = Roles.query.filter_by(roles=inI).first()
+        tempting = Roles.query.filter_by(roles=i).first()
+        # tempting = Roles.query.order_by(inI).all()
+        print("printing the temp variable", tempting)
+        descRoles.append(tempting.image)
+        print("getting quotes", descRoles)
 
     # creating list
     personality_list = list(sorted_dict.keys())
@@ -606,7 +610,7 @@ def results_10():
     score_values = [str(x) for x in temp_score]
     storeResult(personality_list, score_values, roles)
 
-    return render_template("/tenth/resultpage.html", roles=new_list, mylist=my_list, getinfo=getinfo)
+    return render_template("/tenth/resultpage.html", roles=new_list, mylist=my_list, getinfo=getinfo, descRoles=descRoles)
 
 
 @app.route('/results_10/<roleid>', methods=['GET', 'POST'])
@@ -1517,5 +1521,5 @@ def server_error():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3000)
-    # app.run(debug=True)
+    # app.run(host="0.0.0.0", port=3000)
+    app.run(debug=True)

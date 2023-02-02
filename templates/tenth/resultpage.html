@@ -249,13 +249,13 @@
 
 
           <!-- section start -->
-          {% for i in roles %}
+          {% for i,j in zip(roles,descRoles): %}
           <div class="col-sm-3 d-flex align-items-center">
             <div class="a-box">
               <div class="img-container">
                 <div class="img-inner">
                   <div class="inner-skew">
-                    <img src="/static/assets/img/musicteacher.jpg">
+                    <img src="{{j}}">
                   </div>
                 </div>
               </div>
