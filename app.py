@@ -1282,7 +1282,7 @@ def addpost():
     gender = request.form['gender']
     account = request.form['account']
     income = request.form['income']
-    roles = request.form['roles']
+    # roles = request.form['roles']
 
     if User.query.filter_by(email=email).first() == None:
         pass
@@ -1308,14 +1308,14 @@ def addpost():
         ((today.month, today.day) < (date_time_str.month, date_time_str.day))
 
     print("************************REGISTRATION INFO********",  state,
-          city, uname, dob, date_time_str, age, gender, account, income, roles)
+          city, uname, dob, date_time_str, age, gender, account, income)
 
     server = smtplib.SMTP('smtp.gmail.com', 587)
     otp = str(random.randint(1000, 9999))
     print(otp, type(otp))
 
-    finalotp = "You are going to be registered in Edukrishna, Please find the below OTP and complete the verification. YOUR OTP IS " + \
-        otp+". Do not share this OTP with anyone. - Team Edukrishnaa"
+    finalotp = "To register yourself in Edukrishna, Please find the below OTP and complete the verification. YOUR OTP IS " + \
+        otp+". Do not share this OTP with anyone - Team Edukrishnaa"
 # randomnew = "OTP ", randomNumber
 
     server.starttls()
@@ -1325,7 +1325,7 @@ def addpost():
     print("*********Mail sent !*********")
 
     adddata = User(fname=name, lname=lname, email=email, dob=date_time_str, age=age,
-                   phone=phone, state=state, city=city, uname=uname, gender=gender, quali=account, fam_income=income, roles=roles,
+                   phone=phone, state=state, city=city, uname=uname, gender=gender, quali=account, fam_income=income, roles="User",
                    address=None, clg_name=None, graduation_year=None, course=None, certificate=None, otp=otp, img=profile)
 
     db.session.add(adddata)
@@ -1524,5 +1524,5 @@ def server_error():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3000)
-    # app.run(debug=True)
+    # app.run(host="0.0.0.0", port=3000)
+    app.run(debug=True)
