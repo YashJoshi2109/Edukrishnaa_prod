@@ -436,10 +436,11 @@ def aboutus():
     return render_template("/log_reg_pro/aboutus.html")
 
 
-@ app.route('/user_profile', methods=['GET', 'POST'])
+@app.route('/user_profile', methods=['GET', 'POST'])
 def user_profile():
     username1 = session['user']
     getinfo = User.query.filter_by(uname=username1).first()
+    print("show image",getinfo.img)
     return render_template("/log_reg_pro/user_profile.html", getinfo=getinfo)
 
 
@@ -843,7 +844,28 @@ def results_up():
     score_values = [str(x) for x in score_values]
     storeResult(personality_list, score_values, roles)
 
-    return render_template("/ug-pg/be/result_be.html",  roles=roles, mylist=my_list, getinfo=getinfo)
+
+    # Job description and image code starts here
+    descRoles = []
+    desccopy = []
+    roles = [item.strip() for item in roles]
+    for i in roles:
+        print("printing roles plz", i)
+        inI = str(i)
+        print(type(i))
+        print(i)
+        # temp = Roles.query.filter_by(roles=inI).first()
+        tempting = Roles.query.filter_by(roles=i).first()
+        # tempting = Roles.query.order_by(inI).all()
+        print("printing the temp variable", tempting)
+        descRoles.append(tempting.image)
+        desccopy.append(tempting.quote)
+        img_dict = list(zip(roles, descRoles, desccopy))
+        print("getting quotes", descRoles)
+
+
+
+    return render_template("/ug-pg/be/result_be.html",  roles=roles, mylist=my_list, getinfo=getinfo, img_dict=img_dict)
 
 
 @ app.route('/results-se', methods=['GET', 'POST'])
@@ -879,6 +901,7 @@ def results_se():
     mcqList = []
     ans = [0, 1]
     mcqId = ['CP{}', 'DM{}', 'CH{}']
+    store_dict = {}
     if request.method == "POST":
         print("if is working")
         scoreChoco = 0
@@ -896,24 +919,62 @@ def results_se():
                 if temp in ans:
                     score += ans.index(temp)+1
                     tempScore = score-6
-
+            if i == 'CH{}':
+                temp_char = "Computer Hardware"
+            elif i=='CP{}':
+                temp_char = "C"
+            elif i=='DM{}':
+                temp_char = "Data mining and storage"
+                
+            store_dict[temp_char] = tempScore
             print(tempScore, "  ", i)
+            print ("MY dictionary - ",store_dict)
             scoreList.append(tempScore)
             # scoreList.append(mcqList)
 
     print("this is MCQ test  ", scoreList)
-    roles = predict_jobrole_Te([scoreList])
-    print(roles)
-    roles = [item.strip() for item in roles]
+    
+    # Getting the key with maximum value  
+    Key_max = max(zip(store_dict.values(), store_dict.keys()))[1]  
+    print("Key max value", Key_max)
 
-    # roles1 = roles.pop(0)
+    key_value = store_dict[Key_max] 
+    if key_value <= 3:
+        Key_max = "other"
 
-    my_dict = {"Logical": 0, "Spatial": 0,
-               "Interpersonal": 0, "Intrapersonal": 0}
+    data1 = pd.read_csv("SE.csv")
+    df_new = data1[data1['domain'] == f'{Key_max}']
+    print(df_new)
+    sub_domain = df_new.iloc[0][1]
+    se_roles = df_new.iloc[0][2]
+    print("sub domain", sub_domain)
+    print("se roles", se_roles)
 
-    per_list = ["Logical", "Spatial", "Interpersonal", "Intrapersonal"]
+    se_roles = list(se_roles.split(","))
 
-    final_dict = dict(zip(per_list, perScore))
+    # Job description and image code starts here
+    descRoles = []
+    desccopy = []
+    for i in se_roles:
+        print("printing roles plz", i)
+        inI = str(i)
+        print(type(i))
+        print(i)
+        # temp = Roles.query.filter_by(roles=inI).first()
+        tempting = Roles.query.filter_by(roles=i).first()
+        # tempting = Roles.query.order_by(inI).all()
+        print("printing the temp variable", tempting)
+        descRoles.append(tempting.image)
+        desccopy.append(tempting.quote)
+        img_dict = list(zip(se_roles, descRoles, desccopy))
+        print("getting quotes", descRoles)
+
+
+    #converting to percentage personality
+    per_list = ["Linguistic", "Musical", "Bodily", "Logical",
+                "Spatial", "Interpersonal", "Intrapersonal", "Naturalist"]
+
+    final_dict = dict(zip(per_list, scoreList))
     print("printing filled dictionary : ", final_dict)
 
     perc_dict = {}
@@ -923,15 +984,19 @@ def results_se():
     sorted_dict = dict(
         sorted(perc_dict.items(), key=lambda x: x[1], reverse=True))
 
-    # Storing in the database
     my_list = list(sorted_dict.items())
     print("soreted list", my_list)
-    personality_list = list(sorted_dict.keys())
-    score_values = list(sorted_dict.values())
-    score_values = [str(x) for x in score_values]
-    storeResult(personality_list, score_values, roles)
 
-    return render_template("/ug-pg/se/result_se.html",roles=roles, mylist=my_list, getinfo=getinfo)
+
+    # # Storing in the database
+    # my_list = list(sorted_dict.items())
+    # print("soreted list", my_list)
+    # personality_list = list(sorted_dict.keys())
+    # score_values = list(sorted_dict.values())
+    # score_values = [str(x) for x in score_values]
+    # storeResult(personality_list, score_values, roles)
+
+    return render_template("/ug-pg/se/result_se.html", mylist=my_list, sub=sub_domain, img_dict=img_dict, getinfo=getinfo)
 
 
 @ app.route('/results-te', methods=['GET', 'POST'])
@@ -1020,7 +1085,25 @@ def results_te():
     score_values = [str(x) for x in score_values]
     storeResult(personality_list, score_values, roles)
 
-    return render_template("/ug-pg/te/result_te.html", roles=roles, mylist=my_list, getinfo=getinfo)
+    # Job description and image code starts here
+    descRoles = []
+    desccopy = []
+    roles = [item.strip() for item in roles]
+    for i in roles:
+        print("printing roles plz", i)
+        inI = str(i)
+        print(type(i))
+        print(i)
+        # temp = Roles.query.filter_by(roles=inI).first()
+        tempting = Roles.query.filter_by(roles=i).first()
+        # tempting = Roles.query.order_by(inI).all()
+        print("printing the temp variable", tempting)
+        descRoles.append(tempting.image)
+        desccopy.append(tempting.quote)
+        img_dict = list(zip(roles, descRoles, desccopy))
+        print("getting quotes", descRoles)
+
+    return render_template("/ug-pg/te/result_te.html", roles=roles, mylist=my_list, getinfo=getinfo, img_dict=img_dict)
 
 
 @app.route('/results_te/<roleid>', methods=['GET', 'POST'])
@@ -1607,5 +1690,5 @@ def server_error():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3000)
-    # app.run(debug=True)
+    # app.run(host="0.0.0.0", port=3000)
+    app.run(debug=True)

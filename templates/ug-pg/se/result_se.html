@@ -254,7 +254,8 @@
     <section id="recommend" class="jobs-section-bg">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h2>Recommended Career</h2>
+          <h2>Recommended Domain </h2>
+          <h3>{{ sub }}</h3>
           <p>EduKrishnaa brings to you scientific and meticulously designed. Our recommendation System to discover your
             true potential and interest ,learning styles and skills .</p>
         </div>
@@ -262,22 +263,22 @@
 
 
           <!-- section start -->
-          {% for i in roles %}
+          {% for i,j,k in img_dict %}
           <div class="col-sm-3 d-flex align-items-center">
-            <div class="a-box" title="CLICK TO EXPLORE" data-toggle="tooltip">
+            <div class="a-box">
               <div class="img-container">
                 <div class="img-inner">
                   <div class="inner-skew">
-                    <img src="/static/assets/img/musicteacher.jpg">
+                    <img src="{{j}}">
                   </div>
                 </div>
               </div>
               <div class="text-container">
-                <a href="/results_te/{{i}}">
-                  <h3>{{ i }}</h3>
+                <a href="/results_10/{{i}}">
+                  <h3>{{i}}</h3>
                 </a>
                 <div>
-                  Sample descriptions
+                  {{k}}
                 </div>
               </div>
             </div>
