@@ -731,7 +731,7 @@ def take_test_up():
         return redirect(url_for("login"))
 
 
-@ app.route('/test1-se', methods=['GET', 'POST'])
+@ app.route('/se', methods=['GET', 'POST'])
 def test1_se():
     return render_template("/ug-pg/se/test1_se.html")
 
@@ -848,7 +848,90 @@ def results_up():
 
 @ app.route('/results-se', methods=['GET', 'POST'])
 def results_se():
-    return render_template("/ug-pg/se/result_se.html")
+    username1 = session['user']
+    getinfo = User.query.filter_by(uname=username1).first()
+
+    scoreList = []
+    numericalValues = ["Mostly Disagree",
+                       "Slightly Disagree", "Slightly Agree", "Mostly Agree"]
+
+    personalities = ['logical{}', 'spatial{}',
+                     'interpersonal{}', 'intrapersonal{}']
+
+    if request.method == "POST":
+        print("if is working")
+        scoreChoco = 0
+        score = 0
+        form = request.form.get("form1")
+        sum = 0
+
+        for i in personalities:
+            score = 0
+            for j in range(1, 6):
+                choco = request.form.get((i.format(j)))
+
+                if choco in numericalValues:
+                    score += numericalValues.index(choco)+1
+
+            print(score, "  ", i)
+            scoreList.append(score)
+            perScore = scoreList
+    mcqList = []
+    ans = [0, 1]
+    mcqId = ['NIM{}', 'web{}', 'AI{}']
+    if request.method == "POST":
+        print("if is working")
+        scoreChoco = 0
+        score = 0
+        form = request.form.get("form1")
+        sum = 0
+
+        for i in mcqId:
+            score = 0
+            for j in range(1, 7):
+                getAns = request.form.get((i.format(j)))
+                # print(type(getAns))
+                print(j, i, " get ans ", getAns)
+                temp = int(getAns)
+                if temp in ans:
+                    score += ans.index(temp)+1
+                    tempScore = score-6
+
+            print(tempScore, "  ", i)
+            scoreList.append(tempScore)
+            # scoreList.append(mcqList)
+
+    print("this is MCQ test  ", scoreList)
+    roles = predict_jobrole_Te([scoreList])
+    print(roles)
+    roles = [item.strip() for item in roles]
+
+    # roles1 = roles.pop(0)
+
+    my_dict = {"Logical": 0, "Spatial": 0,
+               "Interpersonal": 0, "Intrapersonal": 0}
+
+    per_list = ["Logical", "Spatial", "Interpersonal", "Intrapersonal"]
+
+    final_dict = dict(zip(per_list, perScore))
+    print("printing filled dictionary : ", final_dict)
+
+    perc_dict = {}
+    for key, val in final_dict.items():
+        perc_dict[key] = round(val/20 * 100, 2)
+
+    sorted_dict = dict(
+        sorted(perc_dict.items(), key=lambda x: x[1], reverse=True))
+
+    # Storing in the database
+    my_list = list(sorted_dict.items())
+    print("soreted list", my_list)
+    personality_list = list(sorted_dict.keys())
+    score_values = list(sorted_dict.values())
+    score_values = [str(x) for x in score_values]
+    storeResult(personality_list, score_values, roles)
+
+    return render_template("/ug-pg/se/result_se.html",roles=roles, mylist=my_list, getinfo=getinfo)
 
 
 @ app.route('/results-te', methods=['GET', 'POST'])
@@ -1524,5 +1607,5 @@ def server_error():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3000)
-    # app.run(debug=True)
+    # app.run(host="0.0.0.0", port=3000)
+    app.run(debug=True)
