@@ -856,7 +856,7 @@ def results_se():
                        "Slightly Disagree", "Slightly Agree", "Mostly Agree"]
 
     personalities = ['logical{}', 'spatial{}',
-                     'interpersonal{}', 'intrapersonal{}']
+                     'interpersonal{}', 'intrapersonal{}', 'linguistic{}', 'musical{}', 'bodily{}', 'naturalistic{}']
 
     if request.method == "POST":
         print("if is working")
@@ -878,7 +878,7 @@ def results_se():
             perScore = scoreList
     mcqList = []
     ans = [0, 1]
-    mcqId = ['NIM{}', 'web{}', 'AI{}']
+    mcqId = ['CP{}', 'DM{}', 'CH{}']
     if request.method == "POST":
         print("if is working")
         scoreChoco = 0
@@ -1607,5 +1607,5 @@ def server_error():
 
 
 if __name__ == '__main__':
-    # app.run(host="0.0.0.0", port=3000)
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=3000)
+    # app.run(debug=True)
