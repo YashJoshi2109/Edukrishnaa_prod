@@ -863,6 +863,13 @@ def results_up():
         img_dict = list(zip(roles, descRoles, desccopy))
         print("getting quotes", descRoles)
 
+    
+    # creating list to add into db
+    personality_list = list(sorted_dict.keys())
+    temp_score = list(sorted_dict.values())
+    score_values = [str(x) for x in temp_score]
+    storeResult(personality_list, score_values, roles, )
+
 
 
     return render_template("/ug-pg/be/result_be.html",  roles=roles, mylist=my_list, getinfo=getinfo, img_dict=img_dict)
@@ -949,9 +956,8 @@ def results_se():
     se_roles = df_new.iloc[0][2]
     print("sub domain", sub_domain)
     print("se roles", se_roles)
-
     se_roles = list(se_roles.split(","))
-
+    roles=se_roles
     # Job description and image code starts here
     descRoles = []
     desccopy = []
@@ -984,6 +990,12 @@ def results_se():
     sorted_dict = dict(
         sorted(perc_dict.items(), key=lambda x: x[1], reverse=True))
 
+    # creating list
+    personality_list = list(sorted_dict.keys())
+    temp_score = list(sorted_dict.values())
+    score_values = [str(x) for x in temp_score]
+    storeResult(personality_list, score_values, se_roles, )
+
     my_list = list(sorted_dict.items())
     print("soreted list", my_list)
 
@@ -996,6 +1008,7 @@ def results_se():
     # score_values = [str(x) for x in score_values]
     # storeResult(personality_list, score_values, roles)
 
+    
     return render_template("/ug-pg/se/result_se.html", mylist=my_list, sub=sub_domain, img_dict=img_dict, getinfo=getinfo)
 
 
@@ -1102,6 +1115,13 @@ def results_te():
         desccopy.append(tempting.quote)
         img_dict = list(zip(roles, descRoles, desccopy))
         print("getting quotes", descRoles)
+
+    # creating list to add into db
+    personality_list = list(sorted_dict.keys())
+    temp_score = list(sorted_dict.values())
+    score_values = [str(x) for x in temp_score]
+    storeResult(personality_list, score_values, roles, )
+
 
     return render_template("/ug-pg/te/result_te.html", roles=roles, mylist=my_list, getinfo=getinfo, img_dict=img_dict)
 

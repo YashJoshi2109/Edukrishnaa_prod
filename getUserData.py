@@ -61,7 +61,9 @@ def insert_record(personality_list, score_values, roles, getuserinfo):
     personal_opt_list = personal_opt_list.join(db_per_list)
     get_roles = get_roles.join(db_roles)
     score_list = score_list.join(db_score_list)
-
+    print("db personality ", personal_opt_list)
+    print("db roles ", get_roles)
+    print("db score list ", score_list)
     current_userid = getuserinfo.id
 
     addResult = Results(res_user_id=current_userid, top_domain=personal_opt_list,
