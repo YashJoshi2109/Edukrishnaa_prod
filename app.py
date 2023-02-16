@@ -287,14 +287,15 @@ def login():
         # randomNumber = random.randint(1000, 9999)
         # print(randomNumber)
 
-        username = User.query.filter_by(uname=user).first()
-        # print("This is username from database ***************************************", username.uname)
-        if user == username.uname and password == username.password:
-            session["user"] = user
-            return redirect(url_for("myhome"))
-        # else:
-        #     easygui.msgbox(
-        #         "YOU HAVE ENTER WRONG USERNAME OR PASSWORD!", title="LOGIN ERROR")
+        if User.query.filter_by(uname=user).first():
+            username = User.query.filter_by(uname=user).first()
+            # print("This is username from database ***************************************", username.uname)
+            if user == username.uname and password == username.password:
+                session["user"] = user
+                return redirect(url_for("myhome"))
+        else:
+            flash("Invalid Username or Password")
+            return redirect(url_for("login"))
     else:
         if "user" in session:
             return redirect(url_for("user_profile"))
@@ -307,12 +308,17 @@ def admin():
         user = request.form["rec_email"]
         password = request.form["rec_pass"]
         # admin = request.form["admin"]
-        username = Recruiter.query.filter_by(co_email=user).first()
-        # print("This is username from database ***************************************", username.uname)
-        if user == username.co_email and password == username.recruite_password:
-            session["recruiter"] = user
-            return redirect(url_for("homepage"))
-        # else:
+        if Recruiter.query.filter_by(co_email=user).first():
+            username = Recruiter.query.filter_by(co_email=user).first()
+            # print("This is username from database ***************************************", username.uname)
+            if user == username.co_email and password == username.recruite_password:
+                session["recruiter"] = user
+                return redirect(url_for("homepage"))
+        else:
+            flash("Invalid Username or Password")
+            return redirect(url_for("login"))
+
+            # else:
 
         #     easygui.msgbox(
         #         "YOU HAVE ENTER WRONG USERNAME OR PASSWORD!", title="LOGIN ERROR")

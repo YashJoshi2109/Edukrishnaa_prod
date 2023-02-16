@@ -83,6 +83,11 @@
                 <!-- <span>or use your email for registration</span> -->
                 <input type="text" name="rec_email" placeholder="Company email address" />
                 <input type="password" name="rec_pass" placeholder="Password" />
+                <div style="color: #BE0F04; font-size: medium;">
+                    {% for incorrect_email_pass in get_flashed_messages() %}
+                    {{ incorrect_email_pass }}
+                    {% endfor %}
+                </div>
                 <!-- <input type="OTP" name="otp" placeholder="OTP Number on your mail ID" /> -->
                 <a href="/recruiter_register">Don't have an account? Register here</a>
                 <button>Login</button>
@@ -102,8 +107,8 @@
                 <input type="password" placeholder="Password" name="pass" id="password" required />
                 <!-- <input type="OTP" name="otp" placeholder="OTP Number on your mail ID" /> -->
                 <div style="color: #BE0F04; font-size: medium;">
-                    {% for mesg2 in get_flashed_messages() %}
-                    {{ mesg2 }}
+                    {% for incorrect_email_pass in get_flashed_messages() %}
+                    {{ incorrect_email_pass }}
                     {% endfor %}
                 </div>
                 <a href="/register">Don't have an account? Register here</a>

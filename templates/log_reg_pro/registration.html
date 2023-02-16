@@ -27,25 +27,25 @@
         <form name="form" method="POST" action="/add">
             <hr>
             <label id="icon" for="name"><i class="icon-user"></i></label>
-            <input type="text" name="name" id="name" placeholder="First name" />
+            <input type="text" name="name" id="name" placeholder="First name" required/>
 
             <label id="icon" for="lastname"><i class="icon-user"></i></label>
-            <input type="text" name="lastname" id="lastname" placeholder="Last name" />
+            <input type="text" name="lastname" id="lastname" placeholder="Last name" required/>
 
             <label id="icon" for="email"><i class="icon-envelope "></i></label>
-            <input type="email" name="email" id="email" placeholder="Email" />
+            <input type="email" name="email" id="email" placeholder="Email" required/>
 
             <label id="icon" for="dob"><i class="icon-info-sign"></i></label>
-            <input type="date" name="dob" id="dob" value="">
+            <input type="date" name="dob" id="dob" value="" required>
             <!-- <input type="text" name="age" id="age" placeholder="DD-MM-YYYY"  /> -->
 
             <br>
             <label id="icon" for="phone"><i class="icon-phone"></i></label>
-            <input type="text" name="phone" id="phone" placeholder="Phone Number" />
+            <input type="text" name="phone" id="phone" placeholder="Phone Number" required/>
 
 
             <label id="icon" for="state"><i class="icon-home"></i></label>
-            <select type=dropdown id="inputState" name="state">
+            <select type=dropdown id="inputState" name="state" required>
                 <option value="SelectState">Select State</option>
                 <option value="Andra Pradesh">Andra Pradesh</option>
                 <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -87,7 +87,7 @@
             </select>
 
             <label id="icon" for="city"><i class="icon-home"></i></label>
-            <select name="city" type=dropdown class="form-control" id="inputDistrict">
+            <select name="city" type=dropdown class="form-control" id="inputDistrict" required>
                 <option name="city" value=""> Select District </option>
             </select>
 
@@ -139,11 +139,11 @@
               </select> -->
             &ThickSpace;&MediumSpace;
             <label id="icon" for="uname"><i class="icon-refresh icon-spin"></i></label>
-            <input type="text" name="uname" id="uname" placeholder="Username" />
+            <input type="text" name="uname" id="uname" placeholder="Username" required/>
 
             <hr>
             <div class="gender1">
-                <!-- <div><h3>Enter Gender</h3></div> -->
+                <div><h4>Gender:</h4></div>
                 <input type="radio" value="Male" id="male" name="gender" checked />
                 <label for="male" class="radio" chec>Male</label>
                 &ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;
@@ -155,7 +155,7 @@
             </div>
             <hr>
             <div class="accounttype">
-                <!-- <div><h3>User Type</h3></div> -->
+                <div><h4>Qualification:</h4></div>
                 <input type="radio" value="8th-10th" id="radioOne" name="account" checked />
                 <label for="radioOne" class="radio" chec>8th-10th</label>
                 &ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;
@@ -169,7 +169,7 @@
 
 
             <div class="income">
-                <!-- <div><h3>Enter Gender</h3></div> -->
+                <div><h4>Annual Income:</h4></div>
                 <input type="radio" value="0-8 lakhs" id="income1" name="income" checked />
                 <label for="income1" class="radio" chec>0-8 lakhs</label>
                 &ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;
