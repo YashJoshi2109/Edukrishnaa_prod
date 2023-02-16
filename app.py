@@ -644,7 +644,9 @@ def role_page(roleid):
 def add_feedback():
     username1 = session['user']
     getinfo = User.query.filter_by(uname=username1).first()
-
+    feedid = getinfo.id
+    feedid = "{}".format(feedid)  
+    print("feed id",type(feedid))
     review_text = request.form['review_text']
     # Textual month, day and year
     today = date.today()
@@ -653,12 +655,20 @@ def add_feedback():
     current_time = now.strftime("%H:%M:%S")
     feed_type = "Regular User"
 
-    adddata = Feedback(f_userid=getinfo.id, f_profile_photo=getinfo.img, f_first_name=getinfo.fname, f_last_name=getinfo.lname, feedback=review_text, f_date=current_date,
+    if Feedback.query.filter_by(f_userid=str(getinfo.id)).first():
+        update_feed = Feedback.query.filter_by(f_userid=str(feedid)).first()
+        update_feed.feedback = review_text
+        update_feed.f_time = current_time
+        update_feed.f_date = current_date
+        db.session.commit()
+
+    else:
+        adddata = Feedback(f_userid=getinfo.id, f_profile_photo=getinfo.img, f_first_name=getinfo.fname, f_last_name=getinfo.lname, feedback=review_text, f_date=current_date,
                        f_time=current_time, f_type=feed_type)
 
-    db.session.add(adddata)
+        db.session.add(adddata)
 
-    db.session.commit()
+        db.session.commit()
 
     return redirect("/")
 
@@ -1716,5 +1726,5 @@ def server_error():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3000)
-    # app.run(debug=True)
+    # app.run(host="0.0.0.0", port=3000)
+    app.run(debug=True)
