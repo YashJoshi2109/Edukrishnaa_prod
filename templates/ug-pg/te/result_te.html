@@ -30,6 +30,7 @@
 
   <!-- Template Main CSS File -->
   <link href="/static/assets/css/resultpage.css" rel="stylesheet">
+  <link href="/static/assets/css/profile_survey.css" rel="stylesheet">
 
 
 
@@ -263,29 +264,29 @@
 
           <!-- section start -->
           {% for i,j,k in img_dict %}
-          <div class="col-sm-3 d-flex align-items-center">
-            <div class="a-box">
-              <div class="img-container">
-                <div class="img-inner">
-                  <div class="inner-skew">
-                    <img src="{{j}}">
-                  </div>
-                </div>
-              </div>
-              <div class="text-container">
-                <a href="/results_10/{{i}}">
-                  <h3>{{i}}</h3>
-                </a>
-                <div>
-                  {{k}}
+          <div class="col-sm-3 d-flex align-items-center" title="CLICK TO EXPLORE" data-toggle="tooltip>
+            <div class=" a-box">
+            <div class="img-container">
+              <div class="img-inner">
+                <div class="inner-skew">
+                  <img src="{{j}}">
                 </div>
               </div>
             </div>
+            <div class="text-container">
+              <a href="/results_10/{{i}}">
+                <h3>{{i}}</h3>
+              </a>
+              <div>
+                {{k}}
+              </div>
+            </div>
           </div>
-          {% endfor %}
-
-
         </div>
+        {% endfor %}
+
+
+      </div>
       </div>
     </section><!-- End recommend Section -->
 
@@ -544,113 +545,89 @@
     <!-- offline consultancy section -->
     <section id="recomend" class="jobs-section-bg">
       <div class="container">
-        <div class="section-header">
-          <h2>Discover your IDEAL counsellors</h2>
-          <p>Get acquainted with the talented and well-trained experts who will guide you to your ideal future.</p>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-sm">
-            <!-- start -->
-            <figure class="fir-image-figure">
-              <a class="fir-imageover" rel="noopener" target="_blank" href="#">
-                <img class="fir-author-image fir-clickcircle" src="/static/assets/img/team/team-3.jpg"
-                  alt="David East - Author">
-                <div class="fir-imageover-color"></div>
-                <img class="fir-imageover-image fir-clickcircle"
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png" />
-              </a>
-              <figcaption>
-                <div class="fig-author-figure-title">Rishika Gosh</div>
-                <div class="fig-author-figure-title">Clinical psychologist.</div>
-                <div class="fig-author-figure-title">Experience &#8212; 5 Years</div>
-              </figcaption>
-            </figure>
-            <!-- end -->
-            <!-- start -->
-            <figure class="fir-image-figure">
-              <a class="fir-imageover" rel="noopener" target="_blank" href="#">
-                <img class="fir-author-image fir-clickcircle" src="/static/assets/img/team/team-2.jpg"
-                  alt="David East - Author">
-                <div class="fir-imageover-color"></div>
-                <img class="fir-imageover-image fir-clickcircle"
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png" />
-              </a>
-              <figcaption>
-                <div class="fig-author-figure-title">Prathamesh Kapote </div>
-                <div class="fig-author-figure-title">Career Consultant| Coach| Speaker| Mentor</div>
-                <div class="fig-author-figure-title">Experience &#8212; 3 years</div>
-              </figcaption>
-            </figure>
-            <!-- end -->
+        <div class="wrapper">
+          <div class="master">
+            <h1>Review and Rating</h1>
+            <h2>How was your experience about our website and result?</h2>
+
+            <div class="rating-component">
+              <div class="status-msg">
+                <label>
+                  <input class="rating_msg" type="hidden" name="rating_msg" value="" />
+                </label>
+              </div>
+              <div class="stars-box">
+                <i class="star fa fa-star" title="1 star" data-message="Poor" data-value="1"></i>
+                <i class="star fa fa-star" title="2 stars" data-message="Bad" data-value="2"></i>
+                <i class="star fa fa-star" title="3 stars" data-message="Average" data-value="3"></i>
+                <i class="star fa fa-star" title="4 stars" data-message="Nice" data-value="4"></i>
+                <i class="star fa fa-star" title="5 stars" data-message="Very Good " data-value="5"></i>
+              </div>
+              <div class="starrate">
+                <label>
+                  <input class="ratevalue" type="hidden" name="rate_value" value="" />
+                </label>
+              </div>
+            </div>
+            <form class="form1" id="form1" name="form1" method="POST" action="/add_feed">
+              <div class="feedback-tags">
+                <div class="tags-container" data-tag-set="1">
+                  <div class="question-tag">
+                    Why was your experience so bad?
+                  </div>
+                </div>
+                <div class="tags-container" data-tag-set="2">
+                  <div class="question-tag">
+                    Why was your experience so bad?
+                  </div>
+
+                </div>
+
+                <div class="tags-container" data-tag-set="3">
+                  <div class="question-tag">
+                    Why was your rating experience average?
+                  </div>
+                </div>
+                <div class="tags-container" data-tag-set="4">
+                  <div class="question-tag">
+                    Why was your experience good?
+                  </div>
+                </div>
+
+                <div class="tags-container" data-tag-set="5">
+                  <div class="make-compliment">
+                    <div class="compliment-container">
+                      Give a compliment
+                      <i class="far fa-smile-wink"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tags-box">
+                  <!-- <input type="text" class="tag form-control" name="comment" id="inlineFormInputName"
+                            placeholder="please enter your review"> -->
+                  <textarea style="color: rgb(30, 0, 255);" class="tag form-control" name="review_text"
+                    id="inlineFormInputName" rows="5" cols="60" placeholder="please enter your review">
+                              </textarea>
+
+                  <input type="hidden" name="product_id" />
+                </div>
+
+              </div>
+
+              <div class="button-box">
+                <input type="submit" class="done" disabled="disabled" value="Add review" />
+              </div>
+            </form>
+
+            <div class="placeholder=" please enter your review"">
+              <div class="loader"></div>
+              <div class="success-message">
+                Thank you!
+              </div>
+            </div>
           </div>
-          <div class="col-sm">
-            <!-- start -->
-            <figure class="fir-image-figure">
-              <a class="fir-imageover" rel="noopener" target="_blank" href="#">
-                <img class="fir-author-image fir-clickcircle" src="/static/assets/img/team/team-2.jpg"
-                  alt="David East - Author">
-                <div class="fir-imageover-color"></div>
-                <img class="fir-imageover-image fir-clickcircle"
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png" />
-              </a>
-              <figcaption>
-                <div class="fig-author-figure-title">Manish Jain</div>
-                <div class="fig-author-figure-title">Career Consultant| Coach| Speaker| Mentor</div>
-                <div class="fig-author-figure-title">Experience &#8212; 7 Years</div>
-              </figcaption>
-            </figure>
-            <!-- end -->
-            <!-- start -->
-            <figure class="fir-image-figure">
-              <a class="fir-imageover" rel="noopener" target="_blank" href="#">
-                <img class="fir-author-image fir-clickcircle" src="/static/assets/img/team/team-2.jpg"
-                  alt="David East - Author">
-                <div class="fir-imageover-color"></div>
-                <img class="fir-imageover-image fir-clickcircle"
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png" />
-              </a>
-              <figcaption>
-                <div class="fig-author-figure-title">Dr.Vijay</div>
-                <div class="fig-author-figure-title">Coach| Speaker| Mentor.</div>
-                <div class="fig-author-figure-title">Experience &#8212; 8 Years</div>
-              </figcaption>
-            </figure>
-            <!-- end -->
-          </div>
-          <div class="col-sm" style="align-content: flex-end;">
-            <!-- start -->
-            <figure class="fir-image-figure">
-              <a class="fir-imageover" rel="noopener" target="_blank" href="">
-                <img class="fir-author-image fir-clickcircle" src="/static/assets/img/team/team-3.jpg"
-                  alt="David East - Author">
-                <div class="fir-imageover-color"></div>
-                <img class="fir-imageover-image fir-clickcircle"
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png" />
-              </a>
-              <figcaption>
-                <div class="fig-author-figure-title">Adnan Buland</div>
-                <div class="fig-author-figure-title">Career | Mentor.</div>
-                <div class="fig-author-figure-title">Experience &#8212; 7 Years</div>
-              </figcaption>
-            </figure>
-            <!-- end -->
-            <!-- start -->
-            <figure class="fir-image-figure">
-              <a class="fir-imageover" rel="noopener" target="_blank" href="#">
-                <img class="fir-author-image fir-clickcircle" src="/static/assets/img/team/team-3.jpg"
-                  alt="David East - Author">
-                <div class="fir-imageover-color"></div>
-                <img class="fir-imageover-image fir-clickcircle"
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png" />
-              </a>
-              <figcaption>
-                <div class="fig-author-figure-title">Bhaskar</div>
-                <div class="fig-author-figure-title">Mentor.</div>
-                <div class="fig-author-figure-title">Experience &#8212; 4 Years</div>
-              </figcaption>
-            </figure>
-            <!-- end -->
-          </div>
+
         </div>
       </div>
     </section>
@@ -771,6 +748,104 @@
         }
       });
     });
+  </script>
+  <script>
+    $(".rating-component .star").on("mouseover", function () {
+      var onStar = parseInt($(this).data("value"), 10); //
+      $(this).parent().children("i.star").each(function (e) {
+        if (e < onStar) {
+          $(this).addClass("hover");
+        } else {
+          $(this).removeClass("hover");
+        }
+      });
+    }).on("mouseout", function () {
+      $(this).parent().children("i.star").each(function (e) {
+        $(this).removeClass("hover");
+      });
+    });
+
+    $(".rating-component .stars-box .star").on("click", function () {
+      var onStar = parseInt($(this).data("value"), 10);
+      var stars = $(this).parent().children("i.star");
+      var ratingMessage = $(this).data("message");
+
+      var msg = "";
+      if (onStar > 1) {
+        msg = onStar;
+      } else {
+        msg = onStar;
+      }
+      $('.rating-component .starrate .ratevalue').val(msg);
+
+
+
+      $(".fa-smile-wink").show();
+
+      $(".button-box .done").show();
+
+      if (onStar === 5) {
+        $(".button-box .done").removeAttr("disabled");
+      } else {
+        $(".button-box .done").attr("disabled", "true");
+      }
+
+      for (i = 0; i < stars.length; i++) {
+        $(stars[i]).removeClass("selected");
+      }
+
+      for (i = 0; i < onStar; i++) {
+        $(stars[i]).addClass("selected");
+      }
+
+      $(".status-msg .rating_msg").val(ratingMessage);
+      $(".status-msg").html(ratingMessage);
+      $("[data-tag-set]").hide();
+      $("[data-tag-set=" + onStar + "]").show();
+    });
+
+    $(".feedback-tags  ").on("click", function () {
+      var choosedTagsLength = $(this).parent("div.tags-box").find("input").length;
+      choosedTagsLength = choosedTagsLength + 1;
+
+      if ($(this).hasClass("choosed")) {
+        $(this).removeClass("choosed");
+        choosedTagsLength = choosedTagsLength - 2;
+      } else {
+        $(this).addClass("choosed");
+        $(".button-box .done").removeAttr("disabled");
+      }
+
+      console.log(choosedTagsLength);
+
+      if (choosedTagsLength <= 0) {
+        $(".button-box .done").attr("enabled", "false");
+      }
+    });
+
+
+
+    $(".compliment-container .fa-smile-wink").on("click", function () {
+      $(this).fadeOut("slow", function () {
+        $(".list-of-compliment").fadeIn();
+      });
+    });
+
+
+
+    $(".done").on("click", function () {
+      $(".rating-component").hide();
+      $(".feedback-tags").hide();
+      $(".button-box").hide();
+      $(".submited-box").show();
+      $(".submited-box .loader").show();
+
+      setTimeout(function () {
+        $(".submited-box .loader").hide();
+        $(".submited-box .success-message").show();
+      }, 1500);
+    });
+
   </script>
 </body>
 

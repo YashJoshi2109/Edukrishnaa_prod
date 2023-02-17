@@ -446,7 +446,7 @@ def aboutus():
 def user_profile():
     username1 = session['user']
     getinfo = User.query.filter_by(uname=username1).first()
-    print("show image",getinfo.img)
+    print("show image", getinfo.img)
     return render_template("/log_reg_pro/user_profile.html", getinfo=getinfo)
 
 
@@ -644,9 +644,7 @@ def role_page(roleid):
 def add_feedback():
     username1 = session['user']
     getinfo = User.query.filter_by(uname=username1).first()
-    feedid = getinfo.id
-    feedid = "{}".format(feedid)  
-    print("feed id",type(feedid))
+
     review_text = request.form['review_text']
     # Textual month, day and year
     today = date.today()
@@ -655,20 +653,12 @@ def add_feedback():
     current_time = now.strftime("%H:%M:%S")
     feed_type = "Regular User"
 
-    if Feedback.query.filter_by(f_userid=str(getinfo.id)).first():
-        update_feed = Feedback.query.filter_by(f_userid=str(feedid)).first()
-        update_feed.feedback = review_text
-        update_feed.f_time = current_time
-        update_feed.f_date = current_date
-        db.session.commit()
-
-    else:
-        adddata = Feedback(f_userid=getinfo.id, f_profile_photo=getinfo.img, f_first_name=getinfo.fname, f_last_name=getinfo.lname, feedback=review_text, f_date=current_date,
+    adddata = Feedback(f_userid=getinfo.id, f_profile_photo=getinfo.img, f_first_name=getinfo.fname, f_last_name=getinfo.lname, feedback=review_text, f_date=current_date,
                        f_time=current_time, f_type=feed_type)
 
-        db.session.add(adddata)
+    db.session.add(adddata)
 
-        db.session.commit()
+    db.session.commit()
 
     return redirect("/")
 
@@ -860,7 +850,6 @@ def results_up():
     score_values = [str(x) for x in score_values]
     storeResult(personality_list, score_values, roles)
 
-
     # Job description and image code starts here
     descRoles = []
     desccopy = []
@@ -879,14 +868,11 @@ def results_up():
         img_dict = list(zip(roles, descRoles, desccopy))
         print("getting quotes", descRoles)
 
-    
     # creating list to add into db
     personality_list = list(sorted_dict.keys())
     temp_score = list(sorted_dict.values())
     score_values = [str(x) for x in temp_score]
     storeResult(personality_list, score_values, roles, )
-
-
 
     return render_template("/ug-pg/be/result_be.html",  roles=roles, mylist=my_list, getinfo=getinfo, img_dict=img_dict)
 
@@ -944,24 +930,24 @@ def results_se():
                     tempScore = score-6
             if i == 'CH{}':
                 temp_char = "Computer Hardware"
-            elif i=='CP{}':
+            elif i == 'CP{}':
                 temp_char = "C"
-            elif i=='DM{}':
+            elif i == 'DM{}':
                 temp_char = "Data mining and storage"
-                
+
             store_dict[temp_char] = tempScore
             print(tempScore, "  ", i)
-            print ("MY dictionary - ",store_dict)
+            print("MY dictionary - ", store_dict)
             scoreList.append(tempScore)
             # scoreList.append(mcqList)
 
     print("this is MCQ test  ", scoreList)
-    
-    # Getting the key with maximum value  
-    Key_max = max(zip(store_dict.values(), store_dict.keys()))[1]  
+
+    # Getting the key with maximum value
+    Key_max = max(zip(store_dict.values(), store_dict.keys()))[1]
     print("Key max value", Key_max)
 
-    key_value = store_dict[Key_max] 
+    key_value = store_dict[Key_max]
     if key_value <= 3:
         Key_max = "other"
 
@@ -973,7 +959,7 @@ def results_se():
     print("sub domain", sub_domain)
     print("se roles", se_roles)
     se_roles = list(se_roles.split(","))
-    roles=se_roles
+    roles = se_roles
     # Job description and image code starts here
     descRoles = []
     desccopy = []
@@ -991,8 +977,7 @@ def results_se():
         img_dict = list(zip(se_roles, descRoles, desccopy))
         print("getting quotes", descRoles)
 
-
-    #converting to percentage personality
+    # converting to percentage personality
     per_list = ["Linguistic", "Musical", "Bodily", "Logical",
                 "Spatial", "Interpersonal", "Intrapersonal", "Naturalist"]
 
@@ -1015,7 +1000,6 @@ def results_se():
     my_list = list(sorted_dict.items())
     print("soreted list", my_list)
 
-
     # # Storing in the database
     # my_list = list(sorted_dict.items())
     # print("soreted list", my_list)
@@ -1024,7 +1008,6 @@ def results_se():
     # score_values = [str(x) for x in score_values]
     # storeResult(personality_list, score_values, roles)
 
-    
     return render_template("/ug-pg/se/result_se.html", mylist=my_list, sub=sub_domain, img_dict=img_dict, getinfo=getinfo)
 
 
@@ -1137,7 +1120,6 @@ def results_te():
     temp_score = list(sorted_dict.values())
     score_values = [str(x) for x in temp_score]
     storeResult(personality_list, score_values, roles, )
-
 
     return render_template("/ug-pg/te/result_te.html", roles=roles, mylist=my_list, getinfo=getinfo, img_dict=img_dict)
 
@@ -1726,5 +1708,5 @@ def server_error():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3000)
-    # app.run(debug=True)
+    # app.run(host="0.0.0.0", port=3000)
+    app.run(debug=True)
