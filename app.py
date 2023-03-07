@@ -442,6 +442,12 @@ def aboutus():
     return render_template("/log_reg_pro/aboutus.html")
 
 
+@ app.route('/feedback', methods=['GET', 'POST'])
+def feedback():
+    get_feed = Feedback.query.all()
+    return render_template("/log_reg_pro/feedback.html", get_feed=get_feed)
+
+
 @app.route('/user_profile', methods=['GET', 'POST'])
 def user_profile():
     username1 = session['user']
@@ -1682,7 +1688,7 @@ def addjobpost():
 
 @app.errorhandler(404)
 def not_found():
-    """Page not found."""
+    """Page not found Please contact us via Email."""
     return make_response(
         render_template("404page.html"),
         404
@@ -1691,7 +1697,7 @@ def not_found():
 
 @app.errorhandler(400)
 def bad_request():
-    """Bad request."""
+    """Bad request Please contact us via Email."""
     return make_response(
         render_template("404page.html"),
         400
@@ -1700,7 +1706,7 @@ def bad_request():
 
 @app.errorhandler(500)
 def server_error():
-    """Internal server error."""
+    """Internal server error Please contact us via Email."""
     return make_response(
         render_template("400page.html"),
         500
@@ -1708,5 +1714,5 @@ def server_error():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3000)
-    # app.run(debug=True)
+    # app.run(host="0.0.0.0", port=3000)
+    app.run(debug=True)
