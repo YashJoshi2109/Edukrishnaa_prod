@@ -1381,7 +1381,7 @@ app.config['COMPANY_LOGO'] = "static\\assets\company_logo"
 
 @ app.route('/recruite', methods=['GET', 'POST'])
 def recruite():
-    emp_photo = request.files['emp_photo']
+    # emp_photo = request.files['emp_photo']
     # if emp_photo.filename != '':
     #     global co_photo_id
     #     filepath = os.path.join(
@@ -1416,7 +1416,7 @@ def recruite():
     # e_uname = uname.encode()
     company_name = request.form['co_name']
 
-    certificate = request.files['co_logo']
+    # certificate = request.files['co_logo']
     # if certificate.filename != '':
     #     global co_logo
     #     filepath = os.path.join(
@@ -1434,6 +1434,49 @@ def recruite():
     repass = request.form['password2']
     emp_id = request.form['emp_id']
     role = "Admin"
+
+    # check email already exists
+    if Recruiter.query.filter_by(co_email=email).first() == None:
+        pass
+    else:
+        temp_email = Recruiter.query.filter_by(co_email=email).first()
+        if email == temp_email.co_email:
+            flash("Email already exsists.")
+            return render_template("/log_reg_pro/recruiter_registeration.html")
+
+
+    if password == repass:
+        flag = 0
+        while True:
+            if (len(password) < 7):
+                flag = -1
+                break
+            elif not re.search("[a-z]", password):
+                flag = -1
+                break
+            elif not re.search("[A-Z]", password):
+                flag = -1
+                break
+            elif not re.search("[0-9]", password):
+                flag = -1
+                break
+            elif not re.search("[_@$&#]", password):
+                flag = -1
+                break
+            elif re.search("\s", password):
+                flag = -1
+                break
+            else:
+                flag = 0
+                flash("Valid Password")
+                break
+
+        if flag == -1:
+            flash("*Please enter a valid password or password does not match!")
+            return render_template("/log_reg_pro/recruiter_registeration.html")
+    else:
+        flash("Password does not match.")
+        return render_template("/log_reg_pro/recruiter_registeration.html")
 
     # print("************************UPDATED INFORMATION********",  email,
     #       city, state, address, phone, college_name, course)
@@ -1714,5 +1757,5 @@ def server_error():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3000)
-    # app.run(debug=True)
+    # app.run(host="0.0.0.0", port=3000)
+    app.run(debug=True)

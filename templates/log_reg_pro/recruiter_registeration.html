@@ -180,16 +180,16 @@
         <form name="form" method="POST" action="/recruite" enctype="multipart/form-data">
             <hr>
             <label id="icon" for="name"><i class="icon-user"></i></label>
-            <input type="text" name="emp_name" id="emp_name" placeholder="Your Name" />
+            <input type="text" name="emp_name" id="emp_name" placeholder="Your Name" required/>
 
             <label id="icon" for="lastname"><i class="icon-user"></i></label>
-            <input type="text" name="co_name" id="co_name" placeholder="Company Name" />
+            <input type="text" name="co_name" id="co_name" placeholder="Company Name" required/>
 
             <label id="icon" for="email"><i class="icon-envelope "></i></label>
-            <input type="email" name="co_email" id="co_email" placeholder="Company Email" />
+            <input type="email" name="co_email" id="co_email" placeholder="Company Email" required/>
 
             <label id="icon" for="dob"><i class="icon-info-sign"></i></label>
-            <select type=dropdown id="industry" name="industry">
+            <select type=dropdown id="industry" name="industry" required>
                 <option>Select Company Type</option>
                 <option value="Product-based Company">Product-based Company</option>
                 <option value="Service-based Company">Service-based Company</option>
@@ -201,7 +201,7 @@
             <input type="text" name="phone" id="phone" placeholder="Company Phone Number" /> -->
 
             <label id="icon" for="state"><i class="icon-home"></i></label>
-            <select type=dropdown id="inputState" name="co_state">
+            <select type=dropdown id="inputState" name="co_state"required>
                 <option value="SelectState">Select State</option>
                 <option value="Andra Pradesh">Andra Pradesh</option>
                 <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -243,7 +243,7 @@
             </select>
 
             <label id="icon" for="city"><i class="icon-home"></i></label>
-            <select name="co_city" type=dropdown class="form-control" id="inputDistrict">
+            <select name="co_city" type=dropdown class="form-control" id="inputDistrict" required>
                 <option name="co_city" value=""> Select District </option>
             </select>
 
@@ -295,29 +295,36 @@
           </select> -->
             &ThickSpace;&MediumSpace;
             <label id="icon" for="uname"><i class="icon-refresh icon-spin"></i></label>
-            <input type="text" name="co_req_designation" id="co_req_desgination" placeholder="Your Desgination" />
+            <input type="text" name="co_req_designation" id="co_req_desgination" placeholder="Your Desgination" required/>
 
             <label id="icon" for="password1"><i class="icon-key"></i></label>
-            <input type="password" name="password1" id="password1" placeholder="Type Password" />
+            <input type="password" name="password1" id="password1" placeholder="Type Password" required/>
 
             <label id="icon" for="password2"><i class="icon-key"></i></label>
-            <input type="password" name="password2" id="password2" placeholder="Re-Type Password" />
+            <input type="password" name="password2" id="password2" placeholder="Re-Type Password" required/>
             <span id="StrengthDisp" class="badge displayBadge">Weak</span>
             <!-- <label id="icon" for="password1"><i class="icon-key"></i></label> -->
 
             <label id="icon" for="password2"><i class="icon-key"></i></label>
-            <input type="text" name="co_add1" id="co_add1" placeholder="Company's Address" />
+            <input type="text" name="co_add1" id="co_add1" placeholder="Company's Address" required/>
 
             <label id="icon" for="password1"><i class="icon-key"></i></label>
-            <input type="text" name="emp_id" id="emp_id" placeholder="Your Employee ID" />
+            <input type="text" name="emp_id" id="emp_id" placeholder="Your Employee ID" required/>
 
-            <hr>
+            <!-- <hr>
             <label class="co_logo">Upload Company Logo :</label>
             <input type="file" class="co_logo" name="co_logo" id="co_logo" />
 
             <hr>
             <label class="emp_photo">Upload your photo :</label>
-            <input type="file" class="emp_photo" name="emp_photo" id="emp_photo" />
+            <input type="file" class="emp_photo" name="emp_photo" id="emp_photo" /> -->
+
+            <div style="color: #BE0F04;">
+                {% for mesg in get_flashed_messages() %}
+                <h4>{{ mesg }}</h4>
+                {% endfor %}
+            </div>
+            <p>Password must contain atleast 9 characters including symbols, number and capital letter.</p>
 
             <hr>
             <p1>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p1>
