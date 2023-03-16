@@ -229,17 +229,17 @@
           <div class="col-md-6 col-lg-5 d-flex align-items-center" data-aos="fade-up">
             <div class="content search-tittle">
               <h3>What Personalities you are looking for?</h3>
-              <form action="" class="search-bar">
+              <form action="/personality" method="GET" class="search-bar">
                 <div class="box" title="Click to Select" data-toggle="tooltip">
                   <!-- <input type="search" list="perso" placeholder="Search here" name="q" autocomplete="off" /> -->
-                  <select name="cars" id="cars" placeholder="select">
-                    <option value="volvo">Linguistic Personality</option>
-                    <option value="saab">Logical Personality</option>
-                    <option value="opel">Spatial Personality</option>
-                    <option value="audi">Intrapersonal Personality</option>
-                    <option value="audi">Interpersonal Personality</option>
-                    <option value="audi">Bodily Personality</option>
-                    <option value="audi">Musically Personality</option>
+                  <select name="personality" id="cars" placeholder="select">
+                    <option value="linguistic">Linguistic Personality</option>
+                    <option value="logical">Logical Personality</option>
+                    <option value="spatial">Spatial Personality</option>
+                    <option value="intrapersonal">Intrapersonal Personality</option>
+                    <option value="interpersonal">Interpersonal Personality</option>
+                    <option value="bodily">Bodily Personality</option>
+                    <option value="musically">Musically Personality</option>
                   </select>
                 </div>
                 <button type="submit" title="Search" data-toggle="tooltip"><i class="fa fa-search"></i></button>
@@ -272,7 +272,7 @@
           <h2>Candidate's Data</h2>
         </center>
       </div>
-      <div class="table-responsive" data-aos="fade-up">
+      <div class="table-responsive" data-aos="fade-up" style="height: 450px;">
         <table class="table table-hover table-nowrap">
           <thead class="thead-light">
             <tr data-aos="fade-up">

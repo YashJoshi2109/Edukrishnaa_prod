@@ -1676,6 +1676,12 @@ def addjobpost():
     db.session.commit()
     return redirect("/homepage")
 
+@app.route('/personality',methods=['GET','POST'])
+def searchpersonlity():
+    personality = request.args.get("personality")
+
+    return ;
+
 # @ app.route('/add', methods=['POST'])
 # def addpost():
 #     name = request.form['name']
