@@ -1737,7 +1737,7 @@ def searchpersonlity():
 
 @app.errorhandler(404)
 def not_found():
-    """Page not found Please contact us via Email."""
+    """Page not found Pleaseee contact us via Email."""
     return make_response(
         render_template("404page.html"),
         404
@@ -1746,7 +1746,7 @@ def not_found():
 
 @app.errorhandler(400)
 def bad_request():
-    """Bad request Please contact us via Email."""
+    """Bad request Please contacttt us via Email."""
     return make_response(
         render_template("404page.html"),
         400
@@ -1755,7 +1755,7 @@ def bad_request():
 
 @app.errorhandler(500)
 def server_error():
-    """Internal server error Please contact us via Email."""
+    """Internal server error Pleeeease contact us via Email."""
     return make_response(
         render_template("400page.html"),
         500
