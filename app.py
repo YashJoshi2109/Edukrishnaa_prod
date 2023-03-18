@@ -1526,7 +1526,7 @@ def addpost():
             # return redirect(url_for("/"))
             return render_template("/log_reg_pro/registration.html")
 
-    # key = Fernet.generate_key()  # Store this key or get if you already have it
+    # key = Fernet.generate_key()  # Storeeee thissss key or get if you already have it
     # f = Fernet(key)
     date_time_str = datetime.strptime(str(dob), "%Y-%m-%d")
     if gender == 'Male':
