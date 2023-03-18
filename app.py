@@ -1676,11 +1676,25 @@ def addjobpost():
     return redirect("/homepage")
 
 
+# ekbaar run karke de le pranav ye wala
 @app.route('/personality', methods=['GET', 'POST'])
 def searchpersonlity():
     personality = request.args.get("personality")
+    user = session['recruiter']
+    getting = Results.query.first()  # results table main se top domian liya hain
+    value = getting.top_domain
+    print(value)  # string print hota hain top_domain db se
+    spilt = value.split(',')
+    print(spilt[0])  # starting list ka first element aata hain
+    print(type(spilt))  # spilt varible ka type list aa raha hain
+    # abhi ke liye mene yaha par user table dala hain aur even filter nahi dala hain
+    getinfo = User.query.all()
+    # yeh page main transfer karege hum chalega onces recruiter clicks on that card fir dusra ek page bane ka jarut nahi.
+    rec_user_data = User.query.all()
+    recruiter = Recruiter.query.filter_by(co_email=user).first()
+    print(personality)
+    return render_template("/recruiters/personality.html", all_user=rec_user_data, data=getinfo, recruiter=recruiter, personality=personality)
 
-    return
 
 # @ app.route('/add', methods=['POST'])
 # def addpost():

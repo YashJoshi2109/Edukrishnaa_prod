@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>EduKrishnaa - Home</title>
+    <meta content="Career Guidance System" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="../static/assets/img/logo_without_name.png" rel="icon">
+    <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../static/assets/css/homepage.css" rel="stylesheet">
+    <!-- <link href="../static/assets/css/recruiter.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/chatbot/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/chatbot/style1.css">
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/chatbot/responsive.css">
+
+    <!-- ChatBot -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/chatbot/jquery.convform.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <script src="/static/assets/js/jquery-3.1.1.min.js"></script>
+    <script src="/static/assets/js/jquery.convform.js"></script>
+    <script src="/static/assets/js/custom.js"></script>
+    <link href="/static/assets/css/profile_survey.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="/homepage" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <img src="../static/assets/img/White_font-removebg-preview.png" alt="logo">
+            </a>
+
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+            <nav id="navbar" class="navbar">
+                <!-- ======= Breadcrumbs ======= -->
+
+                <ul>
+                    <li><a href="/homepage" class="active">Home</a></li>
+                    <!-- <li><a href="/start">Start UP</a></li>  -->
+                    <li><a href="/404">About</a></li>
+                    <li><a href="#giveFeedback">Feedback</a></li>
+                    {% if session['recruiter'] == Flase: %}
+                    <li><a href="/login">Login</a></li>
+                    {% else: %}
+                    <!-- <li><a href="/user_profile">{{session['user']}}</a></li> -->
+                    <li class="dropdown"><a href=""><span>{{session['recruiter']}}</span> <i
+                                class="bi bi-chevron-down dropdown-indicator"></i></a>
+                        <ul>
+                            <li><a href="/404">Profile</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </li>
+
+                    {% endif %}
+
+
+
+                    <!-- <div class="col-lg-2 col-md-3">
+              <a href="/login">
+                <button type="submit" class="footer_button ">Login  </button>
+              </a>
+            </l1>
+              <li><a href="/registration">
+                <button type="submit" class="footer_button">Signup</button>
+              </a>
+              </li>
+            </div>  -->
+                </ul>
+            </nav><!-- .navbar -->
+
+        </div>
+
+    </header><!-- End Header -->
+    <main id="main">
+
+
+        <!-- ======= Services Section ======= -->
+        <section id="get-started" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-header">
+                    <br><br>
+                    <h2>Welcome to Edukrishnaa</h2>
+                    <h5>You have been looking for <b>{{personality}}</b> Personality.</h5>
+                    <p>EduKrishnaa provides Recruiters significant interface to reach professionals with right skills
+                        and experience. Our Services to discover potential professionals at one place.</p>
+                </div>
+
+                <div class="row gy-4">
+                    {% for getdata in all_user %}
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-item  position-relative">
+                            <div class="bootstrap-icons">
+                                <img alt="..." src="/../static/assets/img/{{getdata.img}}"
+                                    class="avatar avatar-sm rounded-circle me-2">
+                            </div>
+                            <br>
+                            <h3 data-aos="fade-up" data-aos-delay="100">{{getdata.fname}} {{getdata.lname}}</h3>
+                            <p>Personality: {{personality}} </p>
+                            <p>Email_ID: {{getdata.email}} </p>
+                            <p>Qualification: {{getdata.quali}} </p>
+                            <p>Phone Number: {{getdata.phone}}</p>
+
+                            <a href="recruiter/user/{{ getdata.id}}" class="readmore stretched-link">Know more <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div><!-- End Service Item -->
+                    {% endfor %}
+                </div>
+            </div>
+        </section><!-- End Services Section -->
+
+
+        <footer id="footer" class="footer">
+
+            <div class="footer-content position-relative">
+
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="footer-info">
+                                <h3>EduKrishnaa<span>.</span></h3>
+                                <p>
+                                    Datta Meghe College of Engineeering<br>
+                                    Airoli, Navi Mumbai<br>
+                                    Feel Free to contact us:<br>
+                                    <a href="tel:9819851925" style="color:azure"><strong class="fa fa-phone"> :
+                                        </strong>
+                                        <b>+91 98198
+                                            51925</a> &ThickSpace; Mr. Shreyas Ajgaonkar</b><br>
+                                    <a href="tel:7021082886" style="color:azure"><strong class="fa fa-phone"> :
+                                        </strong>
+                                        <b>+91 70210
+                                            82886</a> &ThickSpace; Ms. Deepali Kadam</b><br>
+                                    <a href="tel:8779624069" style="color:azure"><strong class="fa fa-phone"> :
+                                        </strong>
+                                        <b>+91 87796
+                                            24069</a> &ThickSpace; Mr. Pranav Jore</b><br>
+                                </p>
+
+
+                                <!-- <div class="social-links d-flex mt-3">
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+              </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-10">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7537.587291714683!2d72.997951!3d19.160508!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bf4daf8967d9%3A0xdd90bed2058f7eaa!2sDatta%20Meghe%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1675603175552!5m2!1sen!2sin"
+                                width="700" height="300" style="border: 10px;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <br></br>
+                    </div><!-- End footer info column-->
+                </div>
+            </div>
+
+            <div class="footer-legal text-center position-relative">
+                <div class="container">
+                    <div class="copyright">
+                        &copy; Copyright <strong><span>EduKrishnaa </span></strong>. All Rights Reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+        <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+                class="bi bi-arrow-up-short"></i></a>
+
+        <div id="preloader"></div>
+
+        <!-- Vendor JS Files -->
+        <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../static/assets/vendor/aos/aos.js"></script>
+        <script src="../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="../static/assets/vendor/php-email-form/validate.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="../static/assets/js/main.js"></script>
+
+        <!-- chatbot -->
+        <script type="text/javascript">
+            portfolioList = document.querySelectorAll('.portfolio-box');
+            portfolioList.forEach(function (portfolioPic) {
+                portfolioPic.addEventListener('click', function () {
+                    bg = this.style.backgroundImage;
+                    document.getElementById('port_pop_pic_bg').classList.add("active")
+                    document.getElementById('port_pop_pic').style.backgroundImage = bg
+                    document.getElementById('port_pop_pic').classList.add("active")
+                });
+            })
+            document.getElementById('port_pop_pic_bg').addEventListener('click', function () {
+                document.getElementById('port_pop_pic_bg').classList.remove("active")
+                document.getElementById('port_pop_pic').classList.remove("active")
+            })
+        </script>
+
+
+        <script>
+            $(".rating-component .star").on("mouseover", function () {
+                var onStar = parseInt($(this).data("value"), 10); //
+                $(this).parent().children("i.star").each(function (e) {
+                    if (e < onStar) {
+                        $(this).addClass("hover");
+                    } else {
+                        $(this).removeClass("hover");
+                    }
+                });
+            }).on("mouseout", function () {
+                $(this).parent().children("i.star").each(function (e) {
+                    $(this).removeClass("hover");
+                });
+            });
+
+            $(".rating-component .stars-box .star").on("click", function () {
+                var onStar = parseInt($(this).data("value"), 10);
+                var stars = $(this).parent().children("i.star");
+                var ratingMessage = $(this).data("message");
+
+                var msg = "";
+                if (onStar > 1) {
+                    msg = onStar;
+                } else {
+                    msg = onStar;
+                }
+                $('.rating-component .starrate .ratevalue').val(msg);
+
+
+
+                $(".fa-smile-wink").show();
+
+                $(".button-box .done").show();
+
+                if (onStar === 5) {
+                    $(".button-box .done").removeAttr("disabled");
+                } else {
+                    $(".button-box .done").attr("disabled", "true");
+                }
+
+                for (i = 0; i < stars.length; i++) {
+                    $(stars[i]).removeClass("selected");
+                }
+
+                for (i = 0; i < onStar; i++) {
+                    $(stars[i]).addClass("selected");
+                }
+
+                $(".status-msg .rating_msg").val(ratingMessage);
+                $(".status-msg").html(ratingMessage);
+                $("[data-tag-set]").hide();
+                $("[data-tag-set=" + onStar + "]").show();
+            });
+
+            $(".feedback-tags  ").on("click", function () {
+                var choosedTagsLength = $(this).parent("div.tags-box").find("input").length;
+                choosedTagsLength = choosedTagsLength + 1;
+
+                if ($(this).hasClass("choosed")) {
+                    $(this).removeClass("choosed");
+                    choosedTagsLength = choosedTagsLength - 2;
+                } else {
+                    $(this).addClass("choosed");
+                    $(".button-box .done").removeAttr("disabled");
+                }
+
+                console.log(choosedTagsLength);
+
+                if (choosedTagsLength <= 0) {
+                    $(".button-box .done").attr("enabled", "false");
+                }
+            });
+
+
+
+            $(".compliment-container .fa-smile-wink").on("click", function () {
+                $(this).fadeOut("slow", function () {
+                    $(".list-of-compliment").fadeIn();
+                });
+            });
+
+
+
+            $(".done").on("click", function () {
+                $(".rating-component").hide();
+                $(".feedback-tags").hide();
+                $(".button-box").hide();
+                $(".submited-box").show();
+                $(".submited-box .loader").show();
+
+                setTimeout(function () {
+                    $(".submited-box .loader").hide();
+                    $(".submited-box .success-message").show();
+                }, 1500);
+            });
+
+        </script>
+</body>
+
+</html>
