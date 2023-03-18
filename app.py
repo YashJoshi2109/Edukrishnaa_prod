@@ -1444,7 +1444,6 @@ def recruite():
             flash("Email already exsists.")
             return render_template("/log_reg_pro/recruiter_registeration.html")
 
-
     if password == repass:
         flag = 0
         while True:
@@ -1667,7 +1666,7 @@ def addjobpost():
     location = request.form['location']
     job_link = request.form['job_link']
 
-    # getRecData = getSessionDetailsRecruiter
+    # getRecData = getSessionDetailsRecruiterr
 
     addJobPost = JobPost(jobid=jobid, co_name=co_name, designation=designation, job_type=job_type, department=department,
                          job_desc1=job_description, req_skills=req_skills, location=location, job_link=job_link, job_desc2=None)
@@ -1676,11 +1675,12 @@ def addjobpost():
     db.session.commit()
     return redirect("/homepage")
 
-@app.route('/personality',methods=['GET','POST'])
+
+@app.route('/personality', methods=['GET', 'POST'])
 def searchpersonlity():
     personality = request.args.get("personality")
 
-    return ;
+    return
 
 # @ app.route('/add', methods=['POST'])
 # def addpost():
