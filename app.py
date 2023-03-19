@@ -1,5 +1,6 @@
 import csv
 import re
+from sqlalchemy import func
 from glob import glob
 import pandas as pd
 from sklearn.svm import SVC
@@ -1681,15 +1682,11 @@ def addjobpost():
 def searchpersonlity():
     personality = request.args.get("personality")
     user = session['recruiter']
-    getting = Results.query.first()  # results table main se top domian liya hain
-    value = getting.top_domain
-    print(value)  # string print hota hain top_domain db se
-    spilt = value.split(',')
-    print(spilt[0])  # starting list ka first element aata hain
-    print(type(spilt))  # spilt varible ka type list aa raha hain
-    # abhi ke liye mene yaha par user table dala hain aur even filter nahi dala hain
+    results = Results.query.filter(
+        Results.top_domain.startswith(personality)).all()  # yeh mast work ho raha hain
+    print("Main output hain yeh boss", results)  # output bhi aa raha hain
+    # yeh kaise logic laagana hain bro ? # yeh page main transfer karege hum chalega onces recruiter clicks on that card fir dusra ek page bane ka jarut nahi.
     getinfo = User.query.all()
-    # yeh page main transfer karege hum chalega onces recruiter clicks on that card fir dusra ek page bane ka jarut nahi.
     rec_user_data = User.query.all()
     recruiter = Recruiter.query.filter_by(co_email=user).first()
     print(personality)
@@ -1777,5 +1774,5 @@ def server_error():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3000)
-    # app.run(debug=True)
+    # app.run(host="0.0.0.0", port=3000)
+    app.run(debug=True)
