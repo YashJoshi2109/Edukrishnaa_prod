@@ -116,28 +116,25 @@
             <div class="container" data-aos="fade-up">
                 <div class="section-header">
                     <br><br>
-                    <h2>Welcome to Edukrishnaa</h2>
-                    <h5>You have been looking for <b>{{personality}}</b> Personality.</h5>
+                    <h2>You are looking at candidates with <b>{{personality}}</b> Personality.</h2>
                     <p>EduKrishnaa provides Recruiters significant interface to reach professionals with right skills
                         and experience. Our Services to discover potential professionals at one place.</p>
                 </div>
 
                 <div class="row gy-4">
-                    {% for getdata in all_user %}
+                    {% for i,j,k,l,m in all_user %}
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="service-item  position-relative">
                             <div class="bootstrap-icons">
-                                <img alt="..." src="/../static/assets/img/{{getdata.img}}"
+                                <img alt="..." src="/../static/assets/img/{{ m }}"
                                     class="avatar avatar-sm rounded-circle me-2">
                             </div>
                             <br>
-                            <h3 data-aos="fade-up" data-aos-delay="100">{{getdata.fname}} {{getdata.lname}}</h3>
-                            <p>Personality: {{personality}} </p>
-                            <p>Email_ID: {{getdata.email}} </p>
-                            <p>Qualification: {{getdata.quali}} </p>
-                            <p>Phone Number: {{getdata.phone}}</p>
+                            <h3 data-aos="fade-up" data-aos-delay="100">{{ j }}</h3>
+                            <p>Email_ID: {{ k }} </p>
+                            <p>Phone Number: {{ l }}</p>
 
-                            <a href="recruiter/user/{{ getdata.id}}" class="readmore stretched-link">Know more <i
+                            <a href="recruiter/user/{{ i }}" class="readmore stretched-link">Know more <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div><!-- End Service Item -->

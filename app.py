@@ -1684,13 +1684,38 @@ def searchpersonlity():
     user = session['recruiter']
     results = Results.query.filter(
         Results.top_domain.startswith(personality)).all()  # yeh mast work ho raha hain
-    print("Main output hain yeh boss", results)  # output bhi aa raha hain
+    get_ids = []
+    for i in results:
+        get_currentline = i;
+        temp = re.findall(r'\d+', str(get_currentline))
+        get_ids.append(int(temp[0]))
+    print("this is only ids", get_ids)
+    # output bhi aa raha hain
     # yeh kaise logic laagana hain bro ? # yeh page main transfer karege hum chalega onces recruiter clicks on that card fir dusra ek page bane ka jarut nahi.
+    get_name =[]
+    get_email=[]
+    get_phone = []
+    get_img = []
+    for i in get_ids:
+        i = str(i)
+        print("print i ",i)
+        if User.query.filter_by(id=i).first() != None:
+            user_info = User.query.filter_by(id=i).first()  
+            get_name.append(user_info.fname)
+            get_email.append(user_info.email)
+            get_phone.append(user_info.phone)
+            get_img.append(user_info.img)
+        else:
+            pass
+
+
+    all_data = list(zip(get_ids,get_name, get_email, get_phone, get_img))
+
     getinfo = User.query.all()
     rec_user_data = User.query.all()
     recruiter = Recruiter.query.filter_by(co_email=user).first()
     print(personality)
-    return render_template("/recruiters/personality.html", all_user=rec_user_data, data=getinfo, recruiter=recruiter, personality=personality)
+    return render_template("/recruiters/personality.html", all_user=all_data, data=getinfo, recruiter=recruiter, personality=personality)
 
 
 # @ app.route('/add', methods=['POST'])
@@ -1774,5 +1799,5 @@ def server_error():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3000)
-    # app.run(debug=True)
+    # app.run(host="0.0.0.0", port=3000)
+    app.run(debug=True)
