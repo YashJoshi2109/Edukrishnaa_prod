@@ -1686,21 +1686,21 @@ def searchpersonlity():
         Results.top_domain.startswith(personality)).all()  # yeh mast work ho raha hain
     get_ids = []
     for i in results:
-        get_currentline = i;
+        get_currentline = i
         temp = re.findall(r'\d+', str(get_currentline))
         get_ids.append(int(temp[0]))
     print("this is only ids", get_ids)
     # output bhi aa raha hain
     # yeh kaise logic laagana hain bro ? # yeh page main transfer karege hum chalega onces recruiter clicks on that card fir dusra ek page bane ka jarut nahi.
-    get_name =[]
-    get_email=[]
+    get_name = []
+    get_email = []
     get_phone = []
     get_img = []
     for i in get_ids:
         i = str(i)
-        print("print i ",i)
+        print("print i ", i)
         if User.query.filter_by(id=i).first() != None:
-            user_info = User.query.filter_by(id=i).first()  
+            user_info = User.query.filter_by(id=i).first()
             get_name.append(user_info.fname)
             get_email.append(user_info.email)
             get_phone.append(user_info.phone)
@@ -1708,8 +1708,7 @@ def searchpersonlity():
         else:
             pass
 
-
-    all_data = list(zip(get_ids,get_name, get_email, get_phone, get_img))
+    all_data = list(zip(get_ids, get_name, get_email, get_phone, get_img))
 
     getinfo = User.query.all()
     rec_user_data = User.query.all()
