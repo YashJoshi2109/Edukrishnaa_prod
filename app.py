@@ -6,6 +6,7 @@ import pandas as pd
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 import pickle
+import razorpay
 from internscrap import int_company, int_link, int_loc, int_title
 from internscrap import Scrap_Internshala
 from sqlalchemy.orm import relationship
@@ -208,7 +209,25 @@ def star1t():
 
 @ app.route('/payment', methods=['GET', 'POST'])
 def payment():
-    return render_template("/payment/payment.html")
+    username = User.query.filter_by(uname=user).first()
+    return render_template("/payment/payment.html", username=username)
+
+
+@ app.route('/payment/<id>', methods=['GET', 'POST'])
+def payment_id(id):
+    username = User.query.filter_by(uname=user).first()
+    client = razorpay.Client(
+        auth=("rzp_test_Y5twQEL8KotTAY", "T8zhsmsCkcwQPDNjxfc4A3oy"))
+
+    payment = client.order.create(
+        {'amount': 500, 'currency': 'INR', 'payment_capture': '1'})
+
+    return render_template("/payment/payment.html", payment=payment)
+
+
+@ app.route('/payment_success', methods=['GET', 'POST'])
+def payment_success():
+    return render_template("/payment/payment_success.html")
 
 
 @ app.route('/start', methods=['GET', 'POST'])
@@ -1793,5 +1812,5 @@ def server_error():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=3000)
-    # app.run(debug=True)
+    # app.run(host="0.0.0.0", port=3000)
+    app.run(debug=True)

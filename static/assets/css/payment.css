@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100vh;
+	display: grid;
+	font-family: "Roboto", sans-serif;
+	color: #333333;
+	background: #4f7cac;
+	letter-spacing: 0.05em;
+}
+
+.payment-container {
+	margin: auto;
+	padding: 25px;
+	height: 400px;
+	width: 750px;
+	background: #f7f7f7;
+	border-radius: 15px;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+/* NAV BAR */
+
+.top-nav {
+	margin: 0 auto;
+	height: 25px;
+	display: flex;
+	justify-content: center;
+}
+
+.top-nav ul {
+	display: flex;
+}
+
+.top-nav ul li {
+	width: 100px;
+	padding-bottom: 5px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.normal {
+	color: gray;
+	border-bottom: 1px solid gray;
+}
+
+.highlighted {
+	font-weight: 700;
+	color: #4f7cac;
+	border-bottom: 2px solid #4f7cac;
+}
+
+/* MAIN PAYMENT SECTION */
+
+.main {
+	height: 325px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	font-size: 14px;
+}
+
+.right-payment-info {
+	margin-top: 25px;
+	width: 200px;
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.payment-method h2 {
+	margin-bottom: 10px;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.radio-container {
+	display: flex;
+	gap: 5px;
+}
+
+.radio-container label:not(:last-child) {
+	margin-right: 20px;
+}
+
+.card-info-container {
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.card-info {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 200px;
+}
+
+.card-info label {
+	text-transform: uppercase;
+	letter-spacing: 0.025em;
+	font-size: 13px;
+}
+
+.card-info input {
+	margin-top: 5px;
+	border: 1px solid #333333;
+	border-radius: 5px;
+	letter-spacing: 0.025em;
+	height: 25px;
+}
+
+.full-width {
+	width: 200px;
+	padding-left: 5px;
+}
+
+.expire-ccv {
+	display: flex;
+	justify-content: space-between;
+}
+
+.expire-ccv input {
+	text-align: center;
+}
+
+.expire-ccv label {
+	display: flex;
+	flex-direction: column;
+}
+
+.expire-date {
+	border: 1px solid #333333;
+	border-radius: 5px;
+	margin-top: 5px;
+}
+
+.expire-date input {
+	margin: 0;
+	border: none;
+}
+
+.expire-date span {
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.save-card-info {
+	display: flex;
+	align-items: center;
+	font-size: 13px;
+	gap: 5px;
+	margin-top: 15px;
+	letter-spacing: 0.025em;
+}
+
+input {
+	background-color: #f7f7f7;
+}
+
+input:focus {
+	outline: none;
+}
+
+.button {
+	width: 200px;
+	height: 30px;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 16px;
+	font-family: "Roboto", sans-serif;
+	letter-spacing: 0.05em;
+	color: #f7f7f7;
+	background-color: #4f7cac;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+button:hover {
+	background-color: #2a94f4;
+}
