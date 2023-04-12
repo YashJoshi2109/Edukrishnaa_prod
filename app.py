@@ -206,14 +206,9 @@ def star1t():
     return render_template("speech.html")
 
 
-@ app.route('/daynight', methods=['GET', 'POST'])
-def daynight():
-    return render_template("/log_reg_pro/daynight.html")
-
-
-@ app.route('/wishes', methods=['GET', 'POST'])
-def wishes():
-    return render_template("wishes.html")
+@ app.route('/payment', methods=['GET', 'POST'])
+def payment():
+    return render_template("/payment/payment.html")
 
 
 @ app.route('/start', methods=['GET', 'POST'])
