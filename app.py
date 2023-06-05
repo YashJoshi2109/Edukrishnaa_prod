@@ -1034,7 +1034,7 @@ def results_se():
 
 @ app.route('/results-te', methods=['GET', 'POST'])
 def results_te():
-    # return render_template("/ug-pg/te/testing.py")
+    # return render_template("/ug-pg/te/testing.pyysy")
     username1 = session['user']
     getinfo = User.query.filter_by(uname=username1).first()
 
