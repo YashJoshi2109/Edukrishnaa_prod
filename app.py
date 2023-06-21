@@ -1025,7 +1025,7 @@ def results_se():
     # my_list = list(sorted_dict.items())
     # print("soreted list", my_list)
     # personality_list = list(sorted_dict.keys())
-    # score_values = list(sorted_dict.values())
+    # score_valu = list(sorted_dict.values())
     # score_values = [str(x) for x in score_values]
     # storeResult(personality_list, score_values, roles)
 
