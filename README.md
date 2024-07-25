@@ -10,7 +10,7 @@ Python <br>
 Javascript  <br>
 HTML,CSS  <br>
 FLASK framework <br>
-SQLAlcheny  <br>
+SQLAlchemy  <br>
 
 Tools: <br>
 VS code <br>
